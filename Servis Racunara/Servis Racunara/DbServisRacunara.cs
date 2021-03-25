@@ -280,19 +280,18 @@ namespace Servis_Racunara
             
         }
 
-        public static void InsertPartner(Partner partner,Ulica ulica,int Kbroj,string brojTelefona)
+        public static void InsertPartner(Partner partner,string brojTelefona)
         {
-            InsertAdresa(Kbroj, ulica);
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"INSERT INTO partner(Ime,PostanskiBrojGrada,IdUlice,Email,KucniBroj) 
-                VALUES (@Ime,@PostanskiBrojGrada,@IdUlice,@Email,@KucniBroj)";
+            cmd.CommandText = @"INSERT INTO partner(Ime,PostanskiBrojGrada,NazivUlice,Email,KucniBroj) 
+                VALUES (@Ime,@PostanskiBrojGrada,@NazivUlice,@Email,@KucniBroj)";
             cmd.Parameters.AddWithValue("@Ime", partner.Ime);
-            cmd.Parameters.AddWithValue("@PostanskiBrojGrada", ulica.PostanskiBrojGrada);
-            cmd.Parameters.AddWithValue("@IdUlice", ulica.IdUlice);
+            cmd.Parameters.AddWithValue("@PostanskiBrojGrada",partner.PostanskiBrojGrada);
+            cmd.Parameters.AddWithValue("@NazivUlice", partner.NazivUlice);
             cmd.Parameters.AddWithValue("@Email", partner.Email);
-            cmd.Parameters.AddWithValue("@KucniBroj", Kbroj);
+            cmd.Parameters.AddWithValue("@KucniBroj",partner.KucniBroj);
             cmd.ExecuteNonQuery();
             partner.IdPartnera = (int)cmd.LastInsertedId;
             conn.Close();
@@ -315,27 +314,10 @@ namespace Servis_Racunara
 
         }
 
-        public static void InsertAdresa(int Kbroj,Ulica ulica)
+        
+        public static void InsertRadnik(Radnik radnik,Partner partner, string brojTelefona)
         {
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-            MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"INSERT INTO Ulica(PostanskiBrojGrada,NazivUlice) 
-                VALUES (@PostanskiBrojGrada,@NazivUlice)";
-            cmd.Parameters.AddWithValue("@PostanskiBrojGrada", ulica.PostanskiBrojGrada);
-            cmd.Parameters.AddWithValue("@NazivUlice", ulica.NazivUlice);
-            cmd.ExecuteNonQuery();
-            ulica.IdUlice = (int)cmd.LastInsertedId;
-            cmd.CommandText = @"INSERT INTO Adresa(PostanskiBrojGrada,IdUlice,KucniBroj)
-            VALUES (@PostanskiBrojGrada,@IdUlice,@KucniBroj)";
-            cmd.Parameters.AddWithValue("@IdUlice", ulica.IdUlice);
-            cmd.Parameters.AddWithValue("@KucniBroj", Kbroj);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-        public static void InsertRadnik(Radnik radnik,Partner partner,Ulica ulica, int Kbroj, string brojTelefona)
-        {
-            DbServisRacunara.InsertPartner(partner, ulica, Kbroj,brojTelefona);
+            DbServisRacunara.InsertPartner(partner,brojTelefona);
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
@@ -351,9 +333,9 @@ namespace Servis_Racunara
 
         }
 
-        public static void InsertKlijent(Klijent klijent,Partner partner,Ulica ulica,int Kbroj, string brojTelefona)
+        public static void InsertKlijent(Klijent klijent,Partner partner,string brojTelefona)
         {
-            DbServisRacunara.InsertPartner(partner, ulica, Kbroj, brojTelefona);
+            DbServisRacunara.InsertPartner(partner,brojTelefona);
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
@@ -371,10 +353,10 @@ namespace Servis_Racunara
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"update (((Adresa A inner join Ulica U on A.idUlice=U.IdUlice) inner join Partner P on P.IdUlice=U.IdUlice) inner join Radnik R on R.Idpartnera=P.IdPartnera) inner join Telefon T on T.IdPartnera=P.IdPartnera
-            SET U.NazivUlice =@NazivUlice ,U.PostanskiBrojGrada =@PostanskiBrojGrada,
-            A.KucniBroj =@KucniBroj,P.Ime =@Ime,T.BrojTelefona =@BrojTelefona,P.Email=@Email,R.Uloga=@Uloga,R.Plata=@Plata,R.VozackaDozvola=@VozackaDozvola
-            where A.IdUlice = P.IdUlice and P.IdPartnera=@Id";
+            cmd.CommandText = @"update (Partner P inner join Radnik R on R.Idpartnera=P.IdPartnera) inner join Telefon T on T.IdPartnera=P.IdPartnera
+            SET P.NazivUlice =@NazivUlice ,P.PostanskiBrojGrada =@PostanskiBrojGrada,
+            P.KucniBroj =@KucniBroj,P.Ime =@Ime,T.BrojTelefona =@BrojTelefona,P.Email=@Email,R.Uloga=@Uloga,R.Plata=@Plata,R.VozackaDozvola=@VozackaDozvola
+            where P.IdPartnera=@Id";
             cmd.Parameters.AddWithValue("@Id", radnik.IdPartnera);
             cmd.Parameters.AddWithValue("@NazivUlice",radnik.Ulica);
             cmd.Parameters.AddWithValue("@PostanskiBrojGrada",radnik.PostanskiBrojGrada);
@@ -406,10 +388,10 @@ namespace Servis_Racunara
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"update (((Adresa A inner join Ulica U on A.idUlice=U.IdUlice) inner join Partner P on P.IdUlice=U.IdUlice) inner join Klijent K on K.Idpartnera=P.IdPartnera) inner join Telefon T on T.IdPartnera=P.IdPartnera
-            SET U.NazivUlice =@NazivUlice,U.PostanskiBrojGrada =@PostanskiBrojGrada,
-            A.KucniBroj =@KucniBroj ,P.Ime =@Ime,T.BrojTelefona =@BrojTelefona,P.Email=@Email,K.JIB=@JIB,K.BrojLicneKarte=@BrojLicneKarte
-            where A.IdUlice = P.IdUlice and P.IdPartnera=@Id";
+            cmd.CommandText = @"update (Partner P inner join Klijent K on K.Idpartnera=P.IdPartnera) inner join Telefon T on T.IdPartnera=P.IdPartnera
+            SET P.NazivUlice =@NazivUlice,P.PostanskiBrojGrada =@PostanskiBrojGrada,
+            P.KucniBroj =@KucniBroj ,P.Ime =@Ime,T.BrojTelefona =@BrojTelefona,P.Email=@Email,K.JIB=@JIB,K.BrojLicneKarte=@BrojLicneKarte
+            where P.IdPartnera=@Id";
             cmd.Parameters.AddWithValue("@Id", klijent.IdPartnera);
             cmd.Parameters.AddWithValue("@NazivUlice", klijent.Ulica);
             cmd.Parameters.AddWithValue("@PostanskiBrojGrada", klijent.PostanskiBrojGrada);
@@ -686,7 +668,7 @@ namespace Servis_Racunara
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText =
                 @"SELECT P.IdPartnera,Ime,NazivUlice,NazivGrada,BrojTelefona,KucniBroj,Email,BrojLicneKarte,JIB,JestePravnoLice
-                  FROM (((partner P inner join ulica U on P.IdUlice=U.IdUlice) inner join Grad G on G.PostanskiBrojGrada=U.PostanskiBrojGrada) inner join Telefon T on P.IdPartnera=T.IdPartnera) inner join Klijent K on K.IdPartnera=P.IdPartnera
+                  FROM ((partner P inner join Grad G on G.PostanskiBrojGrada=P.PostanskiBrojGrada) inner join Telefon T on P.IdPartnera=T.IdPartnera) inner join Klijent K on K.IdPartnera=P.IdPartnera
                   WHERE (Ime LIKE @str OR  NazivUlice LIKE @str OR NazivGrada LIKE @str) and P.Obrisan=0
                   ORDER BY IdPartnera,Ime";
             cmd.Parameters.AddWithValue("@str", filter + "%");
@@ -855,7 +837,7 @@ namespace Servis_Racunara
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText =
                 @"SELECT P.IdPartnera,Ime,NazivUlice,NazivGrada,BrojTelefona,KucniBroj,Email,Uloga,Plata,VozackaDozvola
-                FROM (((partner P inner join ulica U on P.IdUlice=U.IdUlice) inner join Grad G on G.PostanskiBrojGrada=U.PostanskiBrojGrada) inner join Telefon T on P.IdPartnera=T.IdPartnera) inner join Radnik R on R.IdPartnera=P.IdPartnera
+                FROM ((partner P inner join Grad G on G.PostanskiBrojGrada=P.PostanskiBrojGrada) inner join Telefon T on P.IdPartnera=T.IdPartnera) inner join Radnik R on R.IdPartnera=P.IdPartnera
                   WHERE (Ime LIKE @str OR  NazivUlice LIKE @str OR NazivGrada LIKE @str) and P.Obrisan=0
                   ORDER BY IdPartnera,Ime";
             cmd.Parameters.AddWithValue("@str", filter + "%");

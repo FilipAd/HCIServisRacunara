@@ -319,13 +319,9 @@ namespace Servis_Racunara
 
                         string[] el = cbGrad.SelectedItem.ToString().Split('-');
                         int kucniBroj = 0;
-                        var ulica = new Ulica()
-                        {
-                            PostanskiBrojGrada = Int32.Parse(el[1]),
-                            NazivUlice = tbUlica.Text,
-                        };
+                       
 
-                        kucniBroj = Int32.Parse(tbKucniBroj.Text);
+                       
 
 
               
@@ -334,6 +330,9 @@ namespace Servis_Racunara
                 {
                     Ime = tbIme.Text,
                     Email = tbEmail.Text,
+                    PostanskiBrojGrada = Int32.Parse(el[1]),
+                    NazivUlice = tbUlica.Text,
+                    KucniBroj = Int32.Parse(tbKucniBroj.Text)
                 };
 
                 var radnik = new Radnik()
@@ -344,7 +343,7 @@ namespace Servis_Racunara
                 };
 
                 string brojTelefona = tbBrojTelefona.Text;
-                DbServisRacunara.InsertRadnik(radnik, partner, ulica, kucniBroj, brojTelefona);
+                DbServisRacunara.InsertRadnik(radnik, partner,brojTelefona);
                 GlavnaFormaSF.cbRadi.Items.Clear();
                 GlavnaFormaSF.cbZaprimio.Items.Clear();
                 GlavnaFormaSF.napuniRadiComboBox();
@@ -424,12 +423,6 @@ private void ubacivanjeFizickogLica(int JestePL)
                 int kucniBroj = 0;
                 string[] el = cbGrad.SelectedItem.ToString().Split('-');
 
-                var ulica = new Ulica()
-                {
-                    PostanskiBrojGrada = Int32.Parse(el[1]),
-                    NazivUlice = tbUlica.Text,
-                };
-
                 kucniBroj = Int32.Parse(tbKucniBroj.Text);
 
 
@@ -437,6 +430,9 @@ private void ubacivanjeFizickogLica(int JestePL)
                 {
                     Ime = tbIme.Text,
                     Email = tbEmail.Text,
+                    PostanskiBrojGrada = Int32.Parse(el[1]),
+                    NazivUlice = tbUlica.Text,
+                    KucniBroj = kucniBroj
                 };
                 var klijent = new Klijent()
                 {
@@ -445,7 +441,7 @@ private void ubacivanjeFizickogLica(int JestePL)
                     JestePravnoLice = JestePL,
                 };
                 string brojTelefona = tbBrojTelefona.Text;
-                DbServisRacunara.InsertKlijent(klijent, partner, ulica, kucniBroj, brojTelefona);
+                DbServisRacunara.InsertKlijent(klijent, partner,brojTelefona);
                 napuniGridKlijenta();
                 resetujTextBoxove();
             }

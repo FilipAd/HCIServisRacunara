@@ -12,7 +12,7 @@ namespace Servis_Racunara
         public string Ime { get; set; }
         public int PostanskiBrojGrada { get; set; }
         public string Email { get; set; }
-        public int IdUlice { get; set; }
+        public string NazivUlice { get; set; }
 
         public int KucniBroj { get; set; }
 
