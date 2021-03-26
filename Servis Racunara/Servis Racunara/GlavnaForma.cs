@@ -168,7 +168,14 @@ namespace Servis_Racunara
         {
             SubjekatFormaGF = new SubjekatForma();
             SubjekatFormaGF.GlavnaFormaSF = this;
+            if(rbPrevediNaSrpski.Checked)
+            SubjekatFormaGF.prevediNaSrpski();
+            else if(rbPrevediNaengleski.Checked)
+            {
+                SubjekatFormaGF.prevediNaEngleski();
+            }
             SubjekatFormaGF.ShowDialog();
+            
         }
 
         private void Form1_MouseHover(object sender, EventArgs e)
@@ -307,9 +314,9 @@ namespace Servis_Racunara
         private void btSacuvajNalog_Click(object sender, EventArgs e)
         {
 
-        if(String.IsNullOrEmpty(cbRadi.Text) || String.IsNullOrEmpty(cbZaprimio.Text) || String.IsNullOrEmpty(cbStatus.Text))
+        if(String.IsNullOrEmpty(cbZaprimio.Text) || String.IsNullOrEmpty(cbStatus.Text))
             {
-                MessageBox.Show("MORATE NAVESTI KO RADI NALOG I KO GA JE ZAPRIMIO KAO I STATUS NALOGA", "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("MORATE NAVESTI KO  JE ZAPRIMIO KAO I STATUS NALOGA", "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           else
             {
@@ -322,13 +329,18 @@ namespace Servis_Racunara
                     OpisZahtjeva = tbZahtjev.Text,
                     Napomena = tbNapomena.Text,
                     IdRadnikaZaprimio = (cbZaprimio.SelectedItem as ComboBoxItem).Vrijednost,
-                    IdServiseraRadi = (cbRadi.SelectedItem as ComboBoxItem).Vrijednost,
                     Status = cbStatus.SelectedItem.ToString(),
                     DatumKreiranja = dtpDatumKreiranja.Value,
                     IdKlijenta = Int32.Parse(tbIdKlijentaGF.Text),
                     DatumZavrsetka = dtpDatumZavrsetka.Value
 
                 };
+                if (cbRadi.SelectedItem as ComboBoxItem is null)
+                {
+
+                }
+                else
+                    nalog.IdServiseraRadi = (cbRadi.SelectedItem as ComboBoxItem).Vrijednost;
 
                 DbServisRacunara.InsertRadniNalog(nalog);
                 MessageBox.Show(tbIdKlijentaGF.Text);
@@ -575,6 +587,163 @@ namespace Servis_Racunara
         {
             napuniDgvNeproknjizeni();
             napuniDgvProknjizeni();
+        }
+
+        private void btPrevodNaEngleski_Click(object sender, EventArgs e)
+        {
+            prevediNaEngleski();
+        }
+
+        private void prevediNaSrpski()
+        {
+            btNoviRadniNalog.Text = "НАПРАВИ НОВИ РАДНИ НАЛОГ";
+            btSacuvajNalog.Text = "САЧУВАЈ НАЛОГ";
+            btIzmjenaNaloga.Text = "ИЗМЈЕНА НАЛОГА";
+            btSacuvajIzmjene.Text = "САЧУВАЈ ИЗМЈЕНЕ";
+            btObrisiNalog.Text = "ОБРИШИ НАЛОГ";
+            btDodajUslugu.Text = "ДОДАЈ УСЛУГУ";
+            btDodajKomponentu.Text = "ДОДАЈ КОМПОНЕНТУ";
+            gbPlacanje.Text = "ИЗНОС ЗА ПЛАЋАЊЕ:";
+            lbZaprimio.Text = "ЗАПРИМИО :";
+            lbServiserRadi.Text = "РАДИ :";
+            lbNapomena.Text = "НАПОМЕНА :";
+            lbUkupnoUsluge.Text = "Услуге за уплату :";
+            lbUkupnoKomponenti.Text = "Компоненти за уплату :";
+            lbUkupanIznosZaUplatu.Text = "УКУПАН ИЗНОС ЗА УПЛАТУ :";
+            lbKlijent.Text = "КЛИЈЕНТ :";
+            lbIdKlijenta.Text = "ИД Клијента :";
+            lbStatus.Text = "СТАТУС :";
+            lbZahtjev.Text = "ЗАХТЈЕВ :";
+            lbDatumKreiranja.Text = "Датум креирања :";
+            lbDatumZavrsetka.Text = "Датум завршетка :";
+            tabPageUsluga.Text = "УСЛУГА";
+            tabPageKomponenta.Text = "КОМПОНЕНТА";
+            lbBrRadnogNaloga.Text = "БР.Налога :";
+            ColumnSifraUsluge.HeaderText = "Шифра";
+            ColumnNazivUsluge.HeaderText = "Назив";
+            ColumnKolicinaUsluge.HeaderText = "Кол.";
+            ColumnCijena.HeaderText = "Јед.Цијена";
+            ColumnRabat.HeaderText = "Рабат";
+            ColumnUkupnaCijena.HeaderText = "Укупно";
+            ColumnIzmjeniStavkuUsluge.HeaderText = "Измјени";
+            ColumnObrisiStavkuUsluge.HeaderText = "Обриши";
+            ColumnIzmjeniStavkuUsluge.Text = "Измјени";
+            ColumnObrisiStavkuUsluge.Text = "Обриши";
+
+            ColumnSifraKomponente.HeaderText = "Шифра";
+            ColumnNazivKomponente.HeaderText = "Назив";
+            ColumnKolicinaKomponente.HeaderText = "Кол.";
+            ColumnCijenaKomponente.HeaderText = "Јед.Цијена";
+            ColumnRabatKomponente.HeaderText = "Рабат";
+            ColumnUkupnaCijenaKomponente.HeaderText = "Укупно";
+            ColumnIzmjeniKS.HeaderText = "Измјени";
+            ColumnObrisiKS.HeaderText = "Обриши";
+            ColumnIzmjeniKS.Text = "Измјени";
+            ColumnObrisiKS.Text = "Обриши";
+
+            lbPretraziNalog.Text = "Претражи :";
+            btProknjizi.Text = "ПРОКЊИЖИ НАЛОГ";
+            rbNeproknjizeni.Text = "НЕПРОКЊИЖЕНИ НАЛОЗИ";
+            rbProknjizeni.Text = "ПРОКЊИЖЕНИ НАЛОЗИ";
+            tabPageProknjizeni.Text = "Прокњижени";
+            tabPageNeproknjizeni.Text = "Непрокњижени";
+            ColumnBrojNaloga.HeaderText = "Бр.Налога";
+            ColumnDatumKreiranjaN.HeaderText = "ДатумКреирања";
+            ColumnImeKlijentaN.HeaderText = "Име";
+            ColumnStatusN.HeaderText = "Статус";
+            ColumnIdPartnera.HeaderText = "ИдПартнера";
+
+            ColumnBrojNalogaP.HeaderText = "Бр.Налога";
+            ColumnDatumKreiranjaP.HeaderText = "ДатумКреирања";
+            ColumnImeP.HeaderText = "Име";
+            ColumnStatusP.HeaderText = "Статус";
+            ColumnIdPartneraProknjizeni.HeaderText = "ИдПартнера";
+
+
+
+
+        }
+
+        private void prevediNaEngleski()
+        {
+            btNoviRadniNalog.Text = "NEW TICKET";
+            btSacuvajNalog.Text = "SAVE TICKET";
+            btIzmjenaNaloga.Text = "EDIT TICKET";
+            btSacuvajIzmjene.Text = "SAVE CHANGES";
+            btObrisiNalog.Text = "DELETE TICKET";
+            btDodajUslugu.Text = "ADD SERVICE";
+            btDodajKomponentu.Text = "ADD COMPONENT";
+            gbPlacanje.Text = "AMOUNT FOR PAYMENT:";
+            lbZaprimio.Text = "CREATED BY :";
+            lbServiserRadi.Text = "ASIGNEE :";
+            lbNapomena.Text = "NOTE :";
+            lbUkupnoUsluge.Text = "Services :";
+            lbUkupnoKomponenti.Text = "Components :";
+            lbUkupanIznosZaUplatu.Text = "CHECKOUT :";
+            lbKlijent.Text = "CLIENT :";
+            lbIdKlijenta.Text = "Client ID :";
+            lbStatus.Text = "STATUS :";
+            lbZahtjev.Text = "REQUEST :";
+            lbDatumKreiranja.Text = "Creation date :";
+            lbDatumZavrsetka.Text = "Completion date :";
+            tabPageUsluga.Text = "SERVICE";
+            tabPageKomponenta.Text = "COMPONENT";
+            lbBrRadnogNaloga.Text = "No.Ticket :";
+            ColumnSifraUsluge.HeaderText = "Code";
+            ColumnNazivUsluge.HeaderText = "Title";
+            ColumnKolicinaUsluge.HeaderText = "quantity";
+            ColumnCijena.HeaderText = "UnitPrice";
+            ColumnRabat.HeaderText = "Discount";
+            ColumnUkupnaCijena.HeaderText = "Sum";
+            ColumnIzmjeniStavkuUsluge.HeaderText = "Edit";
+            ColumnObrisiStavkuUsluge.HeaderText = "Delete";
+            ColumnIzmjeniStavkuUsluge.Text = "Edit";
+            ColumnObrisiStavkuUsluge.Text = "Delete";
+
+            ColumnSifraKomponente.HeaderText = "Code";
+            ColumnNazivKomponente.HeaderText = "Title";
+            ColumnKolicinaKomponente.HeaderText = "quantity";
+            ColumnCijenaKomponente.HeaderText = "UnitPrice";
+            ColumnRabatKomponente.HeaderText = "Discount";
+            ColumnUkupnaCijenaKomponente.HeaderText = "Sum";
+            ColumnIzmjeniKS.HeaderText = "Edit";
+            ColumnObrisiKS.HeaderText = "Delete";
+            ColumnIzmjeniKS.Text = "Edit";
+            ColumnObrisiKS.Text = "Delete";
+
+            lbPretraziNalog.Text = "Search :";
+            btProknjizi.Text = "PROCESS TICKET";
+            rbNeproknjizeni.Text = "UNPROCESSED TICKETS";
+            rbProknjizeni.Text = "UNPROCESSED TICKETS";
+            tabPageProknjizeni.Text = "Processed";
+            tabPageNeproknjizeni.Text = "Unprocessed";
+            ColumnBrojNaloga.HeaderText = "No.Ticket";
+            ColumnDatumKreiranjaN.HeaderText = "Creation date";
+            ColumnImeKlijentaN.HeaderText = "Name";
+            ColumnStatusN.HeaderText = "Status";
+            ColumnIdPartnera.HeaderText = "ClientId";
+
+            ColumnBrojNalogaP.HeaderText = "No.Ticket";
+            ColumnDatumKreiranjaP.HeaderText = "Creation date";
+            ColumnImeP.HeaderText = "Name";
+            ColumnStatusP.HeaderText = "Status";
+            ColumnIdPartneraProknjizeni.HeaderText = "ClientId";
+        }
+
+
+        private void btPrevodNaSrpski_Click(object sender, EventArgs e)
+        {
+            this.prevediNaSrpski();
+        }
+
+        private void rbPrevediNaSrpski_CheckedChanged(object sender, EventArgs e)
+        {
+            prevediNaSrpski();
+        }
+
+        private void rbPrevediNaengleski_CheckedChanged(object sender, EventArgs e)
+        {
+            prevediNaEngleski();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Servis_Racunara
             napuniGradComboBox();
             napuniGridKlijenta();
             napuniGridRadnika();
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -629,6 +630,100 @@ private void ubacivanjeFizickogLica(int JestePL)
         private void btOsvjeziRadnika_Click(object sender, EventArgs e)
         {
             napuniGridRadnika();
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+       public void prevediNaSrpski()
+        {
+            gbOsnovneInformacije.Text = "ОСНОВНЕ ИНФОРМАЦИЈЕ";
+            lbIme.Text = "Име :";
+            lbUlica.Text = "Улица :";
+            lbGrad.Text = "Град :";
+            lbId.Text = "ID :";
+            lbKucniBroj.Text = "Број :";
+            lbTelefon.Text = "Телефон :";
+            gbTipPartnera.Text = "ТИП ПАРТНЕРА";
+            rbDodajPL.Text = "ДОДАЈ ПРАВНО ЛИЦЕ";
+            rbDodajFL.Text = "ДОДАЈ ФИЗИЧКО ЛИЦЕ";
+            rbDodavanjeRadnika.Text = "ДОДАЈ РАДНИКА";
+            gbDodatneInformacije.Text = "ДОДАТНЕ ИНФОРМАЦИЈЕ";
+            lbUloga.Text = "Улога :";
+            lbPlata.Text = "Плата :";
+            lbVozackaDozvola.Text = "Возачка дозвола кат. :";
+            lbBrojLicneKarte.Text = "Број Личне Карте :";
+            lbJib.Text = "ЈИБ :";
+            btDodajPartnera.Text = "ДОДАЈ ПАРТНЕРА";
+            gbKlijent.Text = "КЛИЈЕНТИ";
+            ColumnId.HeaderText=ColumnIdPartneraRadnik.HeaderText = "";
+            ColumnIme.HeaderText=ColumnImeRadnik.HeaderText = "Име";
+            ColumnUlica.HeaderText=ColumnUlicaRadnik.HeaderText = "Улица";
+            ColumnGrad.HeaderText=ColumnGradRadnik.HeaderText = "Град";
+            ColumnTelefon.HeaderText=ColumnTelefonRadnik.HeaderText = "Телефон";
+            ColumnKucniBroj.HeaderText=ColumnBrojKuceRadnik.HeaderText = "Кућ.Бр.";
+            ColumnBrojLicneKarte.HeaderText = "Бр.Лич.Карте";
+            ColumnJIB.HeaderText = "ЈИБ";
+            ColumnJestePravnoLice.HeaderText = "ЈестеПравноЛице?";
+            ColumnIzmjeni.HeaderText=ColumnIzmjeniRadnik.HeaderText = "Измјени";
+            ColumnObrisi.HeaderText=ColumnObrisiRadnik.HeaderText = "Обриши";
+            ColumnObrisi.Text=ColumnObrisiRadnik.Text = "Обриши";
+            ColumnIzmjeni.Text=ColumnIzmjeniRadnik.Text= "Измјени";
+            ColumnDodajNaNalog.HeaderText = "Налог";
+            lbFilterPartnera.Text=lbPreatraziRadnika.Text = "Претражи :";
+            btSacuvajIzmjeneKlijenta.Text = "САЧУВАЈ ИЗМЈЕНЕ КЛИЈЕНТА";
+            btSacuvajIzmjeneRadnika.Text = "САЧУВАЈ ИЗМЈЕНЕ РАДНИКА";
+            gbRadnik.Text = "РАДНИЦИ";
+            ColumnUloga.HeaderText = "Улога";
+            ColumnPlata.HeaderText = "Плата";
+            ColumnVozackaDozvola.HeaderText = "Воз.Доз.";
+
+        }
+
+        public void prevediNaEngleski()
+        {
+            gbOsnovneInformacije.Text = "BASIC INFORMATION";
+            lbIme.Text =  "Name :";
+            lbUlica.Text = "Street :";
+            lbGrad.Text = "City :";
+            lbId.Text = "ID :";
+            lbKucniBroj.Text = "Number :";
+            lbTelefon.Text = "Phone :";
+            gbTipPartnera.Text = "PARTNER TYPE";
+            rbDodajPL.Text = "ADD CORPORATE PERSON";
+            rbDodajFL.Text = "ADD NATURAL PERSON";
+            rbDodavanjeRadnika.Text = "ADD WORKER ";
+            gbDodatneInformacije.Text = "EXTRA INFORMATION";
+            lbUloga.Text = "Role :";
+            lbPlata.Text = "Salary :";
+            lbVozackaDozvola.Text = "Driving licence cat. :";
+            lbBrojLicneKarte.Text = "ID Number :";
+            lbJib.Text = "UIN :";
+            btDodajPartnera.Text = "ADD PARTNER";
+            gbKlijent.Text = "CLIENTS";
+            ColumnUlica.HeaderText = ColumnUlicaRadnik.HeaderText = "Street";
+            ColumnIme.HeaderText = ColumnImeRadnik.HeaderText = "Name";
+            ColumnGrad.HeaderText = ColumnGradRadnik.HeaderText = "City";
+            ColumnTelefon.HeaderText = ColumnTelefonRadnik.HeaderText = "Phone";
+            ColumnKucniBroj.HeaderText = ColumnBrojKuceRadnik.HeaderText = "House No.";
+            ColumnBrojLicneKarte.HeaderText = "ID Number";
+            ColumnJIB.HeaderText = "UIN";
+            ColumnJestePravnoLice.HeaderText = "IsCorporatePerson?";
+            ColumnIzmjeni.HeaderText = ColumnIzmjeniRadnik.HeaderText = "Edit";
+            ColumnObrisi.HeaderText = ColumnObrisiRadnik.HeaderText = "Delete";
+            ColumnObrisi.Text = ColumnObrisiRadnik.Text = "Delete";
+            ColumnIzmjeni.Text = ColumnIzmjeniRadnik.Text = "Edit";
+            ColumnDodajNaNalog.HeaderText = "Ticket";
+            ColumnDodajNaNalog.Text = "Ticket";
+            lbFilterPartnera.Text = lbPreatraziRadnika.Text = "Search :";
+            btSacuvajIzmjeneKlijenta.Text = "SAVE CHANGES CLIENT";
+            btSacuvajIzmjeneRadnika.Text = "SAVE CHANGES WORKER";
+            gbRadnik.Text = "WORKERS";
+            ColumnUloga.HeaderText = "Role";
+            ColumnPlata.HeaderText = "Salary";
+            ColumnVozackaDozvola.HeaderText = "Driv.Lic.";
         }
     }
 }

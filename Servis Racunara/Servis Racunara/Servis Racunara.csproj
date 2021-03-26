@@ -271,5 +271,14 @@
   <ItemGroup>
     <None Include="Resources\refresh %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hiclipart.com %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hiclipart.com %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hiclipart.com %285%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
