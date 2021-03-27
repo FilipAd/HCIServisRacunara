@@ -29,7 +29,7 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbKomponentaStavka = new System.Windows.Forms.GroupBox();
             this.dgvKomponentaStavka = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -41,7 +41,7 @@ namespace Servis_Racunara
             this.tbDostupnoKS = new System.Windows.Forms.TextBox();
             this.lbKolicinaKS = new System.Windows.Forms.Label();
             this.lbRabatKS = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbUkupnaCijena = new System.Windows.Forms.Label();
             this.tbKolicinaKS = new System.Windows.Forms.TextBox();
             this.tbRabatKS = new System.Windows.Forms.TextBox();
             this.tbUkupnaCijenaKS = new System.Windows.Forms.TextBox();
@@ -119,7 +119,7 @@ namespace Servis_Racunara
             // 
             // tbBrojNalogaKS
             // 
-            this.tbBrojNalogaKS.Location = new System.Drawing.Point(217, 375);
+            this.tbBrojNalogaKS.Location = new System.Drawing.Point(252, 375);
             this.tbBrojNalogaKS.Name = "tbBrojNalogaKS";
             this.tbBrojNalogaKS.ReadOnly = true;
             this.tbBrojNalogaKS.Size = new System.Drawing.Size(143, 20);
@@ -127,7 +127,7 @@ namespace Servis_Racunara
             // 
             // tbSifraKomponenteKS
             // 
-            this.tbSifraKomponenteKS.Location = new System.Drawing.Point(217, 410);
+            this.tbSifraKomponenteKS.Location = new System.Drawing.Point(252, 410);
             this.tbSifraKomponenteKS.Name = "tbSifraKomponenteKS";
             this.tbSifraKomponenteKS.ReadOnly = true;
             this.tbSifraKomponenteKS.Size = new System.Drawing.Size(143, 20);
@@ -135,7 +135,7 @@ namespace Servis_Racunara
             // 
             // tbDostupnoKS
             // 
-            this.tbDostupnoKS.Location = new System.Drawing.Point(217, 477);
+            this.tbDostupnoKS.Location = new System.Drawing.Point(252, 478);
             this.tbDostupnoKS.Name = "tbDostupnoKS";
             this.tbDostupnoKS.ReadOnly = true;
             this.tbDostupnoKS.Size = new System.Drawing.Size(143, 20);
@@ -145,7 +145,7 @@ namespace Servis_Racunara
             // 
             this.lbKolicinaKS.AutoSize = true;
             this.lbKolicinaKS.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKolicinaKS.Location = new System.Drawing.Point(472, 408);
+            this.lbKolicinaKS.Location = new System.Drawing.Point(446, 408);
             this.lbKolicinaKS.Name = "lbKolicinaKS";
             this.lbKolicinaKS.Size = new System.Drawing.Size(98, 21);
             this.lbKolicinaKS.TabIndex = 7;
@@ -155,21 +155,21 @@ namespace Servis_Racunara
             // 
             this.lbRabatKS.AutoSize = true;
             this.lbRabatKS.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRabatKS.Location = new System.Drawing.Point(472, 451);
+            this.lbRabatKS.Location = new System.Drawing.Point(446, 451);
             this.lbRabatKS.Name = "lbRabatKS";
             this.lbRabatKS.Size = new System.Drawing.Size(72, 21);
             this.lbRabatKS.TabIndex = 8;
             this.lbRabatKS.Text = "RABAT:";
             // 
-            // label3
+            // lbUkupnaCijena
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(472, 494);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 21);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "UKUPNA CIJENA:";
+            this.lbUkupnaCijena.AutoSize = true;
+            this.lbUkupnaCijena.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUkupnaCijena.Location = new System.Drawing.Point(446, 494);
+            this.lbUkupnaCijena.Name = "lbUkupnaCijena";
+            this.lbUkupnaCijena.Size = new System.Drawing.Size(148, 21);
+            this.lbUkupnaCijena.TabIndex = 9;
+            this.lbUkupnaCijena.Text = "UKUPNA CIJENA:";
             // 
             // tbKolicinaKS
             // 
@@ -222,7 +222,7 @@ namespace Servis_Racunara
             // 
             this.lbFilterKS.AutoSize = true;
             this.lbFilterKS.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFilterKS.Location = new System.Drawing.Point(602, 40);
+            this.lbFilterKS.Location = new System.Drawing.Point(517, 41);
             this.lbFilterKS.Name = "lbFilterKS";
             this.lbFilterKS.Size = new System.Drawing.Size(70, 21);
             this.lbFilterKS.TabIndex = 15;
@@ -248,7 +248,7 @@ namespace Servis_Racunara
             // 
             // tbJedinicnaCijenaKS
             // 
-            this.tbJedinicnaCijenaKS.Location = new System.Drawing.Point(217, 516);
+            this.tbJedinicnaCijenaKS.Location = new System.Drawing.Point(252, 516);
             this.tbJedinicnaCijenaKS.Name = "tbJedinicnaCijenaKS";
             this.tbJedinicnaCijenaKS.ReadOnly = true;
             this.tbJedinicnaCijenaKS.Size = new System.Drawing.Size(143, 20);
@@ -266,7 +266,7 @@ namespace Servis_Racunara
             // 
             // tbNazivKS
             // 
-            this.tbNazivKS.Location = new System.Drawing.Point(104, 441);
+            this.tbNazivKS.Location = new System.Drawing.Point(139, 442);
             this.tbNazivKS.Name = "tbNazivKS";
             this.tbNazivKS.ReadOnly = true;
             this.tbNazivKS.Size = new System.Drawing.Size(256, 20);
@@ -290,16 +290,18 @@ namespace Servis_Racunara
             // 
             // ColumnDostupnaKolicinaKS
             // 
+            this.ColumnDostupnaKolicinaKS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.ColumnDostupnaKolicinaKS.HeaderText = "DostupnaKolicina";
             this.ColumnDostupnaKolicinaKS.Name = "ColumnDostupnaKolicinaKS";
+            this.ColumnDostupnaKolicinaKS.Width = 115;
             // 
             // ColumnOznaci
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnOznaci.HeaderText = "Oznaci";
             this.ColumnOznaci.Name = "ColumnOznaci";
             this.ColumnOznaci.Text = "Oznaci";
@@ -321,7 +323,7 @@ namespace Servis_Racunara
             this.Controls.Add(this.tbUkupnaCijenaKS);
             this.Controls.Add(this.tbRabatKS);
             this.Controls.Add(this.tbKolicinaKS);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbUkupnaCijena);
             this.Controls.Add(this.lbRabatKS);
             this.Controls.Add(this.lbKolicinaKS);
             this.Controls.Add(this.tbDostupnoKS);
@@ -354,7 +356,7 @@ namespace Servis_Racunara
         private System.Windows.Forms.TextBox tbDostupnoKS;
         private System.Windows.Forms.Label lbKolicinaKS;
         private System.Windows.Forms.Label lbRabatKS;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbUkupnaCijena;
         private System.Windows.Forms.TextBox tbKolicinaKS;
         private System.Windows.Forms.TextBox tbRabatKS;
         private System.Windows.Forms.TextBox tbUkupnaCijenaKS;

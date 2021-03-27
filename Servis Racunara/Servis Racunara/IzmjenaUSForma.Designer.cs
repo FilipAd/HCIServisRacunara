@@ -126,6 +126,7 @@ namespace Servis_Racunara
             this.tbBrojNalogaIzmjenaUS.ReadOnly = true;
             this.tbBrojNalogaIzmjenaUS.Size = new System.Drawing.Size(201, 20);
             this.tbBrojNalogaIzmjenaUS.TabIndex = 7;
+            this.tbBrojNalogaIzmjenaUS.TextChanged += new System.EventHandler(this.tbBrojNalogaIzmjenaUS_TextChanged);
             // 
             // tbSifraIzmejnaUS
             // 
@@ -153,9 +154,9 @@ namespace Servis_Racunara
             // 
             // tbKolicinaIzmjenaUS
             // 
-            this.tbKolicinaIzmjenaUS.Location = new System.Drawing.Point(120, 256);
+            this.tbKolicinaIzmjenaUS.Location = new System.Drawing.Point(135, 256);
             this.tbKolicinaIzmjenaUS.Name = "tbKolicinaIzmjenaUS";
-            this.tbKolicinaIzmjenaUS.Size = new System.Drawing.Size(159, 20);
+            this.tbKolicinaIzmjenaUS.Size = new System.Drawing.Size(109, 20);
             this.tbKolicinaIzmjenaUS.TabIndex = 11;
             // 
             // tbRabatIzmejnaUS
@@ -197,7 +198,7 @@ namespace Servis_Racunara
             // 
             this.lbStaraKolicinaIzmjenaUS.AutoSize = true;
             this.lbStaraKolicinaIzmjenaUS.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStaraKolicinaIzmjenaUS.Location = new System.Drawing.Point(285, 255);
+            this.lbStaraKolicinaIzmjenaUS.Location = new System.Drawing.Point(250, 256);
             this.lbStaraKolicinaIzmjenaUS.Name = "lbStaraKolicinaIzmjenaUS";
             this.lbStaraKolicinaIzmjenaUS.Size = new System.Drawing.Size(163, 21);
             this.lbStaraKolicinaIzmjenaUS.TabIndex = 16;
@@ -205,7 +206,7 @@ namespace Servis_Racunara
             // 
             // tbIzmjenaUSStaraKolicina
             // 
-            this.tbIzmjenaUSStaraKolicina.Location = new System.Drawing.Point(447, 256);
+            this.tbIzmjenaUSStaraKolicina.Location = new System.Drawing.Point(438, 256);
             this.tbIzmjenaUSStaraKolicina.Name = "tbIzmjenaUSStaraKolicina";
             this.tbIzmjenaUSStaraKolicina.ReadOnly = true;
             this.tbIzmjenaUSStaraKolicina.Size = new System.Drawing.Size(97, 20);

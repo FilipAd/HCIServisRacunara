@@ -29,7 +29,7 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsluga = new System.Windows.Forms.DataGridView();
             this.ColumnSifraUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNazivUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,11 +90,11 @@ namespace Servis_Racunara
             // 
             // ColumnOznaci
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnOznaci.HeaderText = "Oznaci";
             this.ColumnOznaci.Name = "ColumnOznaci";
             this.ColumnOznaci.Text = "Oznaci";
@@ -104,7 +104,7 @@ namespace Servis_Racunara
             // 
             this.lbBrojNalogaUslugaStavka.AutoSize = true;
             this.lbBrojNalogaUslugaStavka.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBrojNalogaUslugaStavka.Location = new System.Drawing.Point(29, 420);
+            this.lbBrojNalogaUslugaStavka.Location = new System.Drawing.Point(24, 420);
             this.lbBrojNalogaUslugaStavka.Name = "lbBrojNalogaUslugaStavka";
             this.lbBrojNalogaUslugaStavka.Size = new System.Drawing.Size(133, 21);
             this.lbBrojNalogaUslugaStavka.TabIndex = 1;
@@ -114,7 +114,7 @@ namespace Servis_Racunara
             // 
             this.lbSifraUsluge.AutoSize = true;
             this.lbSifraUsluge.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSifraUsluge.Location = new System.Drawing.Point(29, 459);
+            this.lbSifraUsluge.Location = new System.Drawing.Point(24, 458);
             this.lbSifraUsluge.Name = "lbSifraUsluge";
             this.lbSifraUsluge.Size = new System.Drawing.Size(63, 21);
             this.lbSifraUsluge.TabIndex = 2;
@@ -124,7 +124,7 @@ namespace Servis_Racunara
             // 
             this.lbNazivUsluge.AutoSize = true;
             this.lbNazivUsluge.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNazivUsluge.Location = new System.Drawing.Point(24, 492);
+            this.lbNazivUsluge.Location = new System.Drawing.Point(24, 493);
             this.lbNazivUsluge.Name = "lbNazivUsluge";
             this.lbNazivUsluge.Size = new System.Drawing.Size(68, 21);
             this.lbNazivUsluge.TabIndex = 3;
@@ -142,7 +142,7 @@ namespace Servis_Racunara
             // 
             // tbBrojNalogaUS
             // 
-            this.tbBrojNalogaUS.Location = new System.Drawing.Point(174, 422);
+            this.tbBrojNalogaUS.Location = new System.Drawing.Point(190, 422);
             this.tbBrojNalogaUS.Name = "tbBrojNalogaUS";
             this.tbBrojNalogaUS.ReadOnly = true;
             this.tbBrojNalogaUS.Size = new System.Drawing.Size(175, 20);
@@ -151,7 +151,7 @@ namespace Servis_Racunara
             // 
             // tbSifraUS
             // 
-            this.tbSifraUS.Location = new System.Drawing.Point(115, 459);
+            this.tbSifraUS.Location = new System.Drawing.Point(131, 458);
             this.tbSifraUS.Name = "tbSifraUS";
             this.tbSifraUS.ReadOnly = true;
             this.tbSifraUS.Size = new System.Drawing.Size(234, 20);
@@ -159,7 +159,7 @@ namespace Servis_Racunara
             // 
             // tbNazivUS
             // 
-            this.tbNazivUS.Location = new System.Drawing.Point(115, 492);
+            this.tbNazivUS.Location = new System.Drawing.Point(131, 492);
             this.tbNazivUS.Name = "tbNazivUS";
             this.tbNazivUS.ReadOnly = true;
             this.tbNazivUS.Size = new System.Drawing.Size(234, 20);
@@ -167,7 +167,7 @@ namespace Servis_Racunara
             // 
             // tbCijenaPoSatuUS
             // 
-            this.tbCijenaPoSatuUS.Location = new System.Drawing.Point(190, 522);
+            this.tbCijenaPoSatuUS.Location = new System.Drawing.Point(207, 524);
             this.tbCijenaPoSatuUS.Name = "tbCijenaPoSatuUS";
             this.tbCijenaPoSatuUS.ReadOnly = true;
             this.tbCijenaPoSatuUS.Size = new System.Drawing.Size(158, 20);
@@ -177,7 +177,7 @@ namespace Servis_Racunara
             // 
             this.lbKolicinaUsluge.AutoSize = true;
             this.lbKolicinaUsluge.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKolicinaUsluge.Location = new System.Drawing.Point(478, 408);
+            this.lbKolicinaUsluge.Location = new System.Drawing.Point(464, 408);
             this.lbKolicinaUsluge.Name = "lbKolicinaUsluge";
             this.lbKolicinaUsluge.Size = new System.Drawing.Size(98, 21);
             this.lbKolicinaUsluge.TabIndex = 9;
@@ -195,7 +195,7 @@ namespace Servis_Racunara
             // 
             this.lbRabatUsluga.AutoSize = true;
             this.lbRabatUsluga.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRabatUsluga.Location = new System.Drawing.Point(478, 447);
+            this.lbRabatUsluga.Location = new System.Drawing.Point(464, 447);
             this.lbRabatUsluga.Name = "lbRabatUsluga";
             this.lbRabatUsluga.Size = new System.Drawing.Size(104, 21);
             this.lbRabatUsluga.TabIndex = 11;
@@ -213,7 +213,7 @@ namespace Servis_Racunara
             // 
             this.lbCijenaUslugeZavrsna.AutoSize = true;
             this.lbCijenaUslugeZavrsna.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCijenaUslugeZavrsna.Location = new System.Drawing.Point(478, 493);
+            this.lbCijenaUslugeZavrsna.Location = new System.Drawing.Point(464, 492);
             this.lbCijenaUslugeZavrsna.Name = "lbCijenaUslugeZavrsna";
             this.lbCijenaUslugeZavrsna.Size = new System.Drawing.Size(73, 21);
             this.lbCijenaUslugeZavrsna.TabIndex = 13;
@@ -253,7 +253,7 @@ namespace Servis_Racunara
             // 
             this.lbFilterUsluga.AutoSize = true;
             this.lbFilterUsluga.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFilterUsluga.Location = new System.Drawing.Point(446, 31);
+            this.lbFilterUsluga.Location = new System.Drawing.Point(387, 32);
             this.lbFilterUsluga.Name = "lbFilterUsluga";
             this.lbFilterUsluga.Size = new System.Drawing.Size(70, 21);
             this.lbFilterUsluga.TabIndex = 17;

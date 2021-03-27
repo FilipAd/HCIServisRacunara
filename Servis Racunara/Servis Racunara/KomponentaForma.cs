@@ -155,5 +155,45 @@ namespace Servis_Racunara
         {
             NapuniGrid();
         }
+        public void prevediNaSrpski()
+        {
+            lbFilter.Text = "Претрага ( шифра или назив ):";
+            ColumnSifra.HeaderText = "Шифра";
+            ColumnNaziv.HeaderText = "Назив";
+            ColumnCijena.HeaderText = "Цијена по комаду";
+            ColumnDostupnaKolicina.HeaderText = "Доступна количина";
+            ColumnIzmjeni.HeaderText=ColumnIzmjeni.Text = "Измјени";
+            ColumnObrisi.HeaderText = ColumnObrisi.Text = "Обриши";
+            ColumnDodaj.HeaderText = ColumnDodaj.Text = "Додај";
+            gbDodavanjeKomponente.Text = "ДОДАВАЊЕ КОМПОНЕНТЕ";
+            lbSifraKomponente.Text = "Шифра компоненте :";
+            lbNazivKomponente.Text = "Назив компоненте :";
+            lbCijenaPoKomadu.Text = "Цијена по комаду :";
+            lbKolicina.Text = "Количина :";
+            btSacuvajIzmjeneKomponenta.Text = "САЧУВАЈ ИЗМЈЕНЕ";
+            btDodajKolicinu.Text = "ДОДАЈ НА ПОСТОЈЕЋУ КОЛИЧИНУ";
+            btDodajKomponentu.Text = "ДОДАЈ";
+
+        }
+
+        public void prevediNaEngleski()
+        {
+            lbFilter.Text = "Search ( code or title ):";
+            ColumnSifra.HeaderText = "Code";
+            ColumnNaziv.HeaderText = "Title";
+            ColumnCijena.HeaderText = "Unit price";
+            ColumnDostupnaKolicina.HeaderText = "Available";
+            ColumnIzmjeni.HeaderText = ColumnIzmjeni.Text = "Edit";
+            ColumnObrisi.HeaderText = ColumnObrisi.Text = "Delete";
+            ColumnDodaj.HeaderText = ColumnDodaj.Text = "Add";
+            gbDodavanjeKomponente.Text = "ADD COMPONENT";
+            lbSifraKomponente.Text = "Code :";
+            lbNazivKomponente.Text = "Title :";
+            lbCijenaPoKomadu.Text = "Unit Price :";
+            lbKolicina.Text = "Quantity :";
+            btSacuvajIzmjeneKomponenta.Text = "SAVE CHANGES";
+            btDodajKolicinu.Text = "ADD ON EXISTING";
+            btDodajKomponentu.Text = "ADD";
+        }
     }
 }

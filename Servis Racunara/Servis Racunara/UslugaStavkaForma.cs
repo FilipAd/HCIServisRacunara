@@ -123,5 +123,44 @@ namespace Servis_Racunara
         {
             btDodajUsluguNaNalog.Enabled = false;
         }
+
+        public void prevediNasrpski()
+        {
+            lbFilterUsluga.Text = "Претражи :";
+            gbUslugaStavka.Text = "УСЛУГЕ :";
+            ColumnSifraUsluge.HeaderText = "Шифра";
+            ColumnNazivUsluge.HeaderText = "Назив";
+            ColumnCijenaPoH.HeaderText = "Цијена по h";
+            ColumnOznaci.HeaderText = ColumnOznaci.Text = "Означи";
+            lbBrojNalogaUslugaStavka.Text = "БРОЈ НАЛОГА :";
+            lbSifraUsluge.Text = "ШИФРА :";
+            lbNazivUsluge.Text = "НАЗИВ :";
+            lbCijenaUslugePoH.Text = "ЦИЈЕНА ПО h :";
+            lbKolicinaUsluge.Text = "КОЛИЧНА :";
+            lbRabatUsluga.Text = "РАБАТ (%) :";
+            lbCijenaUslugeZavrsna.Text = "ЦИЈЕНА :";
+            btDodajUsluguNaNalog.Text = "ДОДАЈ НА НАЛОГ";
+            btIzracunajCijenuUS.Text = "ОБРАЧУНАЈ";
+
+        }
+
+        public void prevediNaEngleski()
+        {
+            lbFilterUsluga.Text = "Search :";
+            gbUslugaStavka.Text = "SERVICES :";
+            ColumnSifraUsluge.HeaderText = "Code";
+            ColumnNazivUsluge.HeaderText = "Title";
+            ColumnCijenaPoH.HeaderText = "Cost per h";
+            ColumnOznaci.HeaderText = ColumnOznaci.Text = "Select";
+            lbBrojNalogaUslugaStavka.Text = "TICKET NUMBER :";
+            lbSifraUsluge.Text = "CODE :";
+            lbNazivUsluge.Text = "TITLE :";
+            lbCijenaUslugePoH.Text = "COST PER h :";
+            lbKolicinaUsluge.Text = "QUANTITY :";
+            lbRabatUsluga.Text = "DISCOUNT (%) :";
+            lbCijenaUslugeZavrsna.Text = "PRICE :";
+            btDodajUsluguNaNalog.Text = "ADD TO TICKET";
+            btIzracunajCijenuUS.Text = "CALCULATE";
+        }
     }
 }

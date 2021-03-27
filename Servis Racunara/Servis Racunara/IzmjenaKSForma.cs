@@ -80,5 +80,38 @@ namespace Servis_Racunara
         {
             btZapamtiIzmjenaKS.Enabled = false;
         }
+
+        private void IzmjenaKSForma_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void prevediNaSrpski()
+        {
+            lbBrojNalogaIzmjenaKS.Text = "БРОЈ РАДНОГ НАЛОГА :";
+            lbSifraKomponenteIzmjenaKS.Text = "ШИФРА :";
+            lbNazivIzmjenaKS.Text = "НАЗИВ :";
+            lbJedinicnaCijenaIzmjenaKS.Text = "ЈЕДИНИЧНА ЦИЈЕНА :";
+            lbKolicinaIzmjenaKS.Text = "КОЛИЧИНА :";
+            lbRabatIzmjenaKS.Text = "РАБАТ (%) :";
+            lbUkupoIzmjenaKS.Text = "УКУПНО :";
+            lbStaraKolicinaIzmjenaKS.Text = "СТАРА КОЛИЧИНА :";
+            btObracunajIzmjenaKS.Text = "ОБРАЧУНАЈ";
+            btZapamtiIzmjenaKS.Text = "ЗАПАМТИ";
+
+
+        }
+        public void prevediNaEngleski()
+        {
+            lbBrojNalogaIzmjenaKS.Text = "TICKET NUMBER :";
+            lbSifraKomponenteIzmjenaKS.Text = "CODE :";
+            lbNazivIzmjenaKS.Text = "TITLE :";
+            lbJedinicnaCijenaIzmjenaKS.Text = "UNIT PRICE :";
+            lbKolicinaIzmjenaKS.Text = "QUANTITY :";
+            lbRabatIzmjenaKS.Text = "DISCOUNT (%) :";
+            lbUkupoIzmjenaKS.Text = "SUM :";
+            lbStaraKolicinaIzmjenaKS.Text = "OLD QUANTITY :";
+            btObracunajIzmjenaKS.Text = "CALCULATE";
+            btZapamtiIzmjenaKS.Text = "SAVE";
+        }
     }
 }

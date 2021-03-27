@@ -61,5 +61,42 @@ namespace Servis_Racunara
         {
 
         }
+
+        public void prevediNaSrpski()
+        {
+            lbBrojNalogaIzmjenaUS.Text = "БРОЈ РАДНОГ НАЛОГА :";
+            lbSifraIzmjenaUS.Text = "ШИФРА :";
+            lbNazivIzmjenaUS.Text = "НАЗИВ :";
+            lbIzmjenaCijenaPoHUS.Text = "ЦИЈЕНА ПО h :";
+            lbIzmjeniKolicinaUS.Text = "КОЛИЧИНА :";
+            lbStaraKolicinaIzmjenaUS.Text = "СТАРА КОЛИЧИНА :";
+            lbRabatIzmjeniUS.Text = "РАБАТ (%) :";
+            lbUkupnoIzmjenaUS.Text = "УКУПНО :";
+            btObracunajIzmjenaUS.Text = "ОБРАЧУНАЈ";
+            btZapamtiIzmjenaUS.Text = "ЗАПАМТИ";
+
+
+        }
+
+        public void prevediNaEngleski()
+        {
+            lbBrojNalogaIzmjenaUS.Text = "TICKET NUMBER :";
+            lbSifraIzmjenaUS.Text = "CODE :";
+            lbNazivIzmjenaUS.Text = "TITLE :";
+            lbIzmjenaCijenaPoHUS.Text = "COST PER h :";
+            lbIzmjeniKolicinaUS.Text = "QUANTITY :";
+            lbStaraKolicinaIzmjenaUS.Text = "OLD QUANTITY :";
+            lbRabatIzmjeniUS.Text = "DISCOUNT (%) :";
+            lbUkupnoIzmjenaUS.Text = "SUM :";
+            btObracunajIzmjenaUS.Text = "CALCULATE";
+            btZapamtiIzmjenaUS.Text = "SAVE";
+
+
+        }
+
+        private void tbBrojNalogaIzmjenaUS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -232,7 +232,16 @@ namespace Servis_Racunara
         {
             KomponentaFormaGF= new KomponentaForma();
             KomponentaFormaGF.GlavnaFormaKOM = this;
+            if (rbPrevediNaSrpski.Checked)
+            {
+                KomponentaFormaGF.prevediNaSrpski();
+            }
+            else if(rbPrevediNaengleski.Checked)
+            {
+                KomponentaFormaGF.prevediNaEngleski();
+            }
             KomponentaFormaGF.ShowDialog();
+        
            
         }
 
@@ -288,7 +297,12 @@ namespace Servis_Racunara
         {
             if(String.IsNullOrEmpty(cbStatus.Text) || String.IsNullOrEmpty(cbRadi.Text) || String.IsNullOrEmpty(cbZaprimio.Text) || String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                MessageBox.Show("MORATE OZNACITI KO RADI, KO JE KREIRAO NALOG,STATUS,TAKODJE MORA POSTOJATI BROJ RADNOG NALOGA", "NEUSPJESNO AZURIRANJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string eng = "FIELDS: ASSIGNED,CREATED BY and STATUS are required";
+                string srb = "MORATE OZNACITI KO RADI, KO JE KREIRAO NALOG,STATUS,TAKODJE MORA POSTOJATI BROJ RADNOG NALOGA";
+                if(rbPrevediNaSrpski.Checked)
+                MessageBox.Show(srb, "NEUSPJESNO AZURIRANJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(rbPrevediNaengleski.Checked)
+               MessageBox.Show(eng, "UNSUCCESSFUL UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btSacuvajIzmjene.Enabled = false;
             }
             else
@@ -316,7 +330,12 @@ namespace Servis_Racunara
 
         if(String.IsNullOrEmpty(cbZaprimio.Text) || String.IsNullOrEmpty(cbStatus.Text))
             {
-                MessageBox.Show("MORATE NAVESTI KO  JE ZAPRIMIO KAO I STATUS NALOGA", "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               string srb = "MORATE NAVESTI KO  JE ZAPRIMIO KAO I STATUS NALOGA";
+               string eng = "FIELDS: CREATED BY and STATUS are required";
+                if(rbPrevediNaSrpski.Checked)
+                MessageBox.Show(srb, "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(rbPrevediNaengleski.Checked)
+                    MessageBox.Show(eng, "EMPTY FIELD ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           else
             {
@@ -379,12 +398,21 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                MessageBox.Show("MORATE SELEKTOVATI RADNI NALOG ", "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "MORATE SELEKTOVATI RADNI NALOG ";
+                string eng = "YOU HAVE TO SELECT TICKET";
+                if(rbPrevediNaSrpski.Checked)
+                MessageBox.Show(srb, "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(rbPrevediNaengleski.Checked)
+                MessageBox.Show(eng, "TICKET IS NOT SELECTED ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 UslugaFormaGF = new UslugaStavkaForma(tbBrojRadnogNaloga.Text);
                 UslugaFormaGF.GlavnaFormaUSLUGA = this;
+                if (rbPrevediNaSrpski.Checked)
+                    UslugaFormaGF.prevediNasrpski();
+                else if(rbPrevediNaengleski.Checked)
+                    UslugaFormaGF.prevediNaEngleski();
                 UslugaFormaGF.ShowDialog();
             }
         }
@@ -399,6 +427,10 @@ namespace Servis_Racunara
             {
                 KomponentaStavkaFormaGF = new KomponentaStavkaForma(tbBrojRadnogNaloga.Text);
                 KomponentaStavkaFormaGF.GlavnaFormaKS = this;
+                if (rbPrevediNaSrpski.Checked)
+                    KomponentaStavkaFormaGF.prevediNaSrpski();
+                else if (rbPrevediNaengleski.Checked)
+                    KomponentaStavkaFormaGF.prevediNaEngleski();
                 KomponentaStavkaFormaGF.ShowDialog();
             }
         }
@@ -440,6 +472,10 @@ namespace Servis_Racunara
             if (dgvUslugaStavka.Columns[e.ColumnIndex].Name == "ColumnIzmjeniStavkuUsluge")
             {
                 IzmjenaUSFormaGF = new IzmjenaUSForma();
+                if (rbPrevediNaSrpski.Checked)
+                    IzmjenaUSFormaGF.prevediNaSrpski();
+                else if (rbPrevediNaengleski.Checked)
+                    IzmjenaUSFormaGF.prevediNaEngleski();
                 IzmjenaUSFormaGF.tbBrojNalogaIzmjenaUS.Text = tbBrojRadnogNaloga.Text;
                 IzmjenaUSFormaGF.tbSifraIzmejnaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
                 IzmjenaUSFormaGF.tbNazivIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
@@ -480,6 +516,10 @@ namespace Servis_Racunara
                 else
                 {
                     IzmjenaKSFormaGF = new IzmjenaKSForma();
+                    if (rbPrevediNaSrpski.Checked)
+                        IzmjenaKSFormaGF.prevediNaSrpski();
+                    else if (rbPrevediNaengleski.Checked)
+                        IzmjenaKSFormaGF.prevediNaEngleski();
                     IzmjenaKSFormaGF.tbBrojNalogaIzmjenaKS.Text = tbBrojRadnogNaloga.Text;
                     IzmjenaKSFormaGF.tbSifraIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value.ToString();
                     IzmjenaKSFormaGF.tbNazivIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKomponente.Index].Value.ToString();

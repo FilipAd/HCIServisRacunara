@@ -112,7 +112,7 @@ namespace Servis_Racunara
             // 
             // tbBrojNalogaIzmjenaKS
             // 
-            this.tbBrojNalogaIzmjenaKS.Location = new System.Drawing.Point(231, 34);
+            this.tbBrojNalogaIzmjenaKS.Location = new System.Drawing.Point(249, 34);
             this.tbBrojNalogaIzmjenaKS.Name = "tbBrojNalogaIzmjenaKS";
             this.tbBrojNalogaIzmjenaKS.ReadOnly = true;
             this.tbBrojNalogaIzmjenaKS.Size = new System.Drawing.Size(129, 20);
@@ -120,7 +120,7 @@ namespace Servis_Racunara
             // 
             // tbSifraIzmjenaKS
             // 
-            this.tbSifraIzmjenaKS.Location = new System.Drawing.Point(107, 75);
+            this.tbSifraIzmjenaKS.Location = new System.Drawing.Point(125, 76);
             this.tbSifraIzmjenaKS.Name = "tbSifraIzmjenaKS";
             this.tbSifraIzmjenaKS.ReadOnly = true;
             this.tbSifraIzmjenaKS.Size = new System.Drawing.Size(253, 20);
@@ -129,7 +129,7 @@ namespace Servis_Racunara
             // 
             // tbNazivIzmjenaKS
             // 
-            this.tbNazivIzmjenaKS.Location = new System.Drawing.Point(107, 119);
+            this.tbNazivIzmjenaKS.Location = new System.Drawing.Point(125, 119);
             this.tbNazivIzmjenaKS.Name = "tbNazivIzmjenaKS";
             this.tbNazivIzmjenaKS.ReadOnly = true;
             this.tbNazivIzmjenaKS.Size = new System.Drawing.Size(253, 20);
@@ -137,7 +137,7 @@ namespace Servis_Racunara
             // 
             // tbJedinicnaCijenaIzmjenaKS
             // 
-            this.tbJedinicnaCijenaIzmjenaKS.Location = new System.Drawing.Point(187, 169);
+            this.tbJedinicnaCijenaIzmjenaKS.Location = new System.Drawing.Point(205, 169);
             this.tbJedinicnaCijenaIzmjenaKS.Name = "tbJedinicnaCijenaIzmjenaKS";
             this.tbJedinicnaCijenaIzmjenaKS.ReadOnly = true;
             this.tbJedinicnaCijenaIzmjenaKS.Size = new System.Drawing.Size(173, 20);
@@ -145,7 +145,7 @@ namespace Servis_Racunara
             // 
             // tbKolicinaIzmjenaKS
             // 
-            this.tbKolicinaIzmjenaKS.Location = new System.Drawing.Point(187, 214);
+            this.tbKolicinaIzmjenaKS.Location = new System.Drawing.Point(168, 214);
             this.tbKolicinaIzmjenaKS.Name = "tbKolicinaIzmjenaKS";
             this.tbKolicinaIzmjenaKS.Size = new System.Drawing.Size(173, 20);
             this.tbKolicinaIzmjenaKS.TabIndex = 10;
@@ -153,7 +153,7 @@ namespace Servis_Racunara
             // 
             // tbRabatIzmjenaKS
             // 
-            this.tbRabatIzmjenaKS.Location = new System.Drawing.Point(187, 263);
+            this.tbRabatIzmjenaKS.Location = new System.Drawing.Point(205, 264);
             this.tbRabatIzmjenaKS.Name = "tbRabatIzmjenaKS";
             this.tbRabatIzmjenaKS.Size = new System.Drawing.Size(173, 20);
             this.tbRabatIzmjenaKS.TabIndex = 11;
@@ -171,7 +171,7 @@ namespace Servis_Racunara
             // 
             // tbUkupnoIzmjenaKS
             // 
-            this.tbUkupnoIzmjenaKS.Location = new System.Drawing.Point(187, 314);
+            this.tbUkupnoIzmjenaKS.Location = new System.Drawing.Point(205, 314);
             this.tbUkupnoIzmjenaKS.Name = "tbUkupnoIzmjenaKS";
             this.tbUkupnoIzmjenaKS.ReadOnly = true;
             this.tbUkupnoIzmjenaKS.Size = new System.Drawing.Size(173, 20);
@@ -179,9 +179,9 @@ namespace Servis_Racunara
             // 
             // btObracunajIzmjenaKS
             // 
-            this.btObracunajIzmjenaKS.Location = new System.Drawing.Point(547, 263);
+            this.btObracunajIzmjenaKS.Location = new System.Drawing.Point(531, 263);
             this.btObracunajIzmjenaKS.Name = "btObracunajIzmjenaKS";
-            this.btObracunajIzmjenaKS.Size = new System.Drawing.Size(99, 51);
+            this.btObracunajIzmjenaKS.Size = new System.Drawing.Size(115, 51);
             this.btObracunajIzmjenaKS.TabIndex = 15;
             this.btObracunajIzmjenaKS.Text = "OBRACUNAJ";
             this.btObracunajIzmjenaKS.UseVisualStyleBackColor = true;
@@ -191,9 +191,9 @@ namespace Servis_Racunara
             // 
             this.btZapamtiIzmjenaKS.Enabled = false;
             this.btZapamtiIzmjenaKS.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btZapamtiIzmjenaKS.Location = new System.Drawing.Point(547, 332);
+            this.btZapamtiIzmjenaKS.Location = new System.Drawing.Point(531, 332);
             this.btZapamtiIzmjenaKS.Name = "btZapamtiIzmjenaKS";
-            this.btZapamtiIzmjenaKS.Size = new System.Drawing.Size(99, 51);
+            this.btZapamtiIzmjenaKS.Size = new System.Drawing.Size(115, 51);
             this.btZapamtiIzmjenaKS.TabIndex = 16;
             this.btZapamtiIzmjenaKS.Text = "ZAPAMTI";
             this.btZapamtiIzmjenaKS.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@ namespace Servis_Racunara
             // 
             this.lbStaraKolicinaIzmjenaKS.AutoSize = true;
             this.lbStaraKolicinaIzmjenaKS.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStaraKolicinaIzmjenaKS.Location = new System.Drawing.Point(381, 214);
+            this.lbStaraKolicinaIzmjenaKS.Location = new System.Drawing.Point(357, 214);
             this.lbStaraKolicinaIzmjenaKS.Name = "lbStaraKolicinaIzmjenaKS";
             this.lbStaraKolicinaIzmjenaKS.Size = new System.Drawing.Size(163, 21);
             this.lbStaraKolicinaIzmjenaKS.TabIndex = 17;
@@ -242,6 +242,7 @@ namespace Servis_Racunara
             this.Controls.Add(this.lbBrojNalogaIzmjenaKS);
             this.Name = "IzmjenaKSForma";
             this.Text = "IzmjenaKSForma";
+            this.Load += new System.EventHandler(this.IzmjenaKSForma_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

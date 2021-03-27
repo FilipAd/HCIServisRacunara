@@ -134,5 +134,53 @@ namespace Servis_Racunara
             MessageBox.Show("Uspjesno ste dodali stavku", "USPJESNO DODAVANJE KOMPONENTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+        public void prevediNaSrpski()
+        {
+            lbFilterKS.Text = "Претражи :";
+            gbKomponentaStavka.Text = "КОМПОНЕНТЕ";
+            ColumnSifraKomponenteKS.HeaderText = "Шифра";
+            ColumnNazivKS.HeaderText = "Назив";
+            ColumnCijenaPoKomaduKS.HeaderText = "Цијена по комаду";
+            ColumnDostupnaKolicinaKS.HeaderText = "ДоступнаКоличина";
+            ColumnOznaci.HeaderText = ColumnOznaci.Text = "Одабери";
+            lbBrojRadnogNalogaKS.Text = "БРОЈ НАЛОГА :";
+            lbSifraKomponenteKS.Text = "ШИФРА КОМПОНЕНТЕ :";
+            lbNazivKS.Text = "НАЗИВ :";
+            lbDostupnaKolicinaKS.Text = "ДОСТУПНО :";
+            lbJedinicnaCijena.Text = "ЈЕДИНИЧНА ЦИЈЕНА :";
+            lbKolicinaKS.Text = "КОЛИЧИНА :";
+            lbRabatKS.Text = "РАБАТ (%) :";
+            lbUkupnaCijena.Text = "УКУПНА ЦИЈЕНА :";
+            btObracunajKS.Text = "ОБРАЧУНАЈ";
+            btDodajNaNalog.Text = "ДОДАЈ НА НАЛОГ";
+
+        }
+
+        public void prevediNaEngleski()
+        {
+            lbFilterKS.Text = "Search :";
+            gbKomponentaStavka.Text = "COMPONENTS";
+            ColumnSifraKomponenteKS.HeaderText = "Code";
+            ColumnNazivKS.HeaderText = "Title";
+            ColumnCijenaPoKomaduKS.HeaderText = "Unit price";
+            ColumnDostupnaKolicinaKS.HeaderText = "Available";
+            ColumnOznaci.HeaderText = ColumnOznaci.Text = "Select";
+            lbBrojRadnogNalogaKS.Text = "TICKET NUMBER :";
+            lbSifraKomponenteKS.Text = "CODE :";
+            lbNazivKS.Text = "TITLE :";
+            lbDostupnaKolicinaKS.Text = "AVAILABLE :";
+            lbJedinicnaCijena.Text = "UNIT PRICE :";
+            lbKolicinaKS.Text = "QUANTITY :";
+            lbRabatKS.Text = "DISCOUNT (%) :";
+            lbUkupnaCijena.Text = "SUM PRICE :";
+            btObracunajKS.Text = "CALCULATE";
+            btDodajNaNalog.Text = "ADD TO TICKET";
+
+
+
+
+        }
+
+
     }
 }
