@@ -135,6 +135,7 @@ namespace Servis_Racunara
             this.tbSifraIzmejnaUS.ReadOnly = true;
             this.tbSifraIzmejnaUS.Size = new System.Drawing.Size(201, 20);
             this.tbSifraIzmejnaUS.TabIndex = 8;
+            this.tbSifraIzmejnaUS.TextChanged += new System.EventHandler(this.tbSifraIzmejnaUS_TextChanged);
             // 
             // tbNazivIzmjenaUS
             // 
@@ -211,6 +212,7 @@ namespace Servis_Racunara
             this.tbIzmjenaUSStaraKolicina.ReadOnly = true;
             this.tbIzmjenaUSStaraKolicina.Size = new System.Drawing.Size(97, 20);
             this.tbIzmjenaUSStaraKolicina.TabIndex = 17;
+            this.tbIzmjenaUSStaraKolicina.TextChanged += new System.EventHandler(this.tbIzmjenaUSStaraKolicina_TextChanged);
             // 
             // IzmjenaUSForma
             // 

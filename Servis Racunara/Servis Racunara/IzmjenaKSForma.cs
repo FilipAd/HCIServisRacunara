@@ -12,6 +12,7 @@ namespace Servis_Racunara
 {
     public partial class IzmjenaKSForma : Form
     {
+        public GlavnaForma GlavnaFormaIKS;
         public IzmjenaKSForma()
         {
             InitializeComponent();
@@ -41,7 +42,10 @@ namespace Servis_Racunara
                     Razlika = Int32.Parse(tbKolicinaIzmjenaKS.Text) - Int32.Parse(tbStaraKolicinaIzmjenaKS.Text),
                 };
                 DbServisRacunara.UpdateKomponentaStavka(ks);
-                MessageBox.Show("USPJESNO AZURIRANJE", "Uspjesno Azuriranje Stavke Komponente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string srb = "Успјешно ажурирање";
+                string eng = "Successful update";
+
+                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked)? srb:eng, "Uspjesno Azuriranje Stavke Komponente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -50,7 +54,9 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbKolicinaIzmjenaKS.Text) || String.IsNullOrEmpty(tbRabatIzmjenaKS.Text))
             {
-                MessageBox.Show("MORATE POPUNITI SVA ZAHTJEVANA POLJA", "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "Морате попунити сва захтјевана поља";
+                string eng = "All fields are required";
+                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -66,7 +72,9 @@ namespace Servis_Racunara
                 {
                     tbRabatIzmjenaKS.Text = "";
                     tbKolicinaIzmjenaKS.Text = "";
-                    MessageBox.Show("Unesene vrijednosti moraju biti brojevi, i komponenta mora biti selektovana", "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "Унесене вриједности морају бити бројеви, и компонента мора бити селектована";
+                    string eng = "The values entered must be numbers, and the component must be selected";
+                    MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -112,6 +120,11 @@ namespace Servis_Racunara
             lbStaraKolicinaIzmjenaKS.Text = "OLD QUANTITY :";
             btObracunajIzmjenaKS.Text = "CALCULATE";
             btZapamtiIzmjenaKS.Text = "SAVE";
+        }
+
+        private void tbNazivIzmjenaKS_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -63,11 +63,16 @@ namespace Servis_Racunara
             {
                 if (String.IsNullOrEmpty(tbKolicinaKS.Text) || String.IsNullOrEmpty(tbRabatKS.Text))
                 {
-                    MessageBox.Show("MORATE POPUNITI SVA ZAHTJEVANA POLJA", "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "Морате попунити сва захтјевана поља";
+                    string eng = "All fields are required";
+
+                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if ((Int32.Parse(tbDostupnoKS.Text) - Int32.Parse(tbKolicinaKS.Text)) < 0)
                 {
-                    MessageBox.Show("GRESKA! TRAZITE VISE KOMPONENTI NEGO STO IH IMA NA STANJU", "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "Тражити више компоненти него што их има на стању";
+                    string eng = "LOOK FOR MORE COMPONENTS THAN THEY HAVE IN STOCK";
+                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbKolicinaKS.Text = "";
                 }
                 else
@@ -84,13 +89,17 @@ namespace Servis_Racunara
                     {
                         tbKolicinaKS.Text = "";
                         tbRabatKS.Text = "";
-                        MessageBox.Show("Unesene vrijednosti moraju biti brojevi, i usluga mora biti selektovana", "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string srb = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
+                        string eng = "The values entered must be numbers, and the service must be selected";
+                        MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch(FormatException fx)
             {
-                MessageBox.Show("GRESKA! VRIJEDNOSTI MORAJU BITI BROJEVNE", "GRESKA VRIJEDNSOTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "Унесене вриједности морају бити бројеви";
+                string eng = "The values entered must be numbers";
+                MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA VRIJEDNSOTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
         }
@@ -130,8 +139,9 @@ namespace Servis_Racunara
 
             };
             DbServisRacunara.InsertKomponentaStavkaNaNalog(komponenta);
-
-            MessageBox.Show("Uspjesno ste dodali stavku", "USPJESNO DODAVANJE KOMPONENTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string srb = "Успјешно сте додали ставку";
+            string eng = "You have successfully added an item";
+            MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "USPJESNO DODAVANJE KOMPONENTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         public void prevediNaSrpski()

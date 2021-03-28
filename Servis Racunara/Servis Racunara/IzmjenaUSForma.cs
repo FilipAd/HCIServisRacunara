@@ -12,6 +12,7 @@ namespace Servis_Racunara
 {
     public partial class IzmjenaUSForma : Form
     {
+        public GlavnaForma GlavnaFormaIUS;
         public IzmjenaUSForma()
         {
             InitializeComponent();
@@ -21,7 +22,9 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbKolicinaIzmjenaUS.Text) || String.IsNullOrEmpty(tbRabatIzmejnaUS.Text))
             {
-                MessageBox.Show("MORATE POPUNITI SVA ZAHTJEVANA POLJA", "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "Морате попунити сва захтјевана поља";
+                string eng = "All fields are required";
+                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -37,7 +40,9 @@ namespace Servis_Racunara
                 {
                     tbRabatIzmejnaUS.Text = "";
                     tbKolicinaIzmjenaUS.Text = "";
-                    MessageBox.Show("Unesene vrijednosti moraju biti brojevi, i usluga mora biti selektovana", "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
+                    string eng = "The values entered must be numbers, and the service must be selected";
+                    MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -54,7 +59,9 @@ namespace Servis_Racunara
                 UkupnaCijena=Decimal.Parse(tbUkupnoIzmjenaUS.Text),
             };
             DbServisRacunara.UpdateUslugaStavka(us);
-            MessageBox.Show("USPJESNO AZURIRANJE", "Uspjesno Azuriranje Stavke Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string srb = "Успјешно ажурирање";
+            string eng = "Successful update";
+            MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, "Uspjesno Azuriranje Stavke Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void IzmjenaUSForma_Load(object sender, EventArgs e)
@@ -95,6 +102,16 @@ namespace Servis_Racunara
         }
 
         private void tbBrojNalogaIzmjenaUS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSifraIzmejnaUS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbIzmjenaUSStaraKolicina_TextChanged(object sender, EventArgs e)
         {
 
         }

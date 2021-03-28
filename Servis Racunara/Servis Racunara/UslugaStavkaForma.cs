@@ -74,7 +74,9 @@ namespace Servis_Racunara
           
                 if (String.IsNullOrEmpty(tbKolicinaUS.Text) || String.IsNullOrEmpty(tbRabatUS.Text))
                 {
-                    MessageBox.Show("MORATE POPUNITI SVA ZAHTJEVANA POLJA", "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "МОРАТЕ ПОПУНИТИ СВА ЗАХТЈЕВАНА ПОЉА";
+                string eng = "All fields are required";
+                MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -90,7 +92,9 @@ namespace Servis_Racunara
                     {
                         tbKolicinaUS.Text = "";
                         tbKolicinaUS.Text = "";
-                        MessageBox.Show("Unesene vrijednosti moraju biti brojevi, i usluga mora biti selektovana", "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string eng1 = "The values entered must be numbers, and the service must be selected";
+                    string srb1 = "Унесене вриједности морају бити бројеви, и сулуга мора бити селектована";
+                        MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb1 : eng1, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             
@@ -116,7 +120,9 @@ namespace Servis_Racunara
             };
             btDodajUsluguNaNalog.Enabled = true;
             DbServisRacunara.InsertUslugaStavkaNaNalog(usluga);
-            MessageBox.Show("Uspjesno ste dodali stavku", "USPJESNO DODAVANJE USLUGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string srb = "Успјешно сте додали ставку";
+            string eng = "You have successfully added an item";
+            MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb : eng, "USPJESNO DODAVANJE USLUGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void tbRabatUS_TextChanged(object sender, EventArgs e)
@@ -161,6 +167,11 @@ namespace Servis_Racunara
             lbCijenaUslugeZavrsna.Text = "PRICE :";
             btDodajUsluguNaNalog.Text = "ADD TO TICKET";
             btIzracunajCijenuUS.Text = "CALCULATE";
+        }
+
+        private void gbUslugaStavka_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

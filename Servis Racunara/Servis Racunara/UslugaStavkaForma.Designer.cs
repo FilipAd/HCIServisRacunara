@@ -29,7 +29,7 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsluga = new System.Windows.Forms.DataGridView();
             this.ColumnSifraUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNazivUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,11 +90,11 @@ namespace Servis_Racunara
             // 
             // ColumnOznaci
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnOznaci.HeaderText = "Oznaci";
             this.ColumnOznaci.Name = "ColumnOznaci";
             this.ColumnOznaci.Text = "Oznaci";
@@ -236,6 +236,7 @@ namespace Servis_Racunara
             this.gbUslugaStavka.TabIndex = 15;
             this.gbUslugaStavka.TabStop = false;
             this.gbUslugaStavka.Text = "USLUGE:";
+            this.gbUslugaStavka.Enter += new System.EventHandler(this.gbUslugaStavka_Enter);
             // 
             // btDodajUsluguNaNalog
             // 

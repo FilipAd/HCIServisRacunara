@@ -77,7 +77,9 @@ namespace Servis_Racunara
             if (dgvSubjekat.Columns[e.ColumnIndex].Name == "ColumnObrisi")
             {
                 btDodajPartnera.Enabled = true;
-                if (MessageBox.Show("Da li ste sigruni da zelite da obrisete ovog Klijenta?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string eng = "Are you sure you want to delete this Client";
+                string srb = "Da li ste sigruni da zelite da obrisete ovog Klijenta?";
+                if (MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked)?srb:eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int Id = (int)dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
                     DbServisRacunara.DeletePartnera(Id);
@@ -132,7 +134,9 @@ namespace Servis_Racunara
                 tbBrojLicneKarte.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnBrojLicneKarte.Index].Value.ToString();
                 cbGrad.SelectedIndex = cbGrad.FindString(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnGrad.Index].Value.ToString().Trim());
                 OnemoguciTBSubjektaIDugmad();
-                DialogResult rez = MessageBox.Show("Da li zelite da napravite nalog sa ovim klijentom", "Kreiranje radnog naloga sa klijentom", MessageBoxButtons.YesNo);
+                string eng = "Do you want to create a ticket with this Client?";
+                string srb= "Da li zelite da napravite nalog sa ovim klijentom";
+                DialogResult rez = MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked)? srb:eng,"Kreiranje radnog naloga sa klijentom", MessageBoxButtons.YesNo);
                 if (rez == DialogResult.Yes)
                 {
 
@@ -313,7 +317,10 @@ namespace Servis_Racunara
                     if (string.IsNullOrEmpty(tbIme.Text) || string.IsNullOrEmpty(tbKucniBroj.Text)
                         || string.IsNullOrEmpty(tbUloga.Text) || string.IsNullOrEmpty(tbPlata.Text) || string.IsNullOrEmpty(tbVozackaDozvola.Text) || string.IsNullOrEmpty(cbGrad.SelectedItem.ToString()))
                     {
-                        MessageBox.Show("Morate popuniti sva zahtjeva polja", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string srb = "Morate popuniti sva zahtjeva polja";
+                        string eng = "All fields are required";
+
+                        MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked)?srb:eng, "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -355,7 +362,9 @@ namespace Servis_Racunara
                 }
          catch (Exception ex)
             {
-                MessageBox.Show("BROJ KUCE i PLATA MORAJU BITI BROJNE VRIJEDNOSTI A VOZACKA MORA BITI MAKSIMALNE DUZINE 2 KARAKTERA", "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "BROJ KUCE i PLATA MORAJU BITI BROJNE VRIJEDNOSTI A VOZACKA MORA BITI MAKSIMALNE DUZINE 2 KARAKTERA";
+                    string eng = "THE NUMBER OF THE HOUSE AND THE SALARY MUST BE NUMERICAL VALUES AND THE DRIVER MUST BE A MAXIMUM LENGTH OF 2 CHARACTERS ";
+                    MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
                 // DbServisRacunara.InsertPartner(partner, ulica, kucniBroj);
@@ -382,11 +391,16 @@ namespace Servis_Racunara
                 if (string.IsNullOrEmpty(tbIme.Text) || string.IsNullOrEmpty(tbKucniBroj.Text)
                   || string.IsNullOrEmpty(tbBrojTelefona.Text) || string.IsNullOrEmpty(cbGrad.SelectedItem.ToString()) || string.IsNullOrEmpty(tbJib.Text))
                 {
-                    MessageBox.Show("Morate popuniti sva zahtjeva polja", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "Morate popuniti sva zahtjeva polja";
+                    string eng = "All fields are required";
+                    MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (tbJib.Text.Length != 13)
                 {
-                    MessageBox.Show("Polje JIB mora sadzrzavati tacno 13 karaktera", "Greska polje licene karte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "Polje JIB mora sadzrzavati tacno 13 karaktera";
+                    string eng = "UIN field must contain exactly 13 characters";
+
+                    MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Greska polje licene karte", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else 
                 {
@@ -448,7 +462,9 @@ private void ubacivanjeFizickogLica(int JestePL)
             }
             catch (Exception e)
             {
-                MessageBox.Show("BROJ KUCE MORA BITI BROJNA VRIJEDNOST", "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "BROJ KUCE MORA BITI BROJNA VRIJEDNOST";
+                string eng = "HOUSE NUMBER MUST BE NUMERICAL VALUE";
+                MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -466,8 +482,9 @@ private void ubacivanjeFizickogLica(int JestePL)
             if (dvgRadnik.Columns[e.ColumnIndex].Name == "ColumnObrisiRadnik")
             {
 
-
-                if (MessageBox.Show("Da li ste sigruni da zelite da obrisete ovog Klijenta?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string eng = "Are you sure you want to delete this Client";
+                string srb = "Da li ste sigruni da zelite da obrisete ovog Klijenta?";
+                if (MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int Id = (int)dvgRadnik.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
                     DbServisRacunara.DeletePartnera(Id);
@@ -569,7 +586,9 @@ private void ubacivanjeFizickogLica(int JestePL)
             }
             catch(FormatException fx)
             {
-                MessageBox.Show("GRESKA! VRIJEDNOST KUCNOG BROJA MORA BITI BROJNA VRIJEDNOST", "GRESKA BROJNE VRIJEDNOSTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string eng = "THE NUMBER OF THE HOUSE  MUST BE NUMERICAL VALUE";
+                string srb = "GRESKA! VRIJEDNOST KUCNOG BROJA MORA BITI BROJNA VRIJEDNOST";
+                MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJNE VRIJEDNOSTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     
@@ -606,7 +625,9 @@ private void ubacivanjeFizickogLica(int JestePL)
             }
             catch(FormatException fx)
             {
-                MessageBox.Show("GRESKA! VRIJEDNOSTI PLATE I KUCNOG BROJA MORAJU BITI BROJNE VRIJEDNOSTI", "GRESKA BROJNE VRIJEDNOSTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "BROJ KUCE i PLATA MORAJU BITI BROJNE VRIJEDNOSTI ";
+                string eng = "THE NUMBER OF THE HOUSE AND THE SALARY MUST BE NUMERICAL VALUES";
+                MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJNE VRIJEDNOSTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -25,6 +25,7 @@ namespace Servis_Racunara
             napuniRadiComboBox();
             napuniDgvNeproknjizeni();
             napuniDgvProknjizeni();
+            rbPrevediNaSrpski.Checked = true;
             
         }
 
@@ -298,11 +299,10 @@ namespace Servis_Racunara
             if(String.IsNullOrEmpty(cbStatus.Text) || String.IsNullOrEmpty(cbRadi.Text) || String.IsNullOrEmpty(cbZaprimio.Text) || String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
                 string eng = "FIELDS: ASSIGNED,CREATED BY and STATUS are required";
-                string srb = "MORATE OZNACITI KO RADI, KO JE KREIRAO NALOG,STATUS,TAKODJE MORA POSTOJATI BROJ RADNOG NALOGA";
-                if(rbPrevediNaSrpski.Checked)
-                MessageBox.Show(srb, "NEUSPJESNO AZURIRANJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if(rbPrevediNaengleski.Checked)
-               MessageBox.Show(eng, "UNSUCCESSFUL UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "МОРАТЕ ОЗНАЧИТИ КО РАДИ, КО ЈЕ КРЕИРАО НАЛОГ, СТАТУС ТАКОЂЕ МОРА ПОСТОЈАТИ БРОЈ РАДНОГ НАЛОГА";
+
+                MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "NEUSPJESNO AZURIRANJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 btSacuvajIzmjene.Enabled = false;
             }
             else
@@ -330,12 +330,12 @@ namespace Servis_Racunara
 
         if(String.IsNullOrEmpty(cbZaprimio.Text) || String.IsNullOrEmpty(cbStatus.Text))
             {
-               string srb = "MORATE NAVESTI KO  JE ZAPRIMIO KAO I STATUS NALOGA";
-               string eng = "FIELDS: CREATED BY and STATUS are required";
-                if(rbPrevediNaSrpski.Checked)
-                MessageBox.Show(srb, "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if(rbPrevediNaengleski.Checked)
-                    MessageBox.Show(eng, "EMPTY FIELD ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+                string srb = "МОРАТЕ НАВЕСТИ КО ЈЕ ЗАПРИМИО КАО И СТАТУС НАЛОГА";
+                string eng = "FIELDS: CREATED BY and STATUS are required";
+                
+                MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
           else
             {
@@ -398,12 +398,13 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                string srb = "MORATE SELEKTOVATI RADNI NALOG ";
+                
+                string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ";
                 string eng = "YOU HAVE TO SELECT TICKET";
-                if(rbPrevediNaSrpski.Checked)
-                MessageBox.Show(srb, "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if(rbPrevediNaengleski.Checked)
-                MessageBox.Show(eng, "TICKET IS NOT SELECTED ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
+              
             }
             else
             {
@@ -421,7 +422,9 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                MessageBox.Show("MORATE SELEKTOVATI RADNI NALOG ", "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string eng = "TICKET IS NOT SELECTED";
+                string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ";
+                MessageBox.Show((rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -439,7 +442,13 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                MessageBox.Show("MORATE SELEKTOVATI RADNI NALOG ", "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             string   eng = "TICKET IS NOT SELECTED";
+                string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ";
+                if (rbPrevediNaSrpski.Checked)
+                MessageBox.Show(srb, "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(rbPrevediNaengleski.Checked)
+                    MessageBox.Show(eng,"TICKET IS NOT SELECTED ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
@@ -472,6 +481,7 @@ namespace Servis_Racunara
             if (dgvUslugaStavka.Columns[e.ColumnIndex].Name == "ColumnIzmjeniStavkuUsluge")
             {
                 IzmjenaUSFormaGF = new IzmjenaUSForma();
+                IzmjenaUSFormaGF.GlavnaFormaIUS = this;
                 if (rbPrevediNaSrpski.Checked)
                     IzmjenaUSFormaGF.prevediNaSrpski();
                 else if (rbPrevediNaengleski.Checked)
@@ -489,7 +499,9 @@ namespace Servis_Racunara
             }
             else if(dgvUslugaStavka.Columns[e.ColumnIndex].Name == "ColumnObrisiStavkuUsluge")
             {
-                if (MessageBox.Show("Da li ste sigruni da zelite da obrisete ovu stavku?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string eng = "Are you sure you want to delete this item";
+                string srb = "Да ли сте сигурно да желите да обришете ову ставку?";
+                if (MessageBox.Show((rbPrevediNaSrpski.Checked)? srb:eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var us = new UslugaStavka()
                     {
@@ -498,7 +510,9 @@ namespace Servis_Racunara
 
                     };
                     DbServisRacunara.DeleteUslugaStavka(us);
-                    MessageBox.Show("Uspjesno obrisana stavka ", "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string eng1 = "Successfully deleted item";
+                    string srb1 = "Успјешно обрисана ставка";
+                    MessageBox.Show((rbPrevediNaSrpski.Checked)? srb1:eng1, "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -511,11 +525,14 @@ namespace Servis_Racunara
             {
                 if (DbServisRacunara.ProvjeriDaLiJeKomponentaObrisana(Int32.Parse(tbBrojRadnogNaloga.Text)) == 1)
                 {
-                    MessageBox.Show("KOMPONENTA JE OBRISANA IZ REGISTRA I NIJE JE MOGUCE MJENJATI", "KOMPONENTA OBRISANA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string srb = "КОМПОНЕНТА ЈЕ ОБРИСАНА ИЗ РЕГИСТРА И НИЈЕ МОГУЋЕ МЈЕЊАТИ ЈЕ";
+                    string eng = "THE COMPONENT HAS BEEN DELETED FROM THE REGISTER AND CANNOT BE CHANGED";
+                    MessageBox.Show((rbPrevediNaSrpski.Checked)?srb:eng, "KOMPONENTA OBRISANA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     IzmjenaKSFormaGF = new IzmjenaKSForma();
+                    IzmjenaKSFormaGF.GlavnaFormaIKS = this;
                     if (rbPrevediNaSrpski.Checked)
                         IzmjenaKSFormaGF.prevediNaSrpski();
                     else if (rbPrevediNaengleski.Checked)
@@ -534,7 +551,9 @@ namespace Servis_Racunara
             }
             else if (dgvKomponentaStavka.Columns[e.ColumnIndex].Name == "ColumnObrisiKS")
             {
-                if (MessageBox.Show("Da li ste sigruni da zelite da obrisete ovu stavku?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string eng = "Are you sure you want to delete this item";
+                string srb = "Да ли сте сигурни да желите обрисати ову ставку?";
+                if (MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var ks = new KomponentaStavka()
                     {
@@ -544,7 +563,9 @@ namespace Servis_Racunara
                        
                     };
                     DbServisRacunara.DeleteKomponentaStavka(ks);
-                    MessageBox.Show("Uspjesno obrisana stavka ", "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string eng1 = "Successfully deleted item";
+                    string srb1 = "Успјешно обрисана ставка ";
+                    MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb1 : eng1, "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -554,23 +575,32 @@ namespace Servis_Racunara
         {
             if (String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                MessageBox.Show("MORATE OZNACITI RADNI NALOG", "NEUSPJESNO BRISANJE NALOGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string eng = "TICKET IS NOT SELECTED";
+                string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ ";
+                MessageBox.Show((rbPrevediNaSrpski.Checked)?eng:srb, "NEUSPJESNO BRISANJE NALOGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (MessageBox.Show("Da li ste sigruni da zelite da obrisete ovaj nalog?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string eng = "Are you sure you want to delete this ticket";
+                string srb = "Да ли сте сигурни да желите обрисати овај налог?";
+                if (MessageBox.Show((rbPrevediNaSrpski.Checked)?eng:srb, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int brojNaloga = Int32.Parse(tbBrojRadnogNaloga.Text);
                     DbServisRacunara.ObrisSveStavkeUslugeSaRadnogNaloga(brojNaloga);
 
                     if (DbServisRacunara.VratiBrojStavkiKomponentiSaNaloga(Int32.Parse(tbBrojRadnogNaloga.Text)) > 0)
                     {
-                        MessageBox.Show("MORATE OBRISATI SVE KOMPONENTE SA NALOGA DA BI STE MOGLI OBRISATI NALOG", "NEUSPJESNO BRISANJE NALOGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        string eng1 = "You MUST DELETE ALL COMPONENTS FROM THE TICKET IN ORDER TO DELETE THE TICKET";
+                        string srb1 = "МОРАТЕ ОБРИСАТИ СВЕ КОМПОНЕНТЕ СА НАЛОГА ДА БИ СТЕ МОГЛИ ОБРИСАТИ НАЛОГ";
+                        MessageBox.Show((rbPrevediNaSrpski.Checked)?srb1:eng1, "NEUSPJESNO BRISANJE NALOGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
                         DbServisRacunara.DeleteRadniNalog(Int32.Parse(tbBrojRadnogNaloga.Text));
-                        MessageBox.Show("USPJESNO STE OBRISALI RADNI NALOG", "USPJESNO BRISANJE NALOGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string eng1 = "Successfully deleted ticket";
+                        string srb1 = "Успјешно обрисан налог";
+                        MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb1 : eng1, "USPJESNO BRISANJE NALOGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                    
                 }
@@ -592,11 +622,15 @@ namespace Servis_Racunara
         {
             if(String.IsNullOrEmpty(tbBrojRadnogNaloga.Text))
             {
-                MessageBox.Show("NISTE ODABRALI NALOG", "GRESKA PROKNJIZAVANJA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string eng = "TICKET IS NOT SELECTED";
+                string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ ";
+                MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA PROKNJIZAVANJA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (MessageBox.Show("Da li ste sigruni da zelite da proknjizite ovaj nalog?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string eng = "Are you sure you want to process this ticket";
+                string srb = "Да ли сте сигурни да желите да прокњижите овај налог?";
+                if (MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     DbServisRacunara.ProknjiziNalog(Int32.Parse(tbBrojRadnogNaloga.Text));
                     napuniDgvProknjizeni();

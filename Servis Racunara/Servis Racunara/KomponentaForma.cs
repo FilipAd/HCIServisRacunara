@@ -44,7 +44,9 @@ namespace Servis_Racunara
             if (dgvKomponenta.Columns[e.ColumnIndex].Name=="ColumnObrisi")
             {
                 btDodajKomponentu.Enabled = true;
-                if (MessageBox.Show("Da li ste sigruni da zelite da obrisete ovu komponentu?","Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                string eng = "Are you sure you want to delete this component?";
+                string srb = "Да ли сте сигурни да желите да обришете ову компоненту?";
+                if (MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                     {
                     int sifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[0].Value;
                     DbServisRacunara.DeleteKoomponentaSifra(sifra);
@@ -99,7 +101,9 @@ namespace Servis_Racunara
             }
             catch(Exception)
             {
-                MessageBox.Show("Neispravni parametri");
+                string srb = "Неисправни параметри";
+                string eng = "Invalid parameters";
+                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng);
             }
                 NapuniGrid();
             
@@ -120,7 +124,9 @@ namespace Servis_Racunara
             }
             catch(Exception)
             {
-                MessageBox.Show("Neuspjesno azuriranje");
+                string srb = "Неуспјешно ажурирање";
+                string eng = "Update failed";
+                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng);
             }
             NapuniGrid();
             btSacuvajIzmjeneKomponenta.Enabled = false;
@@ -132,7 +138,9 @@ namespace Servis_Racunara
             int kolicina = Int32.Parse(tbKolicina.Text);
             if (kolicina < 0)
             {
-                MessageBox.Show("GRESKA! NE MOZETE UBACIVATI NEGATIVNE VRIJEDNOSTI", "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
+                string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
+                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

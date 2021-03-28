@@ -134,6 +134,7 @@ namespace Servis_Racunara
             this.tbNazivIzmjenaKS.ReadOnly = true;
             this.tbNazivIzmjenaKS.Size = new System.Drawing.Size(253, 20);
             this.tbNazivIzmjenaKS.TabIndex = 8;
+            this.tbNazivIzmjenaKS.TextChanged += new System.EventHandler(this.tbNazivIzmjenaKS_TextChanged);
             // 
             // tbJedinicnaCijenaIzmjenaKS
             // 
