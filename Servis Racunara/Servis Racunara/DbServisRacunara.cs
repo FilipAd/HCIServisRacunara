@@ -892,6 +892,45 @@ namespace Servis_Racunara
             conn.Close();
         }
 
+        public static NalogLozinka GetKorisnikLozinka(int idKorisnika)
+        {
+            NalogLozinka nalog=null;
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = @"SELECT R.IdPartnera,Ime,Lozinka FROM Partner P inner join Radnik R on R.IdPartnera=P.IdPartnera WHERE R.IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika",idKorisnika);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+
+                nalog = new NalogLozinka()
+                {
+                    korisnikId = reader.GetInt32(0),
+                    korisnickoIme = reader.GetString(1),
+                    lozinka = reader.GetString(2)
+                };
+
+            }
+            reader.Close();
+            conn.Close();
+            return nalog;
+        }
+
+        public static void UpdateLozinka(int idKorisnika,string lozinka)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            string heslozinka = NalogLozinka.Hash(lozinka);
+            cmd.CommandText = @"UPDATE Radnik SET  Lozinka=@heslozinka WHERE IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika",idKorisnika);
+            cmd.Parameters.AddWithValue("@heslozinka",heslozinka);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
 
     }
 }

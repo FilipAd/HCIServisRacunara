@@ -18,6 +18,8 @@ namespace Servis_Racunara
         public KomponentaStavkaForma KomponentaStavkaFormaGF;
         public IzmjenaKSForma IzmjenaKSFormaGF;
         public IzmjenaUSForma IzmjenaUSFormaGF;
+        public PrijavaForma PrijavaForma;
+        public PromjenaLozinkeForma PromjenaLozinkeFormaGF;
         public GlavnaForma()
         {
             InitializeComponent();
@@ -716,6 +718,7 @@ namespace Servis_Racunara
             ColumnObrisiKS.Text = "Обриши";
 
             lbPretraziNalog.Text = "Претражи :";
+            lbLogovaniSteKao.Text = "Корисник :";
             btProknjizi.Text = "ПРОКЊИЖИ НАЛОГ";
             rbNeproknjizeni.Text = "НЕПРОКЊИЖЕНИ НАЛОЗИ";
             rbProknjizeni.Text = "ПРОКЊИЖЕНИ НАЛОЗИ";
@@ -732,6 +735,7 @@ namespace Servis_Racunara
             ColumnImeP.HeaderText = "Име";
             ColumnStatusP.HeaderText = "Статус";
             ColumnIdPartneraProknjizeni.HeaderText = "ИдПартнера";
+            btPromjenaLozinke.Text = "Промјена лозинке";
 
 
 
@@ -786,6 +790,7 @@ namespace Servis_Racunara
             ColumnObrisiKS.Text = "Delete";
 
             lbPretraziNalog.Text = "Search :";
+            lbLogovaniSteKao.Text = "User :";
             btProknjizi.Text = "PROCESS TICKET";
             rbNeproknjizeni.Text = "UNPROCESSED TICKETS";
             rbProknjizeni.Text = "UNPROCESSED TICKETS";
@@ -802,6 +807,7 @@ namespace Servis_Racunara
             ColumnImeP.HeaderText = "Name";
             ColumnStatusP.HeaderText = "Status";
             ColumnIdPartneraProknjizeni.HeaderText = "ClientId";
+            btPromjenaLozinke.Text = "Change password";
         }
 
 
@@ -818,6 +824,23 @@ namespace Servis_Racunara
         private void rbPrevediNaengleski_CheckedChanged(object sender, EventArgs e)
         {
             prevediNaEngleski();
+        }
+
+        private void tbIdKlijentaGF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPromjenaLozinke_Click(object sender, EventArgs e)
+        {
+            PromjenaLozinkeFormaGF = new PromjenaLozinkeForma();
+            PromjenaLozinkeFormaGF.GlavnaFormaPromjenaLozinke = this;
+            PromjenaLozinkeFormaGF.lbIme.Text=lbKorisnickoIme.Text;
+            if (rbPrevediNaSrpski.Checked)
+                PromjenaLozinkeFormaGF.prevediNaSrpski();
+            else
+                PromjenaLozinkeFormaGF.prevediNaEngleski();
+            PromjenaLozinkeFormaGF.ShowDialog();
         }
     }
 }

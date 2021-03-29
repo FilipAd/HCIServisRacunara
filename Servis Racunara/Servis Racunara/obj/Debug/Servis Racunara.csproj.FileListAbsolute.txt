@@ -124,3 +124,5 @@ C:\Users\Flic\git\HCIServisRacunara\Servis Racunara\Servis Racunara\obj\Debug\Se
 C:\Users\Flic\git\HCIServisRacunara\Servis Racunara\Servis Racunara\obj\Debug\Servis Racunara.csproj.CopyComplete
 C:\Users\Flic\git\HCIServisRacunara\Servis Racunara\Servis Racunara\obj\Debug\Servis Racunara.exe
 C:\Users\Flic\git\HCIServisRacunara\Servis Racunara\Servis Racunara\obj\Debug\Servis Racunara.pdb
+C:\Users\Flic\git\HCIServisRacunara\Servis Racunara\Servis Racunara\obj\Debug\Servis_Racunara.PrijavaForma.resources
+C:\Users\Flic\git\HCIServisRacunara\Servis Racunara\Servis Racunara\obj\Debug\Servis_Racunara.PromjenaLozinkeForma.resources

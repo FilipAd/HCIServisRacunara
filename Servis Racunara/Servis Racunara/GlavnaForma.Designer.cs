@@ -30,10 +30,10 @@ namespace Servis_Racunara
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbZahtjev = new System.Windows.Forms.Label();
             this.tbZahtjev = new System.Windows.Forms.TextBox();
             this.tbNapomena = new System.Windows.Forms.TextBox();
@@ -117,6 +117,9 @@ namespace Servis_Racunara
             this.btOsvjeziUsluguKomponente = new System.Windows.Forms.Button();
             this.btnKomponenta = new System.Windows.Forms.Button();
             this.btnSubjekat = new System.Windows.Forms.Button();
+            this.lbLogovaniSteKao = new System.Windows.Forms.Label();
+            this.lbKorisnickoIme = new System.Windows.Forms.Label();
+            this.btPromjenaLozinke = new System.Windows.Forms.Button();
             this.tcNalozi.SuspendLayout();
             this.tabPageNeproknjizeni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNeproknjizeni)).BeginInit();
@@ -534,11 +537,11 @@ namespace Servis_Racunara
             // 
             // ColumnIzmjeniStavkuUsluge
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeniStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeniStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnIzmjeniStavkuUsluge.HeaderText = "Izmjeni";
             this.ColumnIzmjeniStavkuUsluge.Name = "ColumnIzmjeniStavkuUsluge";
             this.ColumnIzmjeniStavkuUsluge.ReadOnly = true;
@@ -547,11 +550,11 @@ namespace Servis_Racunara
             // 
             // ColumnObrisiStavkuUsluge
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisiStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisiStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnObrisiStavkuUsluge.HeaderText = "Obrisi";
             this.ColumnObrisiStavkuUsluge.Name = "ColumnObrisiStavkuUsluge";
             this.ColumnObrisiStavkuUsluge.ReadOnly = true;
@@ -621,11 +624,11 @@ namespace Servis_Racunara
             // 
             // ColumnIzmjeniKS
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeniKS.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeniKS.DefaultCellStyle = dataGridViewCellStyle11;
             this.ColumnIzmjeniKS.HeaderText = "Izmjeni";
             this.ColumnIzmjeniKS.Name = "ColumnIzmjeniKS";
             this.ColumnIzmjeniKS.Text = "Izmjeni";
@@ -633,11 +636,11 @@ namespace Servis_Racunara
             // 
             // ColumnObrisiKS
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisiKS.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisiKS.DefaultCellStyle = dataGridViewCellStyle12;
             this.ColumnObrisiKS.HeaderText = "Obrisi";
             this.ColumnObrisiKS.Name = "ColumnObrisiKS";
             this.ColumnObrisiKS.Text = "Obrisi";
@@ -713,6 +716,7 @@ namespace Servis_Racunara
             this.tbIdKlijentaGF.ReadOnly = true;
             this.tbIdKlijentaGF.Size = new System.Drawing.Size(97, 27);
             this.tbIdKlijentaGF.TabIndex = 29;
+            this.tbIdKlijentaGF.TextChanged += new System.EventHandler(this.tbIdKlijentaGF_TextChanged);
             // 
             // lbZaprimio
             // 
@@ -989,12 +993,43 @@ namespace Servis_Racunara
             this.btnSubjekat.Click += new System.EventHandler(this.button1_Click);
             this.btnSubjekat.MouseHover += new System.EventHandler(this.btSubjekat_MouseHover);
             // 
+            // lbLogovaniSteKao
+            // 
+            this.lbLogovaniSteKao.AutoSize = true;
+            this.lbLogovaniSteKao.Location = new System.Drawing.Point(12, 699);
+            this.lbLogovaniSteKao.Name = "lbLogovaniSteKao";
+            this.lbLogovaniSteKao.Size = new System.Drawing.Size(54, 13);
+            this.lbLogovaniSteKao.TabIndex = 52;
+            this.lbLogovaniSteKao.Text = "Korosnik :";
+            // 
+            // lbKorisnickoIme
+            // 
+            this.lbKorisnickoIme.AutoSize = true;
+            this.lbKorisnickoIme.Location = new System.Drawing.Point(75, 699);
+            this.lbKorisnickoIme.Name = "lbKorisnickoIme";
+            this.lbKorisnickoIme.Size = new System.Drawing.Size(35, 13);
+            this.lbKorisnickoIme.TabIndex = 53;
+            this.lbKorisnickoIme.Text = "admin";
+            // 
+            // btPromjenaLozinke
+            // 
+            this.btPromjenaLozinke.Location = new System.Drawing.Point(305, 694);
+            this.btPromjenaLozinke.Name = "btPromjenaLozinke";
+            this.btPromjenaLozinke.Size = new System.Drawing.Size(221, 23);
+            this.btPromjenaLozinke.TabIndex = 54;
+            this.btPromjenaLozinke.Text = "Promjena lozinke";
+            this.btPromjenaLozinke.UseVisualStyleBackColor = true;
+            this.btPromjenaLozinke.Click += new System.EventHandler(this.btPromjenaLozinke_Click);
+            // 
             // GlavnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1344, 721);
+            this.Controls.Add(this.btPromjenaLozinke);
+            this.Controls.Add(this.lbKorisnickoIme);
+            this.Controls.Add(this.lbLogovaniSteKao);
             this.Controls.Add(this.gbJezici);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btProknjizi);
@@ -1143,6 +1178,9 @@ namespace Servis_Racunara
         public System.Windows.Forms.RadioButton rbPrevediNaSrpski;
         public System.Windows.Forms.RadioButton rbPrevediNaengleski;
         private System.Windows.Forms.GroupBox gbJezici;
+        public System.Windows.Forms.Label lbLogovaniSteKao;
+        public System.Windows.Forms.Label lbKorisnickoIme;
+        private System.Windows.Forms.Button btPromjenaLozinke;
     }
 }
 

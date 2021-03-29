@@ -16,7 +16,36 @@ namespace Servis_Racunara
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GlavnaForma());
+            PrijavaForma prijavaForma = new PrijavaForma();
+            if (prijavaForma.ShowDialog() == DialogResult.OK)
+            {
+                GlavnaForma glavna = new GlavnaForma();
+                if (prijavaForma.rbPrevediNaSrpski.Checked)
+                {
+                    glavna.rbPrevediNaSrpski.Checked = true;
+                    if (prijavaForma.cbKorisnickoIme.SelectedItem != null)
+                    {
+                        glavna.lbKorisnickoIme.Text = (prijavaForma.cbKorisnickoIme.SelectedItem as ComboBoxItem).ToString();
+                        Application.Run(glavna);
+                    }
+
+                }
+                    
+                else
+                {
+                    glavna.rbPrevediNaengleski.Checked = true;
+                    if (prijavaForma.cbKorisnickoIme.SelectedItem != null)
+                    {
+                        glavna.lbKorisnickoIme.Text = (prijavaForma.cbKorisnickoIme.SelectedItem as ComboBoxItem).ToString();
+                        Application.Run(glavna);
+                    }
+                }
+                    
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

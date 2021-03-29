@@ -30,6 +30,8 @@ namespace Servis_Racunara
 
         public string VozackaDozvola { get; set; }
 
+        public string Lozinka { get; set; }
+
 
         public override bool Equals(object obj)
         {
