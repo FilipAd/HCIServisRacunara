@@ -109,13 +109,17 @@ namespace Servis_Racunara
         {
             if (dgvKomponentaStavka.Columns[e.ColumnIndex].Name == "ColumnOznaci")
             {
-                btDodajNaNalog.Enabled = true;
+                if (dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponenteKS.Index].Value != null)
+                {
+                    btDodajNaNalog.Enabled = true;
 
-                tbSifraKomponenteKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponenteKS.Index].Value.ToString();
-                tbNazivKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKS.Index].Value.ToString();
-                tbJedinicnaCijenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnCijenaPoKomaduKS.Index].Value.ToString();
-                tbDostupnoKS.Text= dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnDostupnaKolicinaKS.Index].Value.ToString();
-
+                    tbSifraKomponenteKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponenteKS.Index].Value.ToString();
+                    tbNazivKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKS.Index].Value.ToString();
+                    tbJedinicnaCijenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnCijenaPoKomaduKS.Index].Value.ToString();
+                    tbDostupnoKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnDostupnaKolicinaKS.Index].Value.ToString();
+                }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

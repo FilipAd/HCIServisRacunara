@@ -55,12 +55,17 @@ namespace Servis_Racunara
         {
             if (dgvUsluga.Columns[e.ColumnIndex].Name == "ColumnOznaci")
             {
-                btDodajUsluguNaNalog.Enabled = true;
+                if (dgvUsluga.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value != null)
+                {
+                    btDodajUsluguNaNalog.Enabled = true;
 
-                tbSifraUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
-                tbNazivUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
-                tbCijenaPoSatuUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnCijenaPoH.Index].Value.ToString();
-                
+                    tbSifraUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
+                    tbNazivUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
+                    tbCijenaPoSatuUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnCijenaPoH.Index].Value.ToString();
+                }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 

@@ -76,82 +76,98 @@ namespace Servis_Racunara
 
             if (dgvSubjekat.Columns[e.ColumnIndex].Name == "ColumnObrisi")
             {
-                btDodajPartnera.Enabled = true;
-                string eng = "Are you sure you want to delete this Client";
-                string srb = "Da li ste sigruni da zelite da obrisete ovog Klijenta?";
-                if (MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked)?srb:eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value != null)
                 {
-                    int Id = (int)dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
-                    DbServisRacunara.DeletePartnera(Id);
-                    GlavnaFormaSF.napuniRadiComboBox();
-                    GlavnaFormaSF.napuniZaprimioComboBox();
+                    btDodajPartnera.Enabled = true;
+                    string eng = "Are you sure you want to delete this Client";
+                    string srb = "Da li ste sigruni da zelite da obrisete ovog Klijenta?";
+                    if (MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        int Id = (int)dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
+                        DbServisRacunara.DeletePartnera(Id);
+                        GlavnaFormaSF.napuniRadiComboBox();
+                        GlavnaFormaSF.napuniZaprimioComboBox();
 
+                    }
                 }
+                else
+                   MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else if (dgvSubjekat.Columns[e.ColumnIndex].Name == "ColumnIzmjeni")
             {
-                btSacuvajIzmjeneRadnika.Enabled = false;
-                btDodajPartnera.Enabled = false;
-                int vrsta = Int32.Parse(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnJestePravnoLice.Index].Value.ToString());
-
-
-                if (vrsta == 0)
+                if (dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value != null)
                 {
-                    OmoguciOsnovneInformacije();
-                    namjestiTextBoxoveZaFizickaLica();
+                    btSacuvajIzmjeneRadnika.Enabled = false;
+                    btDodajPartnera.Enabled = false;
+                    int vrsta = Int32.Parse(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnJestePravnoLice.Index].Value.ToString());
 
+
+                    if (vrsta == 0)
+                    {
+                        OmoguciOsnovneInformacije();
+                        namjestiTextBoxoveZaFizickaLica();
+
+                    }
+                    else
+                    {
+                        OmoguciOsnovneInformacije();
+                        namjestiTextBoxoveZaPravnaLica();
+                    }
+
+                    int pocetniID = (int)dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
+                    tbID.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value.ToString();
+                    tbIme.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnIme.Index].Value.ToString();
+                    tbUlica.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnUlica.Index].Value.ToString();
+                    tbBrojTelefona.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnTelefon.Index].Value.ToString();
+                    tbEmail.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnEmail.Index].Value.ToString();
+                    tbKucniBroj.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnKucniBroj.Index].Value.ToString();
+                    tbJib.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnJIB.Index].Value.ToString();
+                    tbBrojLicneKarte.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnBrojLicneKarte.Index].Value.ToString();
+                    cbGrad.SelectedIndex = cbGrad.FindString(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnGrad.Index].Value.ToString().Trim());
                 }
                 else
-                {
-                    OmoguciOsnovneInformacije();
-                    namjestiTextBoxoveZaPravnaLica();
-                }
-
-                int pocetniID = (int)dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
-                tbID.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value.ToString();
-                tbIme.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnIme.Index].Value.ToString();
-                tbUlica.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnUlica.Index].Value.ToString();
-                tbBrojTelefona.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnTelefon.Index].Value.ToString();
-                tbEmail.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnEmail.Index].Value.ToString();
-                tbKucniBroj.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnKucniBroj.Index].Value.ToString();
-                tbJib.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnJIB.Index].Value.ToString();
-                tbBrojLicneKarte.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnBrojLicneKarte.Index].Value.ToString();
-                cbGrad.SelectedIndex = cbGrad.FindString(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnGrad.Index].Value.ToString().Trim());
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
             else if (dgvSubjekat.Columns[e.ColumnIndex].Name == "ColumnDodajNaNalog")
             {
-                string identifikator = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value.ToString();
-                int pocetniID = Int32.Parse(identifikator);
-                string ime = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnIme.Index].Value.ToString();
-                tbIme.Text = ime;
-                tbUlica.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnUlica.Index].Value.ToString();
-                tbBrojTelefona.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnTelefon.Index].Value.ToString();
-                tbEmail.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnEmail.Index].Value.ToString();
-                tbKucniBroj.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnKucniBroj.Index].Value.ToString();
-                tbJib.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnJIB.Index].Value.ToString();
-                tbBrojLicneKarte.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnBrojLicneKarte.Index].Value.ToString();
-                cbGrad.SelectedIndex = cbGrad.FindString(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnGrad.Index].Value.ToString().Trim());
-                OnemoguciTBSubjektaIDugmad();
-                string eng = "Do you want to create a ticket with this Client?";
-                string srb= "Da li zelite da napravite nalog sa ovim klijentom";
-                DialogResult rez = MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked)? srb:eng,"Kreiranje radnog naloga sa klijentom", MessageBoxButtons.YesNo);
-                if (rez == DialogResult.Yes)
+                if (dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value != null)
                 {
+                    string identifikator = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value.ToString();
+                    int pocetniID = Int32.Parse(identifikator);
+                    string ime = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnIme.Index].Value.ToString();
+                    tbIme.Text = ime;
+                    tbUlica.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnUlica.Index].Value.ToString();
+                    tbBrojTelefona.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnTelefon.Index].Value.ToString();
+                    tbEmail.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnEmail.Index].Value.ToString();
+                    tbKucniBroj.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnKucniBroj.Index].Value.ToString();
+                    tbJib.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnJIB.Index].Value.ToString();
+                    tbBrojLicneKarte.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnBrojLicneKarte.Index].Value.ToString();
+                    cbGrad.SelectedIndex = cbGrad.FindString(dgvSubjekat.Rows[e.RowIndex].Cells[ColumnGrad.Index].Value.ToString().Trim());
+                    OnemoguciTBSubjektaIDugmad();
+                    string eng = "Do you want to create a ticket with this Client?";
+                    string srb = "Da li zelite da napravite nalog sa ovim klijentom";
+                    DialogResult rez = MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Kreiranje radnog naloga sa klijentom", MessageBoxButtons.YesNo);
+                    if (rez == DialogResult.Yes)
+                    {
 
-                    GlavnaFormaSF.tbKlijentGF.Text = ime;
-                    GlavnaFormaSF.tbIdKlijentaGF.Text = identifikator;
-                    GlavnaFormaSF.btSacuvajNalog.Enabled = true;
-                    resetujTextBoxove();
-                    this.Close();
+                        GlavnaFormaSF.tbKlijentGF.Text = ime;
+                        GlavnaFormaSF.tbIdKlijentaGF.Text = identifikator;
+                        GlavnaFormaSF.btSacuvajNalog.Enabled = true;
+                        resetujTextBoxove();
+                        this.Close();
+                    }
+                    else
+                    {
+                        resetujTextBoxove();
+                        OmoguciRB();
+
+                    }
                 }
                 else
-                {
-                    resetujTextBoxove();
-                    OmoguciRB();
-
-                }
+                   MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
@@ -481,16 +497,20 @@ private void ubacivanjeFizickogLica(int JestePL)
 
             if (dvgRadnik.Columns[e.ColumnIndex].Name == "ColumnObrisiRadnik")
             {
-
-                string eng = "Are you sure you want to delete this Client";
-                string srb = "Da li ste sigruni da zelite da obrisete ovog Klijenta?";
-                if (MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dvgRadnik.Rows[e.RowIndex].Cells[ColumnId.Index].Value != null)
                 {
-                    int Id = (int)dvgRadnik.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
-                    DbServisRacunara.DeletePartnera(Id);
+                    string eng = "Are you sure you want to delete this Client";
+                    string srb = "Da li ste sigruni da zelite da obrisete ovog Klijenta?";
+                    if (MessageBox.Show((GlavnaFormaSF.rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        int Id = (int)dvgRadnik.Rows[e.RowIndex].Cells[ColumnId.Index].Value;
+                        DbServisRacunara.DeletePartnera(Id);
 
 
+                    }
                 }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dvgRadnik.Columns[e.ColumnIndex].Name == "ColumnIzmjeniRadnik")
             {
@@ -498,26 +518,26 @@ private void ubacivanjeFizickogLica(int JestePL)
                 btDodajPartnera.Enabled = false;
                 namjestiTextBoxoveZaRadnike();
 
-                try
-                {
+                
+                    if (dvgRadnik.Rows[e.RowIndex].Cells[ColumnIdPartneraRadnik.Index].Value != null)
+                    {
+                        IdParneraZaMjenjanje = (int)dvgRadnik.Rows[e.RowIndex].Cells[ColumnIdPartneraRadnik.Index].Value;
+                        tbID.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnIdPartneraRadnik.Index].Value.ToString();
+                        tbIme.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnImeRadnik.Index].Value.ToString();
+                        tbUlica.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnUlicaRadnik.Index].Value.ToString();
+                        tbBrojTelefona.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnTelefonRadnik.Index].Value.ToString();
+                        tbEmail.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnEmail.Index].Value.ToString();
+                        tbKucniBroj.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnBrojKuceRadnik.Index].Value.ToString();
 
-                    IdParneraZaMjenjanje = (int)dvgRadnik.Rows[e.RowIndex].Cells[ColumnIdPartneraRadnik.Index].Value;
-                    tbID.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnIdPartneraRadnik.Index].Value.ToString();
-                    tbIme.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnImeRadnik.Index].Value.ToString();
-                    tbUlica.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnUlicaRadnik.Index].Value.ToString();
-                    tbBrojTelefona.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnTelefonRadnik.Index].Value.ToString();
-                    tbEmail.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnEmail.Index].Value.ToString();
-                    tbKucniBroj.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnBrojKuceRadnik.Index].Value.ToString();
-
-                    cbGrad.SelectedIndex = cbGrad.FindString(dvgRadnik.Rows[e.RowIndex].Cells[ColumnGradRadnik.Index].Value.ToString().Trim());
-                    tbUloga.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnUloga.Index].Value.ToString();
-                    tbPlata.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnPlata.Index].Value.ToString();
-                    tbVozackaDozvola.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnVozackaDozvola.Index].Value.ToString();
-                }
-                catch (NullReferenceException ex)
-                {
+                        cbGrad.SelectedIndex = cbGrad.FindString(dvgRadnik.Rows[e.RowIndex].Cells[ColumnGradRadnik.Index].Value.ToString().Trim());
+                        tbUloga.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnUloga.Index].Value.ToString();
+                        tbPlata.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnPlata.Index].Value.ToString();
+                        tbVozackaDozvola.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnVozackaDozvola.Index].Value.ToString();
+                    }
+                
+                else
                     MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
            /* else if (dvgRadnik.Columns[e.ColumnIndex].Name =="ColumnKreirajNalogRadnikKaoKlijent")
             {
@@ -745,6 +765,12 @@ private void ubacivanjeFizickogLica(int JestePL)
             ColumnUloga.HeaderText = "Role";
             ColumnPlata.HeaderText = "Salary";
             ColumnVozackaDozvola.HeaderText = "Driv.Lic.";
+        }
+
+        public void ukiniPrivilegije()
+        {
+            gbRadnik.Visible = false;
+            rbDodavanjeRadnika.Visible = false;
         }
     }
 }

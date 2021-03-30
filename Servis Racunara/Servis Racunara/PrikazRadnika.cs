@@ -32,6 +32,8 @@ namespace Servis_Racunara
 
         public string Lozinka { get; set; }
 
+        public int Privilegije { get; set; }
+
 
         public override bool Equals(object obj)
         {

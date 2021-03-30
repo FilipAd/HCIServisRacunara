@@ -12,6 +12,8 @@ namespace Servis_Racunara
         public string Uloga { get; set; }
         public decimal Plata { get; set; }
         public string VozackaDozvola { get; set; }
+
+        public int Privilegije { get; set; }
         public override bool Equals(object obj)
         {
             return obj is Radnik radnik &&

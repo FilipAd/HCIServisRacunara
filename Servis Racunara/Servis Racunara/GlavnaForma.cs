@@ -169,8 +169,12 @@ namespace Servis_Racunara
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string []el = lbKorisnickoIme.Text.Split('-');
+            int id = Int32.Parse(el[1]);
             SubjekatFormaGF = new SubjekatForma();
             SubjekatFormaGF.GlavnaFormaSF = this;
+            if (DbServisRacunara.GetPrivilegije(id) != 1)
+                SubjekatFormaGF.ukiniPrivilegije();
             if(rbPrevediNaSrpski.Checked)
             SubjekatFormaGF.prevediNaSrpski();
             else if(rbPrevediNaengleski.Checked)
@@ -290,6 +294,17 @@ namespace Servis_Racunara
         {
             SubjekatFormaGF = new SubjekatForma();
             SubjekatFormaGF.GlavnaFormaSF = this;
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int id = Int32.Parse(el[1]);
+            if (DbServisRacunara.GetPrivilegije(id) != 1)
+                SubjekatFormaGF.ukiniPrivilegije();
+            if (rbPrevediNaSrpski.Checked)
+                SubjekatFormaGF.prevediNaSrpski();
+            else if (rbPrevediNaengleski.Checked)
+            {
+                SubjekatFormaGF.prevediNaEngleski();
+            }
+
             SubjekatFormaGF.ShowDialog();
             btSacuvajNalog.Enabled = true;
             
@@ -482,41 +497,50 @@ namespace Servis_Racunara
         {
             if (dgvUslugaStavka.Columns[e.ColumnIndex].Name == "ColumnIzmjeniStavkuUsluge")
             {
-                IzmjenaUSFormaGF = new IzmjenaUSForma();
-                IzmjenaUSFormaGF.GlavnaFormaIUS = this;
-                if (rbPrevediNaSrpski.Checked)
-                    IzmjenaUSFormaGF.prevediNaSrpski();
-                else if (rbPrevediNaengleski.Checked)
-                    IzmjenaUSFormaGF.prevediNaEngleski();
-                IzmjenaUSFormaGF.tbBrojNalogaIzmjenaUS.Text = tbBrojRadnogNaloga.Text;
-                IzmjenaUSFormaGF.tbSifraIzmejnaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
-                IzmjenaUSFormaGF.tbNazivIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
-                IzmjenaUSFormaGF.tbCijenaPoHIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnCijena.Index].Value.ToString();
-                IzmjenaUSFormaGF.tbKolicinaIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaUsluge.Index].Value.ToString();
-                IzmjenaUSFormaGF.tbRabatIzmejnaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnRabat.Index].Value.ToString();
-                IzmjenaUSFormaGF.tbUkupnoIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnUkupnaCijena.Index].Value.ToString();
-                IzmjenaUSFormaGF.tbIzmjenaUSStaraKolicina.Text= dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaUsluge.Index].Value.ToString();
-                IzmjenaUSFormaGF.ShowDialog();
-
+                if (dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value !=null)
+                {
+                    IzmjenaUSFormaGF = new IzmjenaUSForma();
+                    IzmjenaUSFormaGF.GlavnaFormaIUS = this;
+                    if (rbPrevediNaSrpski.Checked)
+                        IzmjenaUSFormaGF.prevediNaSrpski();
+                    else if (rbPrevediNaengleski.Checked)
+                        IzmjenaUSFormaGF.prevediNaEngleski();
+                    IzmjenaUSFormaGF.tbBrojNalogaIzmjenaUS.Text = tbBrojRadnogNaloga.Text;
+                    IzmjenaUSFormaGF.tbSifraIzmejnaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
+                    IzmjenaUSFormaGF.tbNazivIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
+                    IzmjenaUSFormaGF.tbCijenaPoHIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnCijena.Index].Value.ToString();
+                    IzmjenaUSFormaGF.tbKolicinaIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaUsluge.Index].Value.ToString();
+                    IzmjenaUSFormaGF.tbRabatIzmejnaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnRabat.Index].Value.ToString();
+                    IzmjenaUSFormaGF.tbUkupnoIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnUkupnaCijena.Index].Value.ToString();
+                    IzmjenaUSFormaGF.tbIzmjenaUSStaraKolicina.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaUsluge.Index].Value.ToString();
+                    IzmjenaUSFormaGF.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(dgvUslugaStavka.Columns[e.ColumnIndex].Name == "ColumnObrisiStavkuUsluge")
             {
-                string eng = "Are you sure you want to delete this item";
-                string srb = "Да ли сте сигурно да желите да обришете ову ставку?";
-                if (MessageBox.Show((rbPrevediNaSrpski.Checked)? srb:eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value != null)
                 {
-                    var us = new UslugaStavka()
+                    string eng = "Are you sure you want to delete this item";
+                    string srb = "Да ли сте сигурно да желите да обришете ову ставку?";
+                    if (MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        BrojRadnogNaloga = Int32.Parse(tbBrojRadnogNaloga.Text),
-                        SifraUsluge=Int32.Parse(dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString())
+                        var us = new UslugaStavka()
+                        {
+                            BrojRadnogNaloga = Int32.Parse(tbBrojRadnogNaloga.Text),
+                            SifraUsluge = Int32.Parse(dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString())
 
-                    };
-                    DbServisRacunara.DeleteUslugaStavka(us);
-                    string eng1 = "Successfully deleted item";
-                    string srb1 = "Успјешно обрисана ставка";
-                    MessageBox.Show((rbPrevediNaSrpski.Checked)? srb1:eng1, "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        };
+                        DbServisRacunara.DeleteUslugaStavka(us);
+                        string eng1 = "Successfully deleted item";
+                        string srb1 = "Успјешно обрисана ставка";
+                        MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb1 : eng1, "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    }
                 }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -525,51 +549,61 @@ namespace Servis_Racunara
         {
             if(dgvKomponentaStavka.Columns[e.ColumnIndex].Name == "ColumnIzmjeniKS")
             {
-                if (DbServisRacunara.ProvjeriDaLiJeKomponentaObrisana(Int32.Parse(tbBrojRadnogNaloga.Text)) == 1)
+                if (dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value != null)
                 {
-                    string srb = "КОМПОНЕНТА ЈЕ ОБРИСАНА ИЗ РЕГИСТРА И НИЈЕ МОГУЋЕ МЈЕЊАТИ ЈЕ";
-                    string eng = "THE COMPONENT HAS BEEN DELETED FROM THE REGISTER AND CANNOT BE CHANGED";
-                    MessageBox.Show((rbPrevediNaSrpski.Checked)?srb:eng, "KOMPONENTA OBRISANA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (DbServisRacunara.ProvjeriDaLiJeKomponentaObrisana(Int32.Parse(tbBrojRadnogNaloga.Text)) == 1)
+                    {
+                        string srb = "КОМПОНЕНТА ЈЕ ОБРИСАНА ИЗ РЕГИСТРА И НИЈЕ МОГУЋЕ МЈЕЊАТИ ЈЕ";
+                        string eng = "THE COMPONENT HAS BEEN DELETED FROM THE REGISTER AND CANNOT BE CHANGED";
+                        MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "KOMPONENTA OBRISANA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        IzmjenaKSFormaGF = new IzmjenaKSForma();
+                        IzmjenaKSFormaGF.GlavnaFormaIKS = this;
+                        if (rbPrevediNaSrpski.Checked)
+                            IzmjenaKSFormaGF.prevediNaSrpski();
+                        else if (rbPrevediNaengleski.Checked)
+                            IzmjenaKSFormaGF.prevediNaEngleski();
+                        IzmjenaKSFormaGF.tbBrojNalogaIzmjenaKS.Text = tbBrojRadnogNaloga.Text;
+                        IzmjenaKSFormaGF.tbSifraIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.tbNazivIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.tbJedinicnaCijenaIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnCijenaKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.tbKolicinaIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.tbRabatIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnRabatKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.tbUkupnoIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnUkupnaCijenaKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.tbStaraKolicinaIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaKomponente.Index].Value.ToString();
+                        IzmjenaKSFormaGF.ShowDialog();
+                    }
                 }
                 else
-                {
-                    IzmjenaKSFormaGF = new IzmjenaKSForma();
-                    IzmjenaKSFormaGF.GlavnaFormaIKS = this;
-                    if (rbPrevediNaSrpski.Checked)
-                        IzmjenaKSFormaGF.prevediNaSrpski();
-                    else if (rbPrevediNaengleski.Checked)
-                        IzmjenaKSFormaGF.prevediNaEngleski();
-                    IzmjenaKSFormaGF.tbBrojNalogaIzmjenaKS.Text = tbBrojRadnogNaloga.Text;
-                    IzmjenaKSFormaGF.tbSifraIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.tbNazivIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.tbJedinicnaCijenaIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnCijenaKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.tbKolicinaIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.tbRabatIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnRabatKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.tbUkupnoIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnUkupnaCijenaKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.tbStaraKolicinaIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaKomponente.Index].Value.ToString();
-                    IzmjenaKSFormaGF.ShowDialog();
-                }
-                
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else if (dgvKomponentaStavka.Columns[e.ColumnIndex].Name == "ColumnObrisiKS")
             {
-                string eng = "Are you sure you want to delete this item";
-                string srb = "Да ли сте сигурни да желите обрисати ову ставку?";
-                if (MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value != null)
                 {
-                    var ks = new KomponentaStavka()
+                    string eng = "Are you sure you want to delete this item";
+                    string srb = "Да ли сте сигурни да желите обрисати ову ставку?";
+                    if (MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        BrojNaloga = Int32.Parse(tbBrojRadnogNaloga.Text),
-                        SifraKomponente = Int32.Parse(dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value.ToString()),
-                        Razlika=Int32.Parse(dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaKomponente.Index].Value.ToString()),
-                       
-                    };
-                    DbServisRacunara.DeleteKomponentaStavka(ks);
-                    string eng1 = "Successfully deleted item";
-                    string srb1 = "Успјешно обрисана ставка ";
-                    MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb1 : eng1, "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var ks = new KomponentaStavka()
+                        {
+                            BrojNaloga = Int32.Parse(tbBrojRadnogNaloga.Text),
+                            SifraKomponente = Int32.Parse(dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value.ToString()),
+                            Razlika = Int32.Parse(dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnKolicinaKomponente.Index].Value.ToString()),
 
+                        };
+                        DbServisRacunara.DeleteKomponentaStavka(ks);
+                        string eng1 = "Successfully deleted item";
+                        string srb1 = "Успјешно обрисана ставка ";
+                        MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb1 : eng1, "Uspjesno Brisanje Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
                 }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

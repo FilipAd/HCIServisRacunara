@@ -931,6 +931,27 @@ namespace Servis_Racunara
 
         }
 
+        public static int GetPrivilegije(int idKorisnika)
+        {
+            int privilegija = 0;
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = @"SELECT Privilegije from Radnik WHERE IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika", idKorisnika);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+
+                privilegija = reader.GetInt32(0);
+
+            }
+            reader.Close();
+            conn.Close();
+            return privilegija;
+        }
+
+
 
     }
 }

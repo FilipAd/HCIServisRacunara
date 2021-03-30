@@ -39,44 +39,63 @@ namespace Servis_Racunara
         private void dgvKomponenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             btSacuvajIzmjeneKomponenta.Enabled = true;
-            int pocetnaSifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value;
+            if (dgvKomponenta.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                int pocetnaSifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value;
+            }
+            
 
             if (dgvKomponenta.Columns[e.ColumnIndex].Name=="ColumnObrisi")
             {
-                btDodajKomponentu.Enabled = true;
-                string eng = "Are you sure you want to delete this component?";
-                string srb = "Да ли сте сигурни да желите да обришете ову компоненту?";
-                if (MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                if (dgvKomponenta.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    btDodajKomponentu.Enabled = true;
+                    string eng = "Are you sure you want to delete this component?";
+                    string srb = "Да ли сте сигурни да желите да обришете ову компоненту?";
+                    if (MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                    int sifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[0].Value;
-                    DbServisRacunara.DeleteKoomponentaSifra(sifra);
-                    dgvKomponenta.Rows.RemoveAt(e.RowIndex);
+                        int sifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[0].Value;
+                        DbServisRacunara.DeleteKoomponentaSifra(sifra);
+                        dgvKomponenta.Rows.RemoveAt(e.RowIndex);
                     }
+                }
+                else
+                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(dgvKomponenta.Columns[e.ColumnIndex].Name=="ColumnIzmjeni")
             {
-                btSacuvajIzmjeneKomponenta.Enabled = true;
-                staraSifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value;
-                btSacuvajIzmjeneKomponenta.Enabled = true;
-                tbSifraKomponente.Text=dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value.ToString();
-                tbNazivKomponente.Text=dgvKomponenta.Rows[e.RowIndex].Cells[ColumnNaziv.Index].Value.ToString();
-                tbCijenaPoKomadu.Text= dgvKomponenta.Rows[e.RowIndex].Cells[ColumnCijena.Index].Value.ToString();
-                tbKolicina.Text= dgvKomponenta.Rows[e.RowIndex].Cells[ColumnDostupnaKolicina.Index].Value.ToString();
-
+                if (dgvKomponenta.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    btSacuvajIzmjeneKomponenta.Enabled = true;
+                    staraSifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value;
+                    btSacuvajIzmjeneKomponenta.Enabled = true;
+                    tbSifraKomponente.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value.ToString();
+                    tbNazivKomponente.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnNaziv.Index].Value.ToString();
+                    tbCijenaPoKomadu.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnCijena.Index].Value.ToString();
+                    tbKolicina.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnDostupnaKolicina.Index].Value.ToString();
+                }
+                else
+                  MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(dgvKomponenta.Columns[e.ColumnIndex].Name == "ColumnDodaj")
             {
-                btDodajKolicinu.Enabled = true;
-                btSacuvajIzmjeneKomponenta.Enabled = false;
-                btDodajKomponentu.Enabled = false;
-                tbSifraKomponente.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value.ToString();
-                tbNazivKomponente.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnNaziv.Index].Value.ToString();
-                tbCijenaPoKomadu.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnCijena.Index].Value.ToString();
-                tbKolicina.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnDostupnaKolicina.Index].Value.ToString();
-                tbSifraKomponente.Enabled = false;
-                tbNazivKomponente.Enabled = false;
-                tbNazivKomponente.Enabled = false;
-                tbCijenaPoKomadu.Enabled = false;
+                if (dgvKomponenta.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    btDodajKolicinu.Enabled = true;
+                    btSacuvajIzmjeneKomponenta.Enabled = false;
+                    btDodajKomponentu.Enabled = false;
+                    tbSifraKomponente.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnSifra.Index].Value.ToString();
+                    tbNazivKomponente.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnNaziv.Index].Value.ToString();
+                    tbCijenaPoKomadu.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnCijena.Index].Value.ToString();
+                    tbKolicina.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnDostupnaKolicina.Index].Value.ToString();
+                    tbSifraKomponente.Enabled = false;
+                    tbNazivKomponente.Enabled = false;
+                    tbNazivKomponente.Enabled = false;
+                    tbCijenaPoKomadu.Enabled = false;
+                }
+                else
+                  MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
