@@ -222,5 +222,60 @@ namespace Servis_Racunara
             btDodajKolicinu.Text = "ADD ON EXISTING";
             btDodajKomponentu.Text = "ADD";
         }
+
+        private void KomponentaForma_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void prebaciNaTemu1()
+        {
+            this.BackColor = System.Drawing.Color.SkyBlue;
+        
+        }
+
+        public void prebaciNaTemu2()
+        {
+            this.BackColor = System.Drawing.Color.MistyRose;
+         
+        }
+
+        public void prebaciNaTemu3()
+        {
+            this.BackColor = System.Drawing.Color.LightYellow;
+           
+        }
+
+        public void prebaciNaBezteme()
+        {
+            this.BackColor = SystemColors.Control;
+          
+        }
+        public void promjeniFont(string imeFonta)
+        {
+
+
+            List<Control> allControls = GetAllControls(this);
+            allControls.ForEach(k => k.Font = new System.Drawing.Font(imeFonta, k.Font.Size, k.Font.Style));
+
+
+        }
+        private List<Control> GetAllControls(Control container, List<Control> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+
+                if (c.Controls.Count > 0)
+                    list = GetAllControls(c, list);
+                else
+                    list.Add(c);
+            }
+
+            return list;
+        }
+        private List<Control> GetAllControls(Control container)
+        {
+            return GetAllControls(container, new List<Control>());
+        }
+
     }
 }

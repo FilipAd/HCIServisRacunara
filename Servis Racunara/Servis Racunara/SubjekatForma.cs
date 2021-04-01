@@ -22,6 +22,7 @@ namespace Servis_Racunara
             napuniGridKlijenta();
             napuniGridRadnika();
             
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace Servis_Racunara
             tbPlata.Enabled = false;
             tbPlata.Text = "";
             tbVozackaDozvola.Enabled = false;
+            chbPrivilegije.Enabled = false;
             tbVozackaDozvola.Text = "";
             OmoguciOsnovneInformacije();
         }
@@ -46,6 +48,7 @@ namespace Servis_Racunara
         private void rbDodajFL_CheckedChanged(object sender, EventArgs e)
         {
             tbJib.Enabled = false;
+            chbPrivilegije.Enabled = false;
             tbJib.Text = "";
             tbBrojLicneKarte.Enabled = true;
             tbUloga.Enabled = false;
@@ -60,6 +63,7 @@ namespace Servis_Racunara
         private void rbDodavanjeRadnika_CheckedChanged(object sender, EventArgs e)
         {
             tbJib.Enabled = false;
+            chbPrivilegije.Enabled = true;
             tbJib.Text = "";
             tbBrojLicneKarte.Enabled = false;
             tbBrojLicneKarte.Text = "";
@@ -262,6 +266,7 @@ namespace Servis_Racunara
             tbBrojLicneKarte.Enabled = false;
             tbJib.Enabled = false;
             btSacuvajIzmjeneRadnika.Enabled = true;
+            chbPrivilegije.Enabled = true;
         }
 
         private void napuniGradComboBox()
@@ -318,7 +323,7 @@ namespace Servis_Racunara
                     Tag = p
 
                 };
-                row.CreateCells(dvgRadnik, p.IdPartnera, p.Ime, p.Ulica, p.Grad, p.Telefon, p.KucniBroj, p.Email, p.Uloga, p.Plata, p.VozackaDozvola);
+                row.CreateCells(dvgRadnik, p.IdPartnera, p.Ime, p.Ulica, p.Grad, p.Telefon, p.KucniBroj, p.Email, p.Uloga, p.Plata, p.VozackaDozvola,p.Privilegije);
                 dvgRadnik.Rows.Add(row);
             }
         }
@@ -365,7 +370,8 @@ namespace Servis_Racunara
                     Plata = Decimal.Parse(tbPlata.Text),
                     VozackaDozvola = tbVozackaDozvola.Text,
                 };
-
+                        if (chbPrivilegije.Checked)
+                            radnik.Privilegije = 1;
                 string brojTelefona = tbBrojTelefona.Text;
                 DbServisRacunara.InsertRadnik(radnik, partner,brojTelefona);
                 GlavnaFormaSF.cbRadi.Items.Clear();
@@ -533,7 +539,14 @@ private void ubacivanjeFizickogLica(int JestePL)
                         tbUloga.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnUloga.Index].Value.ToString();
                         tbPlata.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnPlata.Index].Value.ToString();
                         tbVozackaDozvola.Text = dvgRadnik.Rows[e.RowIndex].Cells[ColumnVozackaDozvola.Index].Value.ToString();
-                    }
+                    if (dvgRadnik.Rows[e.RowIndex].Cells[ColumnPrivilegije.Index].Value.ToString() == "1")
+                        chbPrivilegije.Checked = true;
+                    else
+                        chbPrivilegije.Checked = false;
+
+
+
+                }
                 
                 else
                     MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -635,6 +648,8 @@ private void ubacivanjeFizickogLica(int JestePL)
                     PostanskiBrojGrada = Int32.Parse(el[1]),
 
                 };
+                if (chbPrivilegije.Checked)
+                    radnik.Privilegije = 1;
                 DbServisRacunara.UpdateRadnika(radnik);
                 napuniGridRadnika();
                 //  NapuniGrid();
@@ -720,6 +735,7 @@ private void ubacivanjeFizickogLica(int JestePL)
             ColumnUloga.HeaderText = "Улога";
             ColumnPlata.HeaderText = "Плата";
             ColumnVozackaDozvola.HeaderText = "Воз.Доз.";
+            chbPrivilegije.Text = "Привилегије";
 
         }
 
@@ -765,12 +781,91 @@ private void ubacivanjeFizickogLica(int JestePL)
             ColumnUloga.HeaderText = "Role";
             ColumnPlata.HeaderText = "Salary";
             ColumnVozackaDozvola.HeaderText = "Driv.Lic.";
+            chbPrivilegije.Text = "Privileges";
         }
 
         public void ukiniPrivilegije()
         {
             gbRadnik.Visible = false;
             rbDodavanjeRadnika.Visible = false;
+        }
+
+        public void prebaciNaTemu1()
+        {
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            ((ToolStripMenuItem)GlavnaFormaSF.tsmiTema1.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            GlavnaFormaSF.tsmiTema1.Checked = true;
+        }
+
+        public void prebaciNaTemu2()
+        {
+            this.BackColor = System.Drawing.Color.MistyRose;
+            ((ToolStripMenuItem)GlavnaFormaSF.tsmiTema2.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            GlavnaFormaSF.tsmiTema2.Checked = true;
+        }
+
+        public void prebaciNaTemu3()
+        {
+            this.BackColor = System.Drawing.Color.LightYellow;
+            ((ToolStripMenuItem)GlavnaFormaSF.tsmiTema3.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            GlavnaFormaSF.tsmiTema3.Checked = true;
+        }
+
+        public void prebaciNaBezteme()
+        {
+            this.BackColor = SystemColors.Control;
+            ((ToolStripMenuItem)GlavnaFormaSF.tsmiTemaBezTeme.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            GlavnaFormaSF.tsmiTemaBezTeme.Checked = true;
+        }
+        public void promjeniFont(string imeFonta)
+        {
+
+
+            List<Control> allControls = GetAllControls(this);
+            allControls.ForEach(k => k.Font = new System.Drawing.Font(imeFonta, k.Font.Size, k.Font.Style));
+
+
+        }
+        private List<Control> GetAllControls(Control container, List<Control> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+
+                if (c.Controls.Count > 0)
+                    list = GetAllControls(c, list);
+                else
+                    list.Add(c);
+            }
+
+            return list;
+        }
+        private List<Control> GetAllControls(Control container)
+        {
+            return GetAllControls(container, new List<Control>());
+        }
+        private void SubjekatForma_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

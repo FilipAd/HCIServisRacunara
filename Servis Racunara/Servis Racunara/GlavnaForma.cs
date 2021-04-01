@@ -28,7 +28,7 @@ namespace Servis_Racunara
             napuniDgvNeproknjizeni();
             napuniDgvProknjizeni();
             rbPrevediNaSrpski.Checked = true;
-            
+
         }
 
         private void napuniDgvNeproknjizeni()
@@ -181,6 +181,24 @@ namespace Servis_Racunara
             {
                 SubjekatFormaGF.prevediNaEngleski();
             }
+            if (tsmiTema1.Checked)
+                SubjekatFormaGF.prebaciNaTemu1();
+            else if (tsmiTema2.Checked)
+               SubjekatFormaGF.prebaciNaTemu2();
+            else if (tsmiTema3.Checked)
+               SubjekatFormaGF.prebaciNaTemu3();
+            else if (tsmiTemaBezTeme.Checked)
+               SubjekatFormaGF.prebaciNaBezteme();
+
+            if (tsmiFontSegoeUI.Checked)
+                SubjekatFormaGF.promjeniFont("Segoe UI");
+            else if (tsmiFontMagneto.Checked)
+                SubjekatFormaGF.promjeniFont("Magneto");
+            else if (tsmiFontTahoma.Checked)
+                SubjekatFormaGF.promjeniFont("Tahoma");
+            else if (tsmiFontConsolas.Checked)
+                SubjekatFormaGF.promjeniFont("Consolas");
+
             SubjekatFormaGF.ShowDialog();
             
         }
@@ -240,13 +258,41 @@ namespace Servis_Racunara
             KomponentaFormaGF= new KomponentaForma();
             KomponentaFormaGF.GlavnaFormaKOM = this;
             if (rbPrevediNaSrpski.Checked)
-            {
+            
                 KomponentaFormaGF.prevediNaSrpski();
-            }
+            
             else if(rbPrevediNaengleski.Checked)
-            {
+            
                 KomponentaFormaGF.prevediNaEngleski();
-            }
+            
+
+            if(tsmiTema1.Checked)
+            
+                KomponentaFormaGF.prebaciNaTemu1();
+            
+            else if(tsmiTema2.Checked)
+            
+                KomponentaFormaGF.prebaciNaTemu2();
+            
+            else if(tsmiTema3.Checked)
+            
+                KomponentaFormaGF.prebaciNaTemu3();
+            
+            else if(tsmiTemaBezTeme.Checked)
+            
+                KomponentaFormaGF.prebaciNaBezteme();
+
+            if (tsmiFontSegoeUI.Checked)
+                KomponentaFormaGF.promjeniFont("Segoe UI");
+            else if (tsmiFontMagneto.Checked)
+                KomponentaFormaGF.promjeniFont("Magneto");
+            else if (tsmiFontTahoma.Checked)
+                KomponentaFormaGF.promjeniFont("Tahoma");
+            else if (tsmiFontConsolas.Checked)
+                KomponentaFormaGF.promjeniFont("Consolas");
+
+
+
             KomponentaFormaGF.ShowDialog();
         
            
@@ -305,6 +351,24 @@ namespace Servis_Racunara
                 SubjekatFormaGF.prevediNaEngleski();
             }
 
+
+            if (tsmiTema1.Checked)
+                SubjekatFormaGF.prebaciNaTemu1();
+            else if (tsmiTema2.Checked)
+                SubjekatFormaGF.prebaciNaTemu2();
+            else if (tsmiTema3.Checked)
+                SubjekatFormaGF.prebaciNaTemu3();
+            else if (tsmiTemaBezTeme.Checked)
+                SubjekatFormaGF.prebaciNaBezteme();
+
+            if (tsmiFontSegoeUI.Checked)
+                SubjekatFormaGF.promjeniFont("Segoe UI");
+            else if(tsmiFontMagneto.Checked)
+                SubjekatFormaGF.promjeniFont("Magneto");
+            else if(tsmiFontTahoma.Checked)
+                SubjekatFormaGF.promjeniFont("Tahoma");
+            else if(tsmiFontConsolas.Checked)
+                SubjekatFormaGF.promjeniFont("Consolas");
             SubjekatFormaGF.ShowDialog();
             btSacuvajNalog.Enabled = true;
             
@@ -431,6 +495,28 @@ namespace Servis_Racunara
                     UslugaFormaGF.prevediNasrpski();
                 else if(rbPrevediNaengleski.Checked)
                     UslugaFormaGF.prevediNaEngleski();
+
+                if (tsmiTema1.Checked)
+                    UslugaFormaGF.prebaciNaTemu1();
+
+                else if (tsmiTema2.Checked)
+                    UslugaFormaGF.prebaciNaTemu2();
+
+                else if (tsmiTema3.Checked)
+                    UslugaFormaGF.prebaciNaTemu3();
+
+                else if (tsmiTemaBezTeme.Checked)
+                    UslugaFormaGF.prebaciNaBezteme();
+                
+
+                if (tsmiFontSegoeUI.Checked)
+                    UslugaFormaGF.promjeniFont("Segoe UI");
+                else if (tsmiFontMagneto.Checked)
+                    UslugaFormaGF.promjeniFont("Magneto");
+                else if (tsmiFontTahoma.Checked)
+                    UslugaFormaGF.promjeniFont("Tahoma");
+                else if (tsmiFontConsolas.Checked)
+                    UslugaFormaGF.promjeniFont("Consolas");
                 UslugaFormaGF.ShowDialog();
             }
         }
@@ -451,6 +537,28 @@ namespace Servis_Racunara
                     KomponentaStavkaFormaGF.prevediNaSrpski();
                 else if (rbPrevediNaengleski.Checked)
                     KomponentaStavkaFormaGF.prevediNaEngleski();
+
+                if (tsmiTema1.Checked)
+                    KomponentaStavkaFormaGF.prebaciNaTemu1();
+
+                else if (tsmiTema2.Checked)
+                    KomponentaStavkaFormaGF.prebaciNaTemu2();
+
+                else if (tsmiTema3.Checked)
+                    KomponentaStavkaFormaGF.prebaciNaTemu3();
+
+                else if (tsmiTemaBezTeme.Checked)
+                    KomponentaStavkaFormaGF.prebaciNaBezteme();
+                
+
+                if (tsmiFontSegoeUI.Checked)
+                    KomponentaStavkaFormaGF.promjeniFont("Segoe UI");
+                else if (tsmiFontMagneto.Checked)
+                    KomponentaStavkaFormaGF.promjeniFont("Magneto");
+                else if (tsmiFontTahoma.Checked)
+                    KomponentaStavkaFormaGF.promjeniFont("Tahoma");
+                else if (tsmiFontConsolas.Checked)
+                    KomponentaStavkaFormaGF.promjeniFont("Consolas");
                 KomponentaStavkaFormaGF.ShowDialog();
             }
         }
@@ -505,6 +613,28 @@ namespace Servis_Racunara
                         IzmjenaUSFormaGF.prevediNaSrpski();
                     else if (rbPrevediNaengleski.Checked)
                         IzmjenaUSFormaGF.prevediNaEngleski();
+
+                    if (tsmiTema1.Checked)
+                        IzmjenaUSFormaGF.prebaciNaTemu1();
+
+                    else if (tsmiTema2.Checked)
+                        IzmjenaUSFormaGF.prebaciNaTemu2();
+
+                    else if (tsmiTema3.Checked)
+                        IzmjenaUSFormaGF.prebaciNaTemu3();
+
+                    else if (tsmiTemaBezTeme.Checked)
+                        IzmjenaUSFormaGF.prebaciNaBezteme();
+
+
+                    if (tsmiFontSegoeUI.Checked)
+                        IzmjenaUSFormaGF.promjeniFont("Segoe UI");
+                    else if (tsmiFontMagneto.Checked)
+                        IzmjenaUSFormaGF.promjeniFont("Magneto");
+                    else if (tsmiFontTahoma.Checked)
+                        IzmjenaUSFormaGF.promjeniFont("Tahoma");
+                    else if (tsmiFontConsolas.Checked)
+                        IzmjenaUSFormaGF.promjeniFont("Consolas");
                     IzmjenaUSFormaGF.tbBrojNalogaIzmjenaUS.Text = tbBrojRadnogNaloga.Text;
                     IzmjenaUSFormaGF.tbSifraIzmejnaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
                     IzmjenaUSFormaGF.tbNazivIzmjenaUS.Text = dgvUslugaStavka.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
@@ -565,6 +695,28 @@ namespace Servis_Racunara
                             IzmjenaKSFormaGF.prevediNaSrpski();
                         else if (rbPrevediNaengleski.Checked)
                             IzmjenaKSFormaGF.prevediNaEngleski();
+                        if (tsmiTema1.Checked)
+                            IzmjenaKSFormaGF.prebaciNaTemu1();
+
+                        else if (tsmiTema2.Checked)
+                            IzmjenaKSFormaGF.prebaciNaTemu2();
+
+                        else if (tsmiTema3.Checked)
+                            IzmjenaKSFormaGF.prebaciNaTemu3();
+
+                        else if (tsmiTemaBezTeme.Checked)
+                            IzmjenaKSFormaGF.prebaciNaBezteme();
+
+
+                        if (tsmiFontSegoeUI.Checked)
+                            IzmjenaKSFormaGF.promjeniFont("Segoe UI");
+                        else if (tsmiFontMagneto.Checked)
+                            IzmjenaKSFormaGF.promjeniFont("Magneto");
+                        else if (tsmiFontTahoma.Checked)
+                            IzmjenaKSFormaGF.promjeniFont("Tahoma");
+                        else if (tsmiFontConsolas.Checked)
+                            IzmjenaKSFormaGF.promjeniFont("Consolas");
+
                         IzmjenaKSFormaGF.tbBrojNalogaIzmjenaKS.Text = tbBrojRadnogNaloga.Text;
                         IzmjenaKSFormaGF.tbSifraIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponente.Index].Value.ToString();
                         IzmjenaKSFormaGF.tbNazivIzmjenaKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKomponente.Index].Value.ToString();
@@ -770,6 +922,8 @@ namespace Servis_Racunara
             ColumnStatusP.HeaderText = "Статус";
             ColumnIdPartneraProknjizeni.HeaderText = "ИдПартнера";
             btPromjenaLozinke.Text = "Промјена лозинке";
+            tsmFont.Text = "Фонтови";
+            tsmTeme.Text = "Теме";
 
 
 
@@ -842,8 +996,19 @@ namespace Servis_Racunara
             ColumnStatusP.HeaderText = "Status";
             ColumnIdPartneraProknjizeni.HeaderText = "ClientId";
             btPromjenaLozinke.Text = "Change password";
+            tsmFont.Text = "Fonts";
+            tsmTeme.Text = "Themes";
         }
 
+        private void promjeniFont(string imeFonta)
+        {
+
+           
+                List<Control> allControls = GetAllControls(this);
+                allControls.ForEach(k => k.Font = new System.Drawing.Font(imeFonta,k.Font.Size,k.Font.Style));
+
+            
+        }
 
         private void btPrevodNaSrpski_Click(object sender, EventArgs e)
         {
@@ -874,7 +1039,245 @@ namespace Servis_Racunara
                 PromjenaLozinkeFormaGF.prevediNaSrpski();
             else
                 PromjenaLozinkeFormaGF.prevediNaEngleski();
+
+            if (tsmiTema1.Checked)
+              PromjenaLozinkeFormaGF.prebaciNaTemu1();
+            else if (tsmiTema2.Checked)
+             PromjenaLozinkeFormaGF.prebaciNaTemu2();
+            else if (tsmiTema3.Checked)
+            PromjenaLozinkeFormaGF.prebaciNaTemu3();
+            else if (tsmiTemaBezTeme.Checked)
+               PromjenaLozinkeFormaGF.prebaciNaBezteme();
+            
+            if (tsmiFontSegoeUI.Checked)
+                PromjenaLozinkeFormaGF.promjeniFont("Segoe UI");
+            else if (tsmiFontMagneto.Checked)
+                PromjenaLozinkeFormaGF.promjeniFont("Magneto");
+            else if (tsmiFontTahoma.Checked)
+                PromjenaLozinkeFormaGF.promjeniFont("Tahoma");
+            else if (tsmiFontConsolas.Checked)
+                PromjenaLozinkeFormaGF.promjeniFont("Consolas");
+
+
             PromjenaLozinkeFormaGF.ShowDialog();
         }
+
+        private void temeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private List<Control> GetAllControls(Control container, List<Control> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+
+                if (c.Controls.Count > 0)
+                    list = GetAllControls(c, list);
+                else
+                    list.Add(c);
+            }
+
+            return list;
+        }
+        private List<Control> GetAllControls(Control container)
+        {
+            return GetAllControls(container, new List<Control>());
+        }
+
+        private void bookAntiquaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            promjeniFont("Segoe UI");
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateFont(IdKorisnika, 1);
+            ((ToolStripMenuItem)tsmiFontSegoeUI.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiFontSegoeUI.Checked = true;
+        }
+
+        private void magnetoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            promjeniFont("Magneto");
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateFont(IdKorisnika, 2);
+            ((ToolStripMenuItem)tsmiFontMagneto.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiFontMagneto.Checked = true;
+        }
+
+        private void tahomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            promjeniFont("Tahoma");
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateFont(IdKorisnika, 3);
+            ((ToolStripMenuItem)tsmiFontTahoma.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiFontTahoma.Checked = true;
+        }
+
+        private void consolasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            promjeniFont("Consolas");
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateFont(IdKorisnika, 4);
+            ((ToolStripMenuItem)tsmiFontConsolas.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiFontConsolas.Checked = true;
+        }
+
+        private void tema1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateTema(IdKorisnika,1);
+            ((ToolStripMenuItem)tsmiTema1.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiTema1.Checked = true;
+        }
+
+        private void tema2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = System.Drawing.Color.MistyRose;
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateTema(IdKorisnika, 2);
+            ((ToolStripMenuItem)tsmiTema2.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiTema2.Checked = true;
+        }
+
+        private void tema3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = System.Drawing.Color.LightYellow;
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateTema(IdKorisnika, 3);
+            ((ToolStripMenuItem)tsmiTema3.OwnerItem).DropDownItems
+           .OfType<ToolStripMenuItem>().ToList()
+           .ForEach(item =>
+           {
+               item.Checked = false;
+           });
+            tsmiTema3.Checked = true;
+        }
+
+        private void bezTemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.Control;
+            string[] el = lbKorisnickoIme.Text.Split('-');
+            int IdKorisnika = Int32.Parse(el[1]);
+            DbServisRacunara.UpdateTema(IdKorisnika, 4);
+            ((ToolStripMenuItem)tsmiTemaBezTeme.OwnerItem).DropDownItems
+        .OfType<ToolStripMenuItem>().ToList()
+        .ForEach(item =>
+        {
+            item.Checked = false;
+        });
+            tsmiTemaBezTeme.Checked = true;
+        }
+
+        public void podesiTemuNaOsnovuSacuvanihVrijednosti(int idTeme)
+        {
+            switch(idTeme)
+            {
+                case 1:
+                    tsmiTema1.Checked = true;
+                    prebaciNaTemu1();
+                break;
+                case 2:
+                    tsmiTema2.Checked = true;
+                    prebaciNaTemu2();
+                    break;
+                case 3:
+                    tsmiTema3.Checked = true;
+                    prebaciNaTemu3();
+                    break;
+                case 4:
+                    tsmiTemaBezTeme.Checked = true;
+                    prebaciNaBezteme();
+                    break;
+            }
+        }
+
+        public void podesiFontNaOsnovuSacuvanihVrijednosti(int idFonta)
+        {
+            switch (idFonta)
+            {
+                case 1:
+                    tsmiFontSegoeUI.Checked = true;
+                    promjeniFont("Segoe UI");
+                    
+                   
+                    break;
+                case 2:
+                    tsmiFontMagneto.Checked = true;
+                    promjeniFont("Magneto");
+                    break;
+                case 3:
+                    tsmiFontTahoma.Checked = true;
+                    promjeniFont("Tahoma");
+                    break;
+                case 4:
+                    tsmiFontConsolas.Checked = true;
+                    promjeniFont("Consolas");
+                    break;
+                case 5:
+                    break;
+            }
+        }
+
+        public void prebaciNaTemu1()
+        {
+            this.BackColor = System.Drawing.Color.SkyBlue;
+        
+        }
+
+        public void prebaciNaTemu2()
+        {
+            this.BackColor = System.Drawing.Color.MistyRose;
+          
+        }
+
+        public void prebaciNaTemu3()
+        {
+            this.BackColor = System.Drawing.Color.LightYellow;
+           
+        }
+
+        public void prebaciNaBezteme()
+        {
+            this.BackColor = SystemColors.Control;
+          
+        }
     }
+    
 }

@@ -20,9 +20,16 @@ namespace Servis_Racunara
             if (prijavaForma.ShowDialog() == DialogResult.OK)
             {
                 GlavnaForma glavna = new GlavnaForma();
+                int idKorisnika = (prijavaForma.cbKorisnickoIme.SelectedItem as ComboBoxItem).Vrijednost;
+                int idfonta = DbServisRacunara.GetFont(idKorisnika);
+                int idteme = DbServisRacunara.GetTema(idKorisnika);
+                glavna.podesiFontNaOsnovuSacuvanihVrijednosti(idfonta);
+                glavna.podesiTemuNaOsnovuSacuvanihVrijednosti(idteme);
                 if (prijavaForma.rbPrevediNaSrpski.Checked)
                 {
                     glavna.rbPrevediNaSrpski.Checked = true;
+
+
                     if (prijavaForma.cbKorisnickoIme.SelectedItem != null)
                     {
                         glavna.lbKorisnickoIme.Text = (prijavaForma.cbKorisnickoIme.SelectedItem as ComboBoxItem).ToString();
@@ -47,5 +54,6 @@ namespace Servis_Racunara
                 Application.Exit();
             }
         }
+
     }
 }

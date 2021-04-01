@@ -321,12 +321,13 @@ namespace Servis_Racunara
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"INSERT INTO Radnik(IdPartnera,Uloga,Plata,VozackaDozvola)
-            VALUES (@IdPartnera,@Uloga,@Plata,@VozackaDozvola)";
+            cmd.CommandText = @"INSERT INTO Radnik(IdPartnera,Uloga,Plata,VozackaDozvola,Privilegije)
+            VALUES (@IdPartnera,@Uloga,@Plata,@VozackaDozvola,@Privilegije)";
             cmd.Parameters.AddWithValue("@IdPartnera", partner.IdPartnera);
             cmd.Parameters.AddWithValue("@Uloga", radnik.Uloga);
             cmd.Parameters.AddWithValue("@Plata", radnik.Plata);
             cmd.Parameters.AddWithValue("@VozackaDozvola", radnik.VozackaDozvola);
+            cmd.Parameters.AddWithValue("@Privilegije", radnik.Privilegije);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -355,7 +356,7 @@ namespace Servis_Racunara
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = @"update (Partner P inner join Radnik R on R.Idpartnera=P.IdPartnera) inner join Telefon T on T.IdPartnera=P.IdPartnera
             SET P.NazivUlice =@NazivUlice ,P.PostanskiBrojGrada =@PostanskiBrojGrada,
-            P.KucniBroj =@KucniBroj,P.Ime =@Ime,T.BrojTelefona =@BrojTelefona,P.Email=@Email,R.Uloga=@Uloga,R.Plata=@Plata,R.VozackaDozvola=@VozackaDozvola
+            P.KucniBroj =@KucniBroj,P.Ime =@Ime,T.BrojTelefona =@BrojTelefona,P.Email=@Email,R.Uloga=@Uloga,R.Plata=@Plata,R.VozackaDozvola=@VozackaDozvola,R.Privilegije=@Privilegije
             where P.IdPartnera=@Id";
             cmd.Parameters.AddWithValue("@Id", radnik.IdPartnera);
             cmd.Parameters.AddWithValue("@NazivUlice",radnik.Ulica);
@@ -367,6 +368,7 @@ namespace Servis_Racunara
             cmd.Parameters.AddWithValue("@Uloga", radnik.Uloga);
             cmd.Parameters.AddWithValue("@Plata", radnik.Plata);
             cmd.Parameters.AddWithValue("@VozackaDozvola", radnik.VozackaDozvola);
+            cmd.Parameters.AddWithValue("@Privilegije", radnik.Privilegije);
             cmd.ExecuteNonQuery();
             conn.Close();
             
@@ -836,7 +838,7 @@ namespace Servis_Racunara
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText =
-                @"SELECT P.IdPartnera,Ime,NazivUlice,NazivGrada,BrojTelefona,KucniBroj,Email,Uloga,Plata,VozackaDozvola
+                @"SELECT P.IdPartnera,Ime,NazivUlice,NazivGrada,BrojTelefona,KucniBroj,Email,Uloga,Plata,VozackaDozvola,Privilegije
                 FROM ((partner P inner join Grad G on G.PostanskiBrojGrada=P.PostanskiBrojGrada) inner join Telefon T on P.IdPartnera=T.IdPartnera) inner join Radnik R on R.IdPartnera=P.IdPartnera
                   WHERE (Ime LIKE @str OR  NazivUlice LIKE @str OR NazivGrada LIKE @str) and P.Obrisan=0
                   ORDER BY IdPartnera,Ime";
@@ -855,7 +857,8 @@ namespace Servis_Racunara
                     Email = reader.GetString(6),
                     Uloga = reader.GetString(7),
                     Plata = reader.GetDecimal(8),
-                    VozackaDozvola = reader.GetString(9)
+                    VozackaDozvola = reader.GetString(9),
+                    Privilegije = reader.GetInt32(10)
 
 
                 }) ;
@@ -951,6 +954,70 @@ namespace Servis_Racunara
             return privilegija;
         }
 
+
+        public static void UpdateFont(int IdKorisnika,int IdFonta)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = @"UPDATE Radnik SET  IDFonta=@IdFonta WHERE IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika", IdKorisnika);
+            cmd.Parameters.AddWithValue("@IdFonta",IdFonta);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void UpdateTema(int IdKorisnika, int IdTeme)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = @"UPDATE Radnik SET IdTeme=@IdTeme WHERE IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika", IdKorisnika);
+            cmd.Parameters.AddWithValue("@IdTeme", IdTeme);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static int GetFont(int idKorisnika)
+        {
+            int idfonta = 0;
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = @"SELECT IdFonta from Radnik WHERE IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika", idKorisnika);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+
+                idfonta = reader.GetInt32(0);
+
+            }
+            reader.Close();
+            conn.Close();
+            return idfonta;
+        }
+
+        public static int GetTema(int idKorisnika)
+        {
+            int idteme = 0;
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = @"SELECT IdTeme from Radnik WHERE IdPartnera=@idKorisnika";
+            cmd.Parameters.AddWithValue("@idKorisnika", idKorisnika);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+
+                idteme = reader.GetInt32(0);
+
+            }
+            reader.Close();
+            conn.Close();
+            return idteme;
+        }
 
 
     }

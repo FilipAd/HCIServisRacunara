@@ -29,9 +29,14 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbKomponentaStavka = new System.Windows.Forms.GroupBox();
             this.dgvKomponentaStavka = new System.Windows.Forms.DataGridView();
+            this.ColumnSifraKomponenteKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNazivKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCijenaPoKomaduKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDostupnaKolicinaKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnOznaci = new System.Windows.Forms.DataGridViewButtonColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lbBrojRadnogNalogaKS = new System.Windows.Forms.Label();
             this.lbSifraKomponenteKS = new System.Windows.Forms.Label();
@@ -53,11 +58,6 @@ namespace Servis_Racunara
             this.tbJedinicnaCijenaKS = new System.Windows.Forms.TextBox();
             this.lbNazivKS = new System.Windows.Forms.Label();
             this.tbNazivKS = new System.Windows.Forms.TextBox();
-            this.ColumnSifraKomponenteKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNazivKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCijenaPoKomaduKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDostupnaKolicinaKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnOznaci = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbKomponentaStavka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomponentaStavka)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,41 @@ namespace Servis_Racunara
             this.dgvKomponentaStavka.Size = new System.Drawing.Size(876, 247);
             this.dgvKomponentaStavka.TabIndex = 0;
             this.dgvKomponentaStavka.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKomponentaStavka_CellContentClick);
+            // 
+            // ColumnSifraKomponenteKS
+            // 
+            this.ColumnSifraKomponenteKS.HeaderText = "Sifra";
+            this.ColumnSifraKomponenteKS.Name = "ColumnSifraKomponenteKS";
+            // 
+            // ColumnNazivKS
+            // 
+            this.ColumnNazivKS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnNazivKS.HeaderText = "Naziv";
+            this.ColumnNazivKS.Name = "ColumnNazivKS";
+            // 
+            // ColumnCijenaPoKomaduKS
+            // 
+            this.ColumnCijenaPoKomaduKS.HeaderText = "Cijena po komadu";
+            this.ColumnCijenaPoKomaduKS.Name = "ColumnCijenaPoKomaduKS";
+            // 
+            // ColumnDostupnaKolicinaKS
+            // 
+            this.ColumnDostupnaKolicinaKS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnDostupnaKolicinaKS.HeaderText = "DostupnaKolicina";
+            this.ColumnDostupnaKolicinaKS.Name = "ColumnDostupnaKolicinaKS";
+            this.ColumnDostupnaKolicinaKS.Width = 115;
+            // 
+            // ColumnOznaci
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnOznaci.HeaderText = "Oznaci";
+            this.ColumnOznaci.Name = "ColumnOznaci";
+            this.ColumnOznaci.Text = "Oznaci";
+            this.ColumnOznaci.UseColumnTextForButtonValue = true;
             // 
             // lbBrojRadnogNalogaKS
             // 
@@ -119,7 +154,7 @@ namespace Servis_Racunara
             // 
             // tbBrojNalogaKS
             // 
-            this.tbBrojNalogaKS.Location = new System.Drawing.Point(252, 375);
+            this.tbBrojNalogaKS.Location = new System.Drawing.Point(269, 374);
             this.tbBrojNalogaKS.Name = "tbBrojNalogaKS";
             this.tbBrojNalogaKS.ReadOnly = true;
             this.tbBrojNalogaKS.Size = new System.Drawing.Size(143, 20);
@@ -127,7 +162,7 @@ namespace Servis_Racunara
             // 
             // tbSifraKomponenteKS
             // 
-            this.tbSifraKomponenteKS.Location = new System.Drawing.Point(252, 410);
+            this.tbSifraKomponenteKS.Location = new System.Drawing.Point(269, 410);
             this.tbSifraKomponenteKS.Name = "tbSifraKomponenteKS";
             this.tbSifraKomponenteKS.ReadOnly = true;
             this.tbSifraKomponenteKS.Size = new System.Drawing.Size(143, 20);
@@ -135,7 +170,7 @@ namespace Servis_Racunara
             // 
             // tbDostupnoKS
             // 
-            this.tbDostupnoKS.Location = new System.Drawing.Point(252, 478);
+            this.tbDostupnoKS.Location = new System.Drawing.Point(269, 478);
             this.tbDostupnoKS.Name = "tbDostupnoKS";
             this.tbDostupnoKS.ReadOnly = true;
             this.tbDostupnoKS.Size = new System.Drawing.Size(143, 20);
@@ -173,7 +208,7 @@ namespace Servis_Racunara
             // 
             // tbKolicinaKS
             // 
-            this.tbKolicinaKS.Location = new System.Drawing.Point(576, 410);
+            this.tbKolicinaKS.Location = new System.Drawing.Point(593, 410);
             this.tbKolicinaKS.Name = "tbKolicinaKS";
             this.tbKolicinaKS.Size = new System.Drawing.Size(190, 20);
             this.tbKolicinaKS.TabIndex = 10;
@@ -181,7 +216,7 @@ namespace Servis_Racunara
             // 
             // tbRabatKS
             // 
-            this.tbRabatKS.Location = new System.Drawing.Point(576, 453);
+            this.tbRabatKS.Location = new System.Drawing.Point(593, 452);
             this.tbRabatKS.Name = "tbRabatKS";
             this.tbRabatKS.Size = new System.Drawing.Size(190, 20);
             this.tbRabatKS.TabIndex = 11;
@@ -189,7 +224,7 @@ namespace Servis_Racunara
             // 
             // tbUkupnaCijenaKS
             // 
-            this.tbUkupnaCijenaKS.Location = new System.Drawing.Point(627, 496);
+            this.tbUkupnaCijenaKS.Location = new System.Drawing.Point(644, 496);
             this.tbUkupnaCijenaKS.Name = "tbUkupnaCijenaKS";
             this.tbUkupnaCijenaKS.ReadOnly = true;
             this.tbUkupnaCijenaKS.Size = new System.Drawing.Size(139, 20);
@@ -248,7 +283,7 @@ namespace Servis_Racunara
             // 
             // tbJedinicnaCijenaKS
             // 
-            this.tbJedinicnaCijenaKS.Location = new System.Drawing.Point(252, 516);
+            this.tbJedinicnaCijenaKS.Location = new System.Drawing.Point(269, 516);
             this.tbJedinicnaCijenaKS.Name = "tbJedinicnaCijenaKS";
             this.tbJedinicnaCijenaKS.ReadOnly = true;
             this.tbJedinicnaCijenaKS.Size = new System.Drawing.Size(143, 20);
@@ -266,46 +301,11 @@ namespace Servis_Racunara
             // 
             // tbNazivKS
             // 
-            this.tbNazivKS.Location = new System.Drawing.Point(139, 442);
+            this.tbNazivKS.Location = new System.Drawing.Point(156, 442);
             this.tbNazivKS.Name = "tbNazivKS";
             this.tbNazivKS.ReadOnly = true;
             this.tbNazivKS.Size = new System.Drawing.Size(256, 20);
             this.tbNazivKS.TabIndex = 20;
-            // 
-            // ColumnSifraKomponenteKS
-            // 
-            this.ColumnSifraKomponenteKS.HeaderText = "Sifra";
-            this.ColumnSifraKomponenteKS.Name = "ColumnSifraKomponenteKS";
-            // 
-            // ColumnNazivKS
-            // 
-            this.ColumnNazivKS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnNazivKS.HeaderText = "Naziv";
-            this.ColumnNazivKS.Name = "ColumnNazivKS";
-            // 
-            // ColumnCijenaPoKomaduKS
-            // 
-            this.ColumnCijenaPoKomaduKS.HeaderText = "Cijena po komadu";
-            this.ColumnCijenaPoKomaduKS.Name = "ColumnCijenaPoKomaduKS";
-            // 
-            // ColumnDostupnaKolicinaKS
-            // 
-            this.ColumnDostupnaKolicinaKS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnDostupnaKolicinaKS.HeaderText = "DostupnaKolicina";
-            this.ColumnDostupnaKolicinaKS.Name = "ColumnDostupnaKolicinaKS";
-            this.ColumnDostupnaKolicinaKS.Width = 115;
-            // 
-            // ColumnOznaci
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnOznaci.HeaderText = "Oznaci";
-            this.ColumnOznaci.Name = "ColumnOznaci";
-            this.ColumnOznaci.Text = "Oznaci";
-            this.ColumnOznaci.UseColumnTextForButtonValue = true;
             // 
             // KomponentaStavkaForma
             // 

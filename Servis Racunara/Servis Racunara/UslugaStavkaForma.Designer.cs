@@ -29,7 +29,7 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsluga = new System.Windows.Forms.DataGridView();
             this.ColumnSifraUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNazivUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,11 +90,11 @@ namespace Servis_Racunara
             // 
             // ColumnOznaci
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnOznaci.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnOznaci.HeaderText = "Oznaci";
             this.ColumnOznaci.Name = "ColumnOznaci";
             this.ColumnOznaci.Text = "Oznaci";
@@ -142,7 +142,7 @@ namespace Servis_Racunara
             // 
             // tbBrojNalogaUS
             // 
-            this.tbBrojNalogaUS.Location = new System.Drawing.Point(190, 422);
+            this.tbBrojNalogaUS.Location = new System.Drawing.Point(249, 421);
             this.tbBrojNalogaUS.Name = "tbBrojNalogaUS";
             this.tbBrojNalogaUS.ReadOnly = true;
             this.tbBrojNalogaUS.Size = new System.Drawing.Size(175, 20);
@@ -151,7 +151,7 @@ namespace Servis_Racunara
             // 
             // tbSifraUS
             // 
-            this.tbSifraUS.Location = new System.Drawing.Point(131, 458);
+            this.tbSifraUS.Location = new System.Drawing.Point(190, 460);
             this.tbSifraUS.Name = "tbSifraUS";
             this.tbSifraUS.ReadOnly = true;
             this.tbSifraUS.Size = new System.Drawing.Size(234, 20);
@@ -159,7 +159,7 @@ namespace Servis_Racunara
             // 
             // tbNazivUS
             // 
-            this.tbNazivUS.Location = new System.Drawing.Point(131, 492);
+            this.tbNazivUS.Location = new System.Drawing.Point(190, 494);
             this.tbNazivUS.Name = "tbNazivUS";
             this.tbNazivUS.ReadOnly = true;
             this.tbNazivUS.Size = new System.Drawing.Size(234, 20);
@@ -167,7 +167,7 @@ namespace Servis_Racunara
             // 
             // tbCijenaPoSatuUS
             // 
-            this.tbCijenaPoSatuUS.Location = new System.Drawing.Point(207, 524);
+            this.tbCijenaPoSatuUS.Location = new System.Drawing.Point(266, 524);
             this.tbCijenaPoSatuUS.Name = "tbCijenaPoSatuUS";
             this.tbCijenaPoSatuUS.ReadOnly = true;
             this.tbCijenaPoSatuUS.Size = new System.Drawing.Size(158, 20);
@@ -185,7 +185,7 @@ namespace Servis_Racunara
             // 
             // tbKolicinaUS
             // 
-            this.tbKolicinaUS.Location = new System.Drawing.Point(605, 408);
+            this.tbKolicinaUS.Location = new System.Drawing.Point(614, 410);
             this.tbKolicinaUS.Name = "tbKolicinaUS";
             this.tbKolicinaUS.Size = new System.Drawing.Size(147, 20);
             this.tbKolicinaUS.TabIndex = 10;
@@ -203,7 +203,7 @@ namespace Servis_Racunara
             // 
             // tbRabatUS
             // 
-            this.tbRabatUS.Location = new System.Drawing.Point(605, 448);
+            this.tbRabatUS.Location = new System.Drawing.Point(614, 447);
             this.tbRabatUS.Name = "tbRabatUS";
             this.tbRabatUS.Size = new System.Drawing.Size(147, 20);
             this.tbRabatUS.TabIndex = 12;
@@ -221,7 +221,7 @@ namespace Servis_Racunara
             // 
             // tbCijenaUS
             // 
-            this.tbCijenaUS.Location = new System.Drawing.Point(605, 492);
+            this.tbCijenaUS.Location = new System.Drawing.Point(614, 492);
             this.tbCijenaUS.Name = "tbCijenaUS";
             this.tbCijenaUS.ReadOnly = true;
             this.tbCijenaUS.Size = new System.Drawing.Size(147, 20);

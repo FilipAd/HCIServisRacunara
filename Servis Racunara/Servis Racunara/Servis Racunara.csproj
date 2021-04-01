@@ -329,5 +329,20 @@
   <ItemGroup>
     <None Include="Resources\wp2747048.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2747053.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2747065.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2747152.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2747181.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2747265.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

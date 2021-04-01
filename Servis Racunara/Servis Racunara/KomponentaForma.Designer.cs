@@ -29,9 +29,9 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvKomponenta = new System.Windows.Forms.DataGridView();
             this.ColumnSifra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNaziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,11 +104,11 @@ namespace Servis_Racunara
             // 
             // ColumnIzmjeni
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnIzmjeni.HeaderText = "Izmjeni";
             this.ColumnIzmjeni.Name = "ColumnIzmjeni";
             this.ColumnIzmjeni.Text = "Izmjeni";
@@ -116,11 +116,11 @@ namespace Servis_Racunara
             // 
             // ColumnObrisi
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnObrisi.HeaderText = "Obrisi";
             this.ColumnObrisi.Name = "ColumnObrisi";
             this.ColumnObrisi.Text = "Obrisi";
@@ -128,11 +128,11 @@ namespace Servis_Racunara
             // 
             // ColumnDodaj
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnDodaj.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnDodaj.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnDodaj.HeaderText = "Dodaj";
             this.ColumnDodaj.Name = "ColumnDodaj";
             this.ColumnDodaj.Text = "Dodaj";
@@ -289,6 +289,7 @@ namespace Servis_Racunara
             this.Controls.Add(this.dgvKomponenta);
             this.Name = "KomponentaForma";
             this.Text = "KomponentaForma";
+            this.Load += new System.EventHandler(this.KomponentaForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomponenta)).EndInit();
             this.gbDodavanjeKomponente.ResumeLayout(false);
             this.gbDodavanjeKomponente.PerformLayout();

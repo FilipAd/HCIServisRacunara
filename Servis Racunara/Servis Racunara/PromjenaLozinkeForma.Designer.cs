@@ -146,6 +146,7 @@ namespace Servis_Racunara
             this.Controls.Add(this.lbStaraLozinka);
             this.Name = "PromjenaLozinkeForma";
             this.Text = "PromjenaLozinkeForma";
+            this.Load += new System.EventHandler(this.PromjenaLozinkeForma_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
