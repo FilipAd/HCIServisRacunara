@@ -29,11 +29,11 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbDodajPL = new System.Windows.Forms.RadioButton();
             this.rbDodajFL = new System.Windows.Forms.RadioButton();
             this.rbDodavanjeRadnika = new System.Windows.Forms.RadioButton();
@@ -428,6 +428,8 @@ namespace Servis_Racunara
             // 
             // dgvSubjekat
             // 
+            this.dgvSubjekat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSubjekat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubjekat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
@@ -531,11 +533,11 @@ namespace Servis_Racunara
             // ColumnIzmjeni
             // 
             this.ColumnIzmjeni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle81;
             this.ColumnIzmjeni.HeaderText = "Izmjeni";
             this.ColumnIzmjeni.Name = "ColumnIzmjeni";
             this.ColumnIzmjeni.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -546,11 +548,11 @@ namespace Servis_Racunara
             // ColumnObrisi
             // 
             this.ColumnObrisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle82.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle82;
             this.ColumnObrisi.HeaderText = "Obrisi";
             this.ColumnObrisi.Name = "ColumnObrisi";
             this.ColumnObrisi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -562,11 +564,11 @@ namespace Servis_Racunara
             // ColumnDodajNaNalog
             // 
             this.ColumnDodajNaNalog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnDodajNaNalog.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle83.BackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnDodajNaNalog.DefaultCellStyle = dataGridViewCellStyle83;
             this.ColumnDodajNaNalog.HeaderText = "Nalog";
             this.ColumnDodajNaNalog.Name = "ColumnDodajNaNalog";
             this.ColumnDodajNaNalog.Text = "Nalog";
@@ -598,6 +600,7 @@ namespace Servis_Racunara
             // 
             // tbFilterPartnera
             // 
+            this.tbFilterPartnera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFilterPartnera.Location = new System.Drawing.Point(531, 10);
             this.tbFilterPartnera.Name = "tbFilterPartnera";
             this.tbFilterPartnera.Size = new System.Drawing.Size(169, 20);
@@ -606,6 +609,7 @@ namespace Servis_Racunara
             // 
             // lbFilterPartnera
             // 
+            this.lbFilterPartnera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFilterPartnera.AutoSize = true;
             this.lbFilterPartnera.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFilterPartnera.Location = new System.Drawing.Point(423, 10);
@@ -616,6 +620,9 @@ namespace Servis_Racunara
             // 
             // dvgRadnik
             // 
+            this.dvgRadnik.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgRadnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgRadnik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnIdPartneraRadnik,
@@ -706,11 +713,11 @@ namespace Servis_Racunara
             // ColumnIzmjeniRadnik
             // 
             this.ColumnIzmjeniRadnik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeniRadnik.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle84.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeniRadnik.DefaultCellStyle = dataGridViewCellStyle84;
             this.ColumnIzmjeniRadnik.HeaderText = "Izmjeni";
             this.ColumnIzmjeniRadnik.Name = "ColumnIzmjeniRadnik";
             this.ColumnIzmjeniRadnik.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -722,11 +729,11 @@ namespace Servis_Racunara
             // ColumnObrisiRadnik
             // 
             this.ColumnObrisiRadnik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisiRadnik.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle85.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisiRadnik.DefaultCellStyle = dataGridViewCellStyle85;
             this.ColumnObrisiRadnik.HeaderText = "Obrisi";
             this.ColumnObrisiRadnik.Name = "ColumnObrisiRadnik";
             this.ColumnObrisiRadnik.Text = "Obrisi";
@@ -735,6 +742,7 @@ namespace Servis_Racunara
             // 
             // btSacuvajIzmjeneRadnika
             // 
+            this.btSacuvajIzmjeneRadnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btSacuvajIzmjeneRadnika.BackColor = System.Drawing.Color.NavajoWhite;
             this.btSacuvajIzmjeneRadnika.Enabled = false;
             this.btSacuvajIzmjeneRadnika.Location = new System.Drawing.Point(6, 194);
@@ -747,6 +755,7 @@ namespace Servis_Racunara
             // 
             // tbFilterRadnika
             // 
+            this.tbFilterRadnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFilterRadnika.Location = new System.Drawing.Point(531, 16);
             this.tbFilterRadnika.Name = "tbFilterRadnika";
             this.tbFilterRadnika.Size = new System.Drawing.Size(169, 20);
@@ -755,6 +764,7 @@ namespace Servis_Racunara
             // 
             // lbPreatraziRadnika
             // 
+            this.lbPreatraziRadnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPreatraziRadnika.AutoSize = true;
             this.lbPreatraziRadnika.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreatraziRadnika.Location = new System.Drawing.Point(423, 15);
@@ -765,6 +775,9 @@ namespace Servis_Racunara
             // 
             // gbKlijent
             // 
+            this.gbKlijent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbKlijent.Controls.Add(this.btOsvjeziKlijenta);
             this.gbKlijent.Controls.Add(this.lbFilterPartnera);
             this.gbKlijent.Controls.Add(this.tbFilterPartnera);
@@ -790,6 +803,9 @@ namespace Servis_Racunara
             // 
             // gbRadnik
             // 
+            this.gbRadnik.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbRadnik.Controls.Add(this.btOsvjeziRadnika);
             this.gbRadnik.Controls.Add(this.btSacuvajIzmjeneRadnika);
             this.gbRadnik.Controls.Add(this.lbPreatraziRadnika);
@@ -804,6 +820,7 @@ namespace Servis_Racunara
             // 
             // btOsvjeziRadnika
             // 
+            this.btOsvjeziRadnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btOsvjeziRadnika.Image = global::Servis_Racunara.Properties.Resources.refresh__1_;
             this.btOsvjeziRadnika.Location = new System.Drawing.Point(157, 194);
             this.btOsvjeziRadnika.Name = "btOsvjeziRadnika";
@@ -814,8 +831,8 @@ namespace Servis_Racunara
             // 
             // SubjekatForma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1280, 564);
             this.Controls.Add(this.gbRadnik);

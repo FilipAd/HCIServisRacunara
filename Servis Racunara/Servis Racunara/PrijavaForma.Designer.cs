@@ -149,6 +149,8 @@ namespace Servis_Racunara
             this.Controls.Add(this.lbKorisnickoIme);
             this.Controls.Add(this.tbLozinka);
             this.Controls.Add(this.btPrijava);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(604, 387);
             this.Name = "PrijavaForma";
             this.Text = "Prijava";
             this.gbJezici.ResumeLayout(false);
