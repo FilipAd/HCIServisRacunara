@@ -39,15 +39,35 @@ PRIMARY KEY(BrojTelefona,IdPartnera),
 CONSTRAINT TELEFON_PARTNER
 FOREIGN KEY(IdPartnera) references PARTNER(IdPartnera));
 
+DROP TABLE IF EXISTS FONT;
+CREATE TABLE FONT(
+IDFonta INT AUTO_INCREMENT,
+NazivFonta VARCHAR(60) NOT NULL,
+Primary key(IdFonta));
+
+DROP TABLE IF EXISTS TEMA;
+CREATE TABLE TEMA(
+IDTeme INT AUTO_INCREMENT,
+NazivTeme VARCHAR(60) NOT NULL,
+Primary key(IdTeme));
+
 DROP TABLE IF EXISTS RADNIK;
 create table RADNIK(
 IdPartnera INT,
 Uloga VARCHAR(50) NOT NULL,
 Plata DECIMAL(10,2) NOT NULL,
 VozackaDozvola varchar(2) NOT NULL,
+Lozinka VARCHAR(200) DEFAULT '827CCB0EEA8A706C4C34A16891F84E7B',
+Privilegije TINYINT UNSIGNED DEFAULT '0',
+IDFonta INT DEFAULT 5,
+IDTeme INT DEFAULT 4,
 PRIMARY KEY (IdPartnera),
 CONSTRAINT RADNIK_PARTNER
-FOREIGN KEY (IdPartnera) references PARTNER(IdPartnera));
+FOREIGN KEY (IdPartnera) references PARTNER(IdPartnera),
+CONSTRAINT RADNIK_FONT
+FOREIGN KEY(IDFonta) references FONT(IDFonta),
+CONSTRAINT RADNIK_TEMA
+FOREIGN KEY(IDTeme) references TEMA(IDTeme));
 
 DROP TABLE IF EXISTS KLIJENT;
 create table KLIJENT(
@@ -74,7 +94,7 @@ StatusNaloga VARCHAR(20) ,
 DatumKreiranja DATETIME NOT NULL,
 DatumZavrsetka DATETIME,
 IdServiseraZ INT,
-IdServiseraR INT,
+IdServiseraR INT NULL,
 IdKlijenta INT,
 Obrisan TINYINT DEFAULT 0,
 CONSTRAINT SERVISER_KOJI_JE_KREIRAO_NALOG
@@ -135,6 +155,8 @@ CONSTRAINT USLUGA_STAVKA_USLUGA
 FOREIGN KEY(SifraUsluge) references USLUGA(SifraUsluge),
 CONSTRAINT USLUGA_STAVKA_RADNI_NALOG
 FOREIGN KEY(BrojRadnogNaloga) references RADNI_NALOG(BrojRadnogNaloga));
+
+
 
 CREATE PROCEDURE UnosUlice (IN pPostanskiBrojGrada INT, IN pNazivUlice varchar(50))
 INSERT INTO ULICA(PostanskiBrojGrada,NazivUlice) VALUES (pPostanskiBrojGrada,pNazivUlice);
@@ -758,6 +780,46 @@ INSERT INTO `servisracunara`.`GRAD` (`PostanskiBrojGrada`,`NazivGrada`) VALUES (
 INSERT INTO `servisracunara`.`GRAD` (`PostanskiBrojGrada`,`NazivGrada`) VALUES ('88286','Zovi Do');
 INSERT INTO `servisracunara`.`GRAD` (`PostanskiBrojGrada`,`NazivGrada`) VALUES ('76214','Zovik Gornji');
 
+INSERT INTO `servisracunara`.`FONT`(`NazivFonta`)VALUES('Segoe UI');
+INSERT INTO `servisracunara`.`FONT`(`NazivFonta`)VALUES('Magneto');
+INSERT INTO `servisracunara`.`FONT`(`NazivFonta`)VALUES('Tahoma');
+INSERT INTO `servisracunara`.`FONT`(`NazivFonta`)VALUES('Consolas');
+INSERT INTO `servisracunara`.`FONT`(`NazivFonta`)VALUES('Book Antiqua');
+
+
+INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Tema 1');
+INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Tema 2');
+INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Tema 3');
+INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Bez Teme');
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Filip Adamović','fadamovic@gmail.com','78000','Dušana Subotića','12');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/820-393','1');
+INSERT INTO `servisracunara`.`Klijent`(`IdPartnera`,`BrojLicneKarte`,`JIB`,`JestePravnoLice`)VALUES('1','756842319','','0');
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Đorđe Milovanović','Dj_milovnaovic@gmail.com','78000','Ognjena Price','4');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/567-431','2');
+INSERT INTO `servisracunara`.`Klijent`(`IdPartnera`,`BrojLicneKarte`,`JIB`,`JestePravnoLice`)VALUES('2','491842319','','0');
+
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Stanislav Panić','stanislav@gmail.com','78211','Hercegovačka','55');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/811-141','3');
+INSERT INTO `servisracunara`.`Radnik`(`IdPartnera`,`Uloga`,`Plata`,`VozackaDozvola`)VALUES('3','Serviser','900','C');
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Miroslav Ivančević','mikiivancevic@gmail.com','70260','Studenička','17');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/883-163','4');
+INSERT INTO `servisracunara`.`Radnik`(`IdPartnera`,`Uloga`,`Plata`,`VozackaDozvola`)VALUES('4','Serviser','1000','B');
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Draško Rudić','draskorud@gmail.com','70260','Majora Podraščanina','82');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/824-143','5');
+INSERT INTO `servisracunara`.`Radnik`(`IdPartnera`,`Uloga`,`Plata`,`VozackaDozvola`)VALUES('5','Šef servisa','1200','B');
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('UNIS','UNIS@mail.com','78000','Ramička','69');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/527-479','6');
+INSERT INTO `servisracunara`.`Klijent`(`IdPartnera`,`BrojLicneKarte`,`JIB`,`JestePravnoLice`)VALUES('6','','4678952354782','1');
+
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Miroslav Matić','maticmiroslav@gmail.com','78000','Desanke Maksimović','10');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/588-522','7');
+INSERT INTO `servisracunara`.`Radnik`(`IdPartnera`,`Uloga`,`Plata`,`VozackaDozvola`,`Privilegije`)VALUES('7','Direktor','2000','B','1');
 
 
 
