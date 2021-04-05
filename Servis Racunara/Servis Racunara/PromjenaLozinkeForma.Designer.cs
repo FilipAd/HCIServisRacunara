@@ -144,6 +144,9 @@ namespace Servis_Racunara
             this.Controls.Add(this.lbPotvrdaLozinke);
             this.Controls.Add(this.lbNovaLozinka);
             this.Controls.Add(this.lbStaraLozinka);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(529, 416);
+            this.MinimumSize = new System.Drawing.Size(529, 416);
             this.Name = "PromjenaLozinkeForma";
             this.Text = "PromjenaLozinkeForma";
             this.Load += new System.EventHandler(this.PromjenaLozinkeForma_Load);

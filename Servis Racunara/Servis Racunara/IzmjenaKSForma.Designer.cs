@@ -241,6 +241,9 @@ namespace Servis_Racunara
             this.Controls.Add(this.lbNazivIzmjenaKS);
             this.Controls.Add(this.lbSifraKomponenteIzmjenaKS);
             this.Controls.Add(this.lbBrojNalogaIzmjenaKS);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(699, 449);
+            this.MinimumSize = new System.Drawing.Size(699, 449);
             this.Name = "IzmjenaKSForma";
             this.Text = "IzmjenaKSForma";
             this.Load += new System.EventHandler(this.IzmjenaKSForma_Load);

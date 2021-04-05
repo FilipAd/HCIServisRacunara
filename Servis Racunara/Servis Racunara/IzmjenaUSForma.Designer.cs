@@ -237,6 +237,9 @@ namespace Servis_Racunara
             this.Controls.Add(this.lbNazivIzmjenaUS);
             this.Controls.Add(this.lbSifraIzmjenaUS);
             this.Controls.Add(this.lbBrojNalogaIzmjenaUS);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(563, 489);
+            this.MinimumSize = new System.Drawing.Size(563, 489);
             this.Name = "IzmjenaUSForma";
             this.Text = "IzmjenaUSForma";
             this.Load += new System.EventHandler(this.IzmjenaUSForma_Load);
