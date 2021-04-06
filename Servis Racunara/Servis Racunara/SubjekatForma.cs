@@ -142,6 +142,17 @@ namespace Servis_Racunara
                     string identifikator = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnId.Index].Value.ToString();
                     int pocetniID = Int32.Parse(identifikator);
                     string ime = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnIme.Index].Value.ToString();
+                    GlavnaFormaSF.tbZahtjev.Text = String.Empty;
+                    GlavnaFormaSF.tbNapomena.Text = String.Empty;
+                    GlavnaFormaSF.dgvKomponentaStavka.Rows.Clear();
+                    GlavnaFormaSF.dgvUslugaStavka.Rows.Clear();
+                    GlavnaFormaSF.cbRadi.SelectedItem = null;
+                    GlavnaFormaSF.cbZaprimio.SelectedItem = null;
+                    GlavnaFormaSF.cbStatus.SelectedItem = null;
+                    GlavnaFormaSF.tbBrojRadnogNaloga.Text = String.Empty;
+                    GlavnaFormaSF.lbStatus.BackColor = SystemColors.Control;
+                    GlavnaFormaSF.dtpDatumKreiranja.Value = DateTime.Now;
+                    GlavnaFormaSF.dtpDatumZavrsetka.Value = DateTime.Now;
                     tbIme.Text = ime;
                     tbUlica.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnUlica.Index].Value.ToString();
                     tbBrojTelefona.Text = dgvSubjekat.Rows[e.RowIndex].Cells[ColumnTelefon.Index].Value.ToString();
@@ -160,6 +171,7 @@ namespace Servis_Racunara
                         GlavnaFormaSF.tbKlijentGF.Text = ime;
                         GlavnaFormaSF.tbIdKlijentaGF.Text = identifikator;
                         GlavnaFormaSF.btSacuvajNalog.Enabled = true;
+  
                         resetujTextBoxove();
                         this.Close();
                     }

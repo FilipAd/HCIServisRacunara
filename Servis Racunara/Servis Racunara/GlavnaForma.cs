@@ -435,12 +435,12 @@ namespace Servis_Racunara
                     DatumZavrsetka = dtpDatumZavrsetka.Value
 
                 };
-                if (cbRadi.SelectedItem as ComboBoxItem is null)
+                if (cbRadi.SelectedItem != null)
                 {
-
+                    nalog.IdServiseraRadi = (cbRadi.SelectedItem as ComboBoxItem).Vrijednost;
                 }
                 else
-                    nalog.IdServiseraRadi = (cbRadi.SelectedItem as ComboBoxItem).Vrijednost;
+                    nalog.IdServiseraRadi=8;
 
                 DbServisRacunara.InsertRadniNalog(nalog);
                 MessageBox.Show(tbIdKlijentaGF.Text);

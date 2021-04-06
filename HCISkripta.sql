@@ -94,7 +94,7 @@ StatusNaloga VARCHAR(20) ,
 DatumKreiranja DATETIME NOT NULL,
 DatumZavrsetka DATETIME,
 IdServiseraZ INT,
-IdServiseraR INT NULL,
+IdServiseraR INT DEFAULT 8,
 IdKlijenta INT,
 Obrisan TINYINT DEFAULT 0,
 CONSTRAINT SERVISER_KOJI_JE_KREIRAO_NALOG
@@ -792,6 +792,8 @@ INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Tema 2');
 INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Tema 3');
 INSERT INTO `servisracunara`.`TEMA`(`NazivTeme`)VALUES('Bez Teme');
 
+
+
 INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('Filip Adamović','fadamovic@gmail.com','78000','Dušana Subotića','12');
 INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/820-393','1');
 INSERT INTO `servisracunara`.`Klijent`(`IdPartnera`,`BrojLicneKarte`,`JIB`,`JestePravnoLice`)VALUES('1','756842319','','0');
@@ -822,4 +824,6 @@ INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('065/5
 INSERT INTO `servisracunara`.`Radnik`(`IdPartnera`,`Uloga`,`Plata`,`VozackaDozvola`,`Privilegije`)VALUES('7','Direktor','2000','B','1');
 
 
-
+INSERT INTO `servisracunara`.`PARTNER`(`Ime`,`email`,`PostanskiBrojGrada`,`NazivUlice`,`KucniBroj`)VALUES('N.N.','','78000','','0');
+INSERT INTO `servisracunara`.`Telefon`(`BrojTelefona`,`IdPartnera`)VALUES('','8');
+INSERT INTO `servisracunara`.`Radnik`(`IdPartnera`,`Uloga`,`Plata`,`VozackaDozvola`,`Privilegije`)VALUES('8','','0','','0');
