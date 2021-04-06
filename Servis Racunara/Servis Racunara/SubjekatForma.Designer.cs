@@ -29,11 +29,11 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbDodajPL = new System.Windows.Forms.RadioButton();
             this.rbDodajFL = new System.Windows.Forms.RadioButton();
             this.rbDodavanjeRadnika = new System.Windows.Forms.RadioButton();
@@ -159,7 +159,7 @@ namespace Servis_Racunara
             this.lbIme.Location = new System.Drawing.Point(11, 40);
             this.lbIme.Name = "lbIme";
             this.lbIme.Size = new System.Drawing.Size(42, 21);
-            this.lbIme.TabIndex = 3;
+            this.lbIme.TabIndex = 0;
             this.lbIme.Text = "Ime:";
             // 
             // tbIme
@@ -167,7 +167,7 @@ namespace Servis_Racunara
             this.tbIme.Location = new System.Drawing.Point(15, 64);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(204, 27);
-            this.tbIme.TabIndex = 4;
+            this.tbIme.TabIndex = 2;
             // 
             // lbUlica
             // 
@@ -176,7 +176,7 @@ namespace Servis_Racunara
             this.lbUlica.Location = new System.Drawing.Point(11, 112);
             this.lbUlica.Name = "lbUlica";
             this.lbUlica.Size = new System.Drawing.Size(51, 21);
-            this.lbUlica.TabIndex = 7;
+            this.lbUlica.TabIndex = 4;
             this.lbUlica.Text = "Ulica:";
             // 
             // tbUlica
@@ -184,7 +184,7 @@ namespace Servis_Racunara
             this.tbUlica.Location = new System.Drawing.Point(15, 145);
             this.tbUlica.Name = "tbUlica";
             this.tbUlica.Size = new System.Drawing.Size(204, 27);
-            this.tbUlica.TabIndex = 8;
+            this.tbUlica.TabIndex = 6;
             // 
             // lbGrad
             // 
@@ -193,7 +193,7 @@ namespace Servis_Racunara
             this.lbGrad.Location = new System.Drawing.Point(13, 196);
             this.lbGrad.Name = "lbGrad";
             this.lbGrad.Size = new System.Drawing.Size(51, 21);
-            this.lbGrad.TabIndex = 9;
+            this.lbGrad.TabIndex = 8;
             this.lbGrad.Text = "Grad:";
             // 
             // cbGrad
@@ -204,7 +204,7 @@ namespace Servis_Racunara
             this.cbGrad.Location = new System.Drawing.Point(17, 221);
             this.cbGrad.Name = "cbGrad";
             this.cbGrad.Size = new System.Drawing.Size(204, 29);
-            this.cbGrad.TabIndex = 10;
+            this.cbGrad.TabIndex = 9;
             // 
             // lbEmail
             // 
@@ -213,7 +213,7 @@ namespace Servis_Racunara
             this.lbEmail.Location = new System.Drawing.Point(13, 343);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(61, 21);
-            this.lbEmail.TabIndex = 11;
+            this.lbEmail.TabIndex = 12;
             this.lbEmail.Text = "E-mail:";
             // 
             // tbEmail
@@ -221,7 +221,7 @@ namespace Servis_Racunara
             this.tbEmail.Location = new System.Drawing.Point(17, 367);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(280, 27);
-            this.tbEmail.TabIndex = 12;
+            this.tbEmail.TabIndex = 13;
             this.tbEmail.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // lbBrojLicneKarte
@@ -231,7 +231,7 @@ namespace Servis_Racunara
             this.lbBrojLicneKarte.Location = new System.Drawing.Point(28, 195);
             this.lbBrojLicneKarte.Name = "lbBrojLicneKarte";
             this.lbBrojLicneKarte.Size = new System.Drawing.Size(132, 21);
-            this.lbBrojLicneKarte.TabIndex = 13;
+            this.lbBrojLicneKarte.TabIndex = 6;
             this.lbBrojLicneKarte.Text = "Broj Licne Karte:";
             // 
             // tbBrojLicneKarte
@@ -239,7 +239,7 @@ namespace Servis_Racunara
             this.tbBrojLicneKarte.Location = new System.Drawing.Point(32, 222);
             this.tbBrojLicneKarte.Name = "tbBrojLicneKarte";
             this.tbBrojLicneKarte.Size = new System.Drawing.Size(177, 25);
-            this.tbBrojLicneKarte.TabIndex = 14;
+            this.tbBrojLicneKarte.TabIndex = 7;
             // 
             // lbJib
             // 
@@ -248,7 +248,7 @@ namespace Servis_Racunara
             this.lbJib.Location = new System.Drawing.Point(28, 252);
             this.lbJib.Name = "lbJib";
             this.lbJib.Size = new System.Drawing.Size(37, 21);
-            this.lbJib.TabIndex = 15;
+            this.lbJib.TabIndex = 8;
             this.lbJib.Text = "JIB:";
             // 
             // tbJib
@@ -256,7 +256,7 @@ namespace Servis_Racunara
             this.tbJib.Location = new System.Drawing.Point(32, 276);
             this.tbJib.Name = "tbJib";
             this.tbJib.Size = new System.Drawing.Size(177, 25);
-            this.tbJib.TabIndex = 16;
+            this.tbJib.TabIndex = 9;
             // 
             // lbUloga
             // 
@@ -265,7 +265,7 @@ namespace Servis_Racunara
             this.lbUloga.Location = new System.Drawing.Point(28, 24);
             this.lbUloga.Name = "lbUloga";
             this.lbUloga.Size = new System.Drawing.Size(57, 21);
-            this.lbUloga.TabIndex = 17;
+            this.lbUloga.TabIndex = 0;
             this.lbUloga.Text = "Uloga:";
             // 
             // lbPlata
@@ -275,7 +275,7 @@ namespace Servis_Racunara
             this.lbPlata.Location = new System.Drawing.Point(28, 84);
             this.lbPlata.Name = "lbPlata";
             this.lbPlata.Size = new System.Drawing.Size(50, 21);
-            this.lbPlata.TabIndex = 19;
+            this.lbPlata.TabIndex = 2;
             this.lbPlata.Text = "Plata:";
             // 
             // tbPlata
@@ -283,7 +283,7 @@ namespace Servis_Racunara
             this.tbPlata.Location = new System.Drawing.Point(32, 108);
             this.tbPlata.Name = "tbPlata";
             this.tbPlata.Size = new System.Drawing.Size(177, 25);
-            this.tbPlata.TabIndex = 20;
+            this.tbPlata.TabIndex = 3;
             // 
             // gbTipPartnera
             // 
@@ -294,7 +294,7 @@ namespace Servis_Racunara
             this.gbTipPartnera.Location = new System.Drawing.Point(319, 17);
             this.gbTipPartnera.Name = "gbTipPartnera";
             this.gbTipPartnera.Size = new System.Drawing.Size(246, 133);
-            this.gbTipPartnera.TabIndex = 21;
+            this.gbTipPartnera.TabIndex = 1;
             this.gbTipPartnera.TabStop = false;
             this.gbTipPartnera.Text = "TIP PARTNERA";
             // 
@@ -315,7 +315,7 @@ namespace Servis_Racunara
             this.gbDodatneInformacije.Location = new System.Drawing.Point(319, 162);
             this.gbDodatneInformacije.Name = "gbDodatneInformacije";
             this.gbDodatneInformacije.Size = new System.Drawing.Size(246, 336);
-            this.gbDodatneInformacije.TabIndex = 22;
+            this.gbDodatneInformacije.TabIndex = 2;
             this.gbDodatneInformacije.TabStop = false;
             this.gbDodatneInformacije.Text = "DODATNE INFORMACIJE";
             // 
@@ -325,7 +325,7 @@ namespace Servis_Racunara
             this.chbPrivilegije.Location = new System.Drawing.Point(32, 307);
             this.chbPrivilegije.Name = "chbPrivilegije";
             this.chbPrivilegije.Size = new System.Drawing.Size(100, 23);
-            this.chbPrivilegije.TabIndex = 23;
+            this.chbPrivilegije.TabIndex = 10;
             this.chbPrivilegije.Text = "Privilegije";
             this.chbPrivilegije.UseVisualStyleBackColor = true;
             // 
@@ -334,7 +334,7 @@ namespace Servis_Racunara
             this.tbVozackaDozvola.Location = new System.Drawing.Point(32, 165);
             this.tbVozackaDozvola.Name = "tbVozackaDozvola";
             this.tbVozackaDozvola.Size = new System.Drawing.Size(177, 25);
-            this.tbVozackaDozvola.TabIndex = 22;
+            this.tbVozackaDozvola.TabIndex = 5;
             // 
             // lbVozackaDozvola
             // 
@@ -342,7 +342,7 @@ namespace Servis_Racunara
             this.lbVozackaDozvola.Location = new System.Drawing.Point(28, 141);
             this.lbVozackaDozvola.Name = "lbVozackaDozvola";
             this.lbVozackaDozvola.Size = new System.Drawing.Size(164, 19);
-            this.lbVozackaDozvola.TabIndex = 21;
+            this.lbVozackaDozvola.TabIndex = 4;
             this.lbVozackaDozvola.Text = "Vozacka Dozvola Kat.";
             // 
             // tbUloga
@@ -350,7 +350,7 @@ namespace Servis_Racunara
             this.tbUloga.Location = new System.Drawing.Point(32, 48);
             this.tbUloga.Name = "tbUloga";
             this.tbUloga.Size = new System.Drawing.Size(177, 25);
-            this.tbUloga.TabIndex = 17;
+            this.tbUloga.TabIndex = 1;
             // 
             // gbOsnovneInformacije
             // 
@@ -372,7 +372,7 @@ namespace Servis_Racunara
             this.gbOsnovneInformacije.Location = new System.Drawing.Point(12, 17);
             this.gbOsnovneInformacije.Name = "gbOsnovneInformacije";
             this.gbOsnovneInformacije.Size = new System.Drawing.Size(301, 481);
-            this.gbOsnovneInformacije.TabIndex = 23;
+            this.gbOsnovneInformacije.TabIndex = 0;
             this.gbOsnovneInformacije.TabStop = false;
             this.gbOsnovneInformacije.Text = "OSNOVNE INFORMACIJE";
             this.gbOsnovneInformacije.Enter += new System.EventHandler(this.groupBox3_Enter);
@@ -383,7 +383,7 @@ namespace Servis_Racunara
             this.lbId.Location = new System.Drawing.Point(220, 40);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(33, 21);
-            this.lbId.TabIndex = 18;
+            this.lbId.TabIndex = 1;
             this.lbId.Text = "ID:";
             // 
             // tbID
@@ -392,7 +392,7 @@ namespace Servis_Racunara
             this.tbID.Name = "tbID";
             this.tbID.ReadOnly = true;
             this.tbID.Size = new System.Drawing.Size(59, 27);
-            this.tbID.TabIndex = 17;
+            this.tbID.TabIndex = 3;
             // 
             // lbKucniBroj
             // 
@@ -400,7 +400,7 @@ namespace Servis_Racunara
             this.lbKucniBroj.Location = new System.Drawing.Point(220, 112);
             this.lbKucniBroj.Name = "lbKucniBroj";
             this.lbKucniBroj.Size = new System.Drawing.Size(45, 21);
-            this.lbKucniBroj.TabIndex = 16;
+            this.lbKucniBroj.TabIndex = 5;
             this.lbKucniBroj.Text = "Broj:";
             // 
             // tbKucniBroj
@@ -408,14 +408,14 @@ namespace Servis_Racunara
             this.tbKucniBroj.Location = new System.Drawing.Point(236, 145);
             this.tbKucniBroj.Name = "tbKucniBroj";
             this.tbKucniBroj.Size = new System.Drawing.Size(59, 27);
-            this.tbKucniBroj.TabIndex = 15;
+            this.tbKucniBroj.TabIndex = 7;
             // 
             // tbBrojTelefona
             // 
             this.tbBrojTelefona.Location = new System.Drawing.Point(17, 298);
             this.tbBrojTelefona.Name = "tbBrojTelefona";
             this.tbBrojTelefona.Size = new System.Drawing.Size(202, 27);
-            this.tbBrojTelefona.TabIndex = 14;
+            this.tbBrojTelefona.TabIndex = 11;
             // 
             // lbTelefon
             // 
@@ -423,7 +423,7 @@ namespace Servis_Racunara
             this.lbTelefon.Location = new System.Drawing.Point(13, 274);
             this.lbTelefon.Name = "lbTelefon";
             this.lbTelefon.Size = new System.Drawing.Size(71, 21);
-            this.lbTelefon.TabIndex = 13;
+            this.lbTelefon.TabIndex = 10;
             this.lbTelefon.Text = "Telefon:";
             // 
             // dgvSubjekat
@@ -448,7 +448,7 @@ namespace Servis_Racunara
             this.dgvSubjekat.Location = new System.Drawing.Point(6, 34);
             this.dgvSubjekat.Name = "dgvSubjekat";
             this.dgvSubjekat.Size = new System.Drawing.Size(695, 222);
-            this.dgvSubjekat.TabIndex = 24;
+            this.dgvSubjekat.TabIndex = 0;
             this.dgvSubjekat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnId
@@ -533,11 +533,11 @@ namespace Servis_Racunara
             // ColumnIzmjeni
             // 
             this.ColumnIzmjeni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle81;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnIzmjeni.HeaderText = "Izmjeni";
             this.ColumnIzmjeni.Name = "ColumnIzmjeni";
             this.ColumnIzmjeni.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -548,11 +548,11 @@ namespace Servis_Racunara
             // ColumnObrisi
             // 
             this.ColumnObrisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnObrisi.HeaderText = "Obrisi";
             this.ColumnObrisi.Name = "ColumnObrisi";
             this.ColumnObrisi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -564,11 +564,11 @@ namespace Servis_Racunara
             // ColumnDodajNaNalog
             // 
             this.ColumnDodajNaNalog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle83.BackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnDodajNaNalog.DefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnDodajNaNalog.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnDodajNaNalog.HeaderText = "Nalog";
             this.ColumnDodajNaNalog.Name = "ColumnDodajNaNalog";
             this.ColumnDodajNaNalog.Text = "Nalog";
@@ -581,7 +581,7 @@ namespace Servis_Racunara
             this.btDodajPartnera.Location = new System.Drawing.Point(371, 512);
             this.btDodajPartnera.Name = "btDodajPartnera";
             this.btDodajPartnera.Size = new System.Drawing.Size(132, 40);
-            this.btDodajPartnera.TabIndex = 25;
+            this.btDodajPartnera.TabIndex = 3;
             this.btDodajPartnera.Text = "DODAJ KLIJENTA";
             this.btDodajPartnera.UseVisualStyleBackColor = false;
             this.btDodajPartnera.Click += new System.EventHandler(this.btDodajKlijenta_Click);
@@ -593,7 +593,7 @@ namespace Servis_Racunara
             this.btSacuvajIzmjeneKlijenta.Location = new System.Drawing.Point(6, 266);
             this.btSacuvajIzmjeneKlijenta.Name = "btSacuvajIzmjeneKlijenta";
             this.btSacuvajIzmjeneKlijenta.Size = new System.Drawing.Size(132, 40);
-            this.btSacuvajIzmjeneKlijenta.TabIndex = 26;
+            this.btSacuvajIzmjeneKlijenta.TabIndex = 3;
             this.btSacuvajIzmjeneKlijenta.Text = "SACUVAJ IZMJENE KLIJENTA";
             this.btSacuvajIzmjeneKlijenta.UseVisualStyleBackColor = false;
             this.btSacuvajIzmjeneKlijenta.Click += new System.EventHandler(this.btSacuvajIzmjeneKlijenta_Click);
@@ -604,7 +604,7 @@ namespace Servis_Racunara
             this.tbFilterPartnera.Location = new System.Drawing.Point(531, 10);
             this.tbFilterPartnera.Name = "tbFilterPartnera";
             this.tbFilterPartnera.Size = new System.Drawing.Size(169, 20);
-            this.tbFilterPartnera.TabIndex = 27;
+            this.tbFilterPartnera.TabIndex = 2;
             this.tbFilterPartnera.TextChanged += new System.EventHandler(this.tbFilterPartnera_TextChanged);
             // 
             // lbFilterPartnera
@@ -615,7 +615,7 @@ namespace Servis_Racunara
             this.lbFilterPartnera.Location = new System.Drawing.Point(423, 10);
             this.lbFilterPartnera.Name = "lbFilterPartnera";
             this.lbFilterPartnera.Size = new System.Drawing.Size(70, 21);
-            this.lbFilterPartnera.TabIndex = 28;
+            this.lbFilterPartnera.TabIndex = 1;
             this.lbFilterPartnera.Text = "Pretrazi:";
             // 
             // dvgRadnik
@@ -641,7 +641,7 @@ namespace Servis_Racunara
             this.dvgRadnik.Location = new System.Drawing.Point(5, 42);
             this.dvgRadnik.Name = "dvgRadnik";
             this.dvgRadnik.Size = new System.Drawing.Size(695, 138);
-            this.dvgRadnik.TabIndex = 29;
+            this.dvgRadnik.TabIndex = 2;
             this.dvgRadnik.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgRadnik_CellContentClick);
             // 
             // ColumnIdPartneraRadnik
@@ -713,11 +713,11 @@ namespace Servis_Racunara
             // ColumnIzmjeniRadnik
             // 
             this.ColumnIzmjeniRadnik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle84.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeniRadnik.DefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeniRadnik.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnIzmjeniRadnik.HeaderText = "Izmjeni";
             this.ColumnIzmjeniRadnik.Name = "ColumnIzmjeniRadnik";
             this.ColumnIzmjeniRadnik.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -729,11 +729,11 @@ namespace Servis_Racunara
             // ColumnObrisiRadnik
             // 
             this.ColumnObrisiRadnik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle85.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisiRadnik.DefaultCellStyle = dataGridViewCellStyle85;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisiRadnik.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnObrisiRadnik.HeaderText = "Obrisi";
             this.ColumnObrisiRadnik.Name = "ColumnObrisiRadnik";
             this.ColumnObrisiRadnik.Text = "Obrisi";
@@ -748,7 +748,7 @@ namespace Servis_Racunara
             this.btSacuvajIzmjeneRadnika.Location = new System.Drawing.Point(6, 194);
             this.btSacuvajIzmjeneRadnika.Name = "btSacuvajIzmjeneRadnika";
             this.btSacuvajIzmjeneRadnika.Size = new System.Drawing.Size(132, 40);
-            this.btSacuvajIzmjeneRadnika.TabIndex = 31;
+            this.btSacuvajIzmjeneRadnika.TabIndex = 3;
             this.btSacuvajIzmjeneRadnika.Text = "SACUVAJ IZMJENE RADNIKA";
             this.btSacuvajIzmjeneRadnika.UseVisualStyleBackColor = false;
             this.btSacuvajIzmjeneRadnika.Click += new System.EventHandler(this.btSacuvajIzmjeneRadnika_Click);
@@ -759,7 +759,7 @@ namespace Servis_Racunara
             this.tbFilterRadnika.Location = new System.Drawing.Point(531, 16);
             this.tbFilterRadnika.Name = "tbFilterRadnika";
             this.tbFilterRadnika.Size = new System.Drawing.Size(169, 20);
-            this.tbFilterRadnika.TabIndex = 32;
+            this.tbFilterRadnika.TabIndex = 1;
             this.tbFilterRadnika.TextChanged += new System.EventHandler(this.tbFilterRadnika_TextChanged);
             // 
             // lbPreatraziRadnika
@@ -770,7 +770,7 @@ namespace Servis_Racunara
             this.lbPreatraziRadnika.Location = new System.Drawing.Point(423, 15);
             this.lbPreatraziRadnika.Name = "lbPreatraziRadnika";
             this.lbPreatraziRadnika.Size = new System.Drawing.Size(70, 21);
-            this.lbPreatraziRadnika.TabIndex = 33;
+            this.lbPreatraziRadnika.TabIndex = 0;
             this.lbPreatraziRadnika.Text = "Pretrazi:";
             // 
             // gbKlijent
@@ -786,7 +786,7 @@ namespace Servis_Racunara
             this.gbKlijent.Location = new System.Drawing.Point(571, 0);
             this.gbKlijent.Name = "gbKlijent";
             this.gbKlijent.Size = new System.Drawing.Size(706, 312);
-            this.gbKlijent.TabIndex = 34;
+            this.gbKlijent.TabIndex = 4;
             this.gbKlijent.TabStop = false;
             this.gbKlijent.Text = "KLIJENTI";
             this.gbKlijent.Enter += new System.EventHandler(this.gbKlijent_Enter);
@@ -797,7 +797,7 @@ namespace Servis_Racunara
             this.btOsvjeziKlijenta.Location = new System.Drawing.Point(157, 266);
             this.btOsvjeziKlijenta.Name = "btOsvjeziKlijenta";
             this.btOsvjeziKlijenta.Size = new System.Drawing.Size(132, 40);
-            this.btOsvjeziKlijenta.TabIndex = 29;
+            this.btOsvjeziKlijenta.TabIndex = 4;
             this.btOsvjeziKlijenta.UseVisualStyleBackColor = true;
             this.btOsvjeziKlijenta.Click += new System.EventHandler(this.btOsvjeziKlijenta_Click);
             // 
@@ -814,7 +814,7 @@ namespace Servis_Racunara
             this.gbRadnik.Location = new System.Drawing.Point(571, 318);
             this.gbRadnik.Name = "gbRadnik";
             this.gbRadnik.Size = new System.Drawing.Size(705, 246);
-            this.gbRadnik.TabIndex = 35;
+            this.gbRadnik.TabIndex = 5;
             this.gbRadnik.TabStop = false;
             this.gbRadnik.Text = "RADNICI";
             // 
@@ -825,7 +825,7 @@ namespace Servis_Racunara
             this.btOsvjeziRadnika.Location = new System.Drawing.Point(157, 194);
             this.btOsvjeziRadnika.Name = "btOsvjeziRadnika";
             this.btOsvjeziRadnika.Size = new System.Drawing.Size(132, 40);
-            this.btOsvjeziRadnika.TabIndex = 34;
+            this.btOsvjeziRadnika.TabIndex = 4;
             this.btOsvjeziRadnika.UseVisualStyleBackColor = true;
             this.btOsvjeziRadnika.Click += new System.EventHandler(this.btOsvjeziRadnika_Click);
             // 

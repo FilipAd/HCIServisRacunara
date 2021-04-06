@@ -20,30 +20,38 @@ namespace Servis_Racunara
 
         private void btObracunajIzmjenaUS_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(tbKolicinaIzmjenaUS.Text) || String.IsNullOrEmpty(tbRabatIzmejnaUS.Text))
+            try
+            {
+                if (String.IsNullOrEmpty(tbKolicinaIzmjenaUS.Text) || String.IsNullOrEmpty(tbRabatIzmejnaUS.Text))
             {
                 string srb = "Морате попунити сва захтјевана поља";
                 string eng = "All fields are required";
                 MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (Int32.Parse(tbKolicinaIzmjenaUS.Text) < 0)
+            {
+                string srb = "Negativne vrijednosti nisu dozvoljene";
+                string eng = "Negative values are not allowed";
+                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
-                try
-                {
+                
                     decimal rabat = Decimal.Parse(tbRabatIzmejnaUS.Text);
                     int kolicina = Int32.Parse(tbKolicinaIzmjenaUS.Text);
                     decimal jedinicnaCijena = Decimal.Parse(tbCijenaPoHIzmjenaUS.Text);
                     tbUkupnoIzmjenaUS.Text = Math.Round((((1 - (rabat / 100)) * jedinicnaCijena) * kolicina), 2).ToString();
                     btZapamtiIzmjenaUS.Enabled = true;
                 }
-                catch (Exception Ex)
-                {
-                    tbRabatIzmejnaUS.Text = "";
-                    tbKolicinaIzmjenaUS.Text = "";
-                    string srb = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
-                    string eng = "The values entered must be numbers, and the service must be selected";
-                    MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+               
+            }
+            catch (Exception Ex)
+            {
+                tbRabatIzmejnaUS.Text = "";
+                tbKolicinaIzmjenaUS.Text = "";
+                string srb = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
+                string eng = "The values entered must be numbers, and the service must be selected";
+                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

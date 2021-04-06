@@ -46,7 +46,7 @@ namespace Servis_Racunara
             this.btPrijava.Location = new System.Drawing.Point(348, 230);
             this.btPrijava.Name = "btPrijava";
             this.btPrijava.Size = new System.Drawing.Size(99, 36);
-            this.btPrijava.TabIndex = 0;
+            this.btPrijava.TabIndex = 3;
             this.btPrijava.Text = "PRIJAVA";
             this.btPrijava.UseVisualStyleBackColor = true;
             this.btPrijava.Click += new System.EventHandler(this.btPrijava_Click);
@@ -65,7 +65,7 @@ namespace Servis_Racunara
             this.lbKorisnickoIme.Location = new System.Drawing.Point(74, 89);
             this.lbKorisnickoIme.Name = "lbKorisnickoIme";
             this.lbKorisnickoIme.Size = new System.Drawing.Size(101, 13);
-            this.lbKorisnickoIme.TabIndex = 3;
+            this.lbKorisnickoIme.TabIndex = 0;
             this.lbKorisnickoIme.Text = "KORISNICKO IME :";
             // 
             // lbLozinka
@@ -74,7 +74,7 @@ namespace Servis_Racunara
             this.lbLozinka.Location = new System.Drawing.Point(74, 166);
             this.lbLozinka.Name = "lbLozinka";
             this.lbLozinka.Size = new System.Drawing.Size(59, 13);
-            this.lbLozinka.TabIndex = 4;
+            this.lbLozinka.TabIndex = 0;
             this.lbLozinka.Text = "LOZINKA :";
             // 
             // gbJezici
@@ -86,7 +86,7 @@ namespace Servis_Racunara
             this.gbJezici.Location = new System.Drawing.Point(493, 12);
             this.gbJezici.Name = "gbJezici";
             this.gbJezici.Size = new System.Drawing.Size(83, 115);
-            this.gbJezici.TabIndex = 52;
+            this.gbJezici.TabIndex = 4;
             this.gbJezici.TabStop = false;
             // 
             // rbPrevediNaSrpski
@@ -96,7 +96,7 @@ namespace Servis_Racunara
             this.rbPrevediNaSrpski.Location = new System.Drawing.Point(10, 13);
             this.rbPrevediNaSrpski.Name = "rbPrevediNaSrpski";
             this.rbPrevediNaSrpski.Size = new System.Drawing.Size(59, 45);
-            this.rbPrevediNaSrpski.TabIndex = 49;
+            this.rbPrevediNaSrpski.TabIndex = 1;
             this.rbPrevediNaSrpski.TabStop = true;
             this.rbPrevediNaSrpski.UseVisualStyleBackColor = true;
             this.rbPrevediNaSrpski.CheckedChanged += new System.EventHandler(this.rbPrevediNaSrpski_CheckedChanged);
@@ -108,7 +108,7 @@ namespace Servis_Racunara
             this.rbPrevediNaengleski.Location = new System.Drawing.Point(10, 64);
             this.rbPrevediNaengleski.Name = "rbPrevediNaengleski";
             this.rbPrevediNaengleski.Size = new System.Drawing.Size(59, 45);
-            this.rbPrevediNaengleski.TabIndex = 50;
+            this.rbPrevediNaengleski.TabIndex = 1;
             this.rbPrevediNaengleski.TabStop = true;
             this.rbPrevediNaengleski.UseVisualStyleBackColor = true;
             this.rbPrevediNaengleski.CheckedChanged += new System.EventHandler(this.rbPrevediNaengleski_CheckedChanged);
@@ -121,7 +121,7 @@ namespace Servis_Racunara
             this.cbKorisnickoIme.Location = new System.Drawing.Point(200, 86);
             this.cbKorisnickoIme.Name = "cbKorisnickoIme";
             this.cbKorisnickoIme.Size = new System.Drawing.Size(247, 21);
-            this.cbKorisnickoIme.TabIndex = 53;
+            this.cbKorisnickoIme.TabIndex = 1;
             this.cbKorisnickoIme.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lbGreska
@@ -132,12 +132,13 @@ namespace Servis_Racunara
             this.lbGreska.Location = new System.Drawing.Point(41, 230);
             this.lbGreska.Name = "lbGreska";
             this.lbGreska.Size = new System.Drawing.Size(275, 20);
-            this.lbGreska.TabIndex = 54;
+            this.lbGreska.TabIndex = 0;
             this.lbGreska.Text = "POGRESNA LOZINKA ILI KORISNIK";
             this.lbGreska.Visible = false;
             // 
             // PrijavaForma
             // 
+            this.AcceptButton = this.btPrijava;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Servis_Racunara.Properties.Resources.wp2747048;

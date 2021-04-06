@@ -29,9 +29,9 @@ namespace Servis_Racunara
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvKomponenta = new System.Windows.Forms.DataGridView();
             this.ColumnSifra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNaziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +77,7 @@ namespace Servis_Racunara
             this.dgvKomponenta.Location = new System.Drawing.Point(26, 39);
             this.dgvKomponenta.Name = "dgvKomponenta";
             this.dgvKomponenta.Size = new System.Drawing.Size(978, 226);
-            this.dgvKomponenta.TabIndex = 0;
+            this.dgvKomponenta.TabIndex = 2;
             this.dgvKomponenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKomponenta_CellContentClick);
             // 
             // ColumnSifra
@@ -107,11 +107,11 @@ namespace Servis_Racunara
             // 
             // ColumnIzmjeni
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeni.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnIzmjeni.HeaderText = "Izmjeni";
             this.ColumnIzmjeni.Name = "ColumnIzmjeni";
             this.ColumnIzmjeni.Text = "Izmjeni";
@@ -119,11 +119,11 @@ namespace Servis_Racunara
             // 
             // ColumnObrisi
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisi.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnObrisi.HeaderText = "Obrisi";
             this.ColumnObrisi.Name = "ColumnObrisi";
             this.ColumnObrisi.Text = "Obrisi";
@@ -131,11 +131,11 @@ namespace Servis_Racunara
             // 
             // ColumnDodaj
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnDodaj.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnDodaj.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnDodaj.HeaderText = "Dodaj";
             this.ColumnDodaj.Name = "ColumnDodaj";
             this.ColumnDodaj.Text = "Dodaj";
@@ -159,7 +159,7 @@ namespace Servis_Racunara
             this.gbDodavanjeKomponente.Location = new System.Drawing.Point(559, 313);
             this.gbDodavanjeKomponente.Name = "gbDodavanjeKomponente";
             this.gbDodavanjeKomponente.Size = new System.Drawing.Size(445, 222);
-            this.gbDodavanjeKomponente.TabIndex = 1;
+            this.gbDodavanjeKomponente.TabIndex = 3;
             this.gbDodavanjeKomponente.TabStop = false;
             this.gbDodavanjeKomponente.Text = "DODAVANJE KOMPONENTE";
             this.gbDodavanjeKomponente.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -170,7 +170,7 @@ namespace Servis_Racunara
             this.btDodajKolicinu.Location = new System.Drawing.Point(303, 98);
             this.btDodajKolicinu.Name = "btDodajKolicinu";
             this.btDodajKolicinu.Size = new System.Drawing.Size(125, 54);
-            this.btDodajKolicinu.TabIndex = 10;
+            this.btDodajKolicinu.TabIndex = 9;
             this.btDodajKolicinu.Text = "DODAJ NA POSTOJECU KOLICINU";
             this.btDodajKolicinu.UseVisualStyleBackColor = true;
             this.btDodajKolicinu.Click += new System.EventHandler(this.btDodajKolicinu_Click);
@@ -181,7 +181,7 @@ namespace Servis_Racunara
             this.btSacuvajIzmjeneKomponenta.Location = new System.Drawing.Point(303, 33);
             this.btSacuvajIzmjeneKomponenta.Name = "btSacuvajIzmjeneKomponenta";
             this.btSacuvajIzmjeneKomponenta.Size = new System.Drawing.Size(125, 43);
-            this.btSacuvajIzmjeneKomponenta.TabIndex = 9;
+            this.btSacuvajIzmjeneKomponenta.TabIndex = 8;
             this.btSacuvajIzmjeneKomponenta.Text = "SACUVAJ IZMJENE";
             this.btSacuvajIzmjeneKomponenta.UseVisualStyleBackColor = true;
             this.btSacuvajIzmjeneKomponenta.Click += new System.EventHandler(this.btSacuvajIzmjeneKomponenta_Click);
@@ -191,7 +191,7 @@ namespace Servis_Racunara
             this.tbSifraKomponente.Location = new System.Drawing.Point(34, 44);
             this.tbSifraKomponente.Name = "tbSifraKomponente";
             this.tbSifraKomponente.Size = new System.Drawing.Size(179, 21);
-            this.tbSifraKomponente.TabIndex = 8;
+            this.tbSifraKomponente.TabIndex = 1;
             // 
             // lbSifraKomponente
             // 
@@ -200,7 +200,7 @@ namespace Servis_Racunara
             this.lbSifraKomponente.Location = new System.Drawing.Point(30, 21);
             this.lbSifraKomponente.Name = "lbSifraKomponente";
             this.lbSifraKomponente.Size = new System.Drawing.Size(139, 20);
-            this.lbSifraKomponente.TabIndex = 7;
+            this.lbSifraKomponente.TabIndex = 0;
             this.lbSifraKomponente.Text = "Sifra komponente:";
             // 
             // btDodajKomponentu
@@ -208,7 +208,7 @@ namespace Servis_Racunara
             this.btDodajKomponentu.Location = new System.Drawing.Point(303, 178);
             this.btDodajKomponentu.Name = "btDodajKomponentu";
             this.btDodajKomponentu.Size = new System.Drawing.Size(125, 32);
-            this.btDodajKomponentu.TabIndex = 6;
+            this.btDodajKomponentu.TabIndex = 10;
             this.btDodajKomponentu.Text = "DODAJ";
             this.btDodajKomponentu.UseVisualStyleBackColor = true;
             this.btDodajKomponentu.Click += new System.EventHandler(this.btDodajKomponentu_Click);
@@ -218,7 +218,7 @@ namespace Servis_Racunara
             this.tbKolicina.Location = new System.Drawing.Point(34, 184);
             this.tbKolicina.Name = "tbKolicina";
             this.tbKolicina.Size = new System.Drawing.Size(179, 21);
-            this.tbKolicina.TabIndex = 5;
+            this.tbKolicina.TabIndex = 7;
             // 
             // lbKolicina
             // 
@@ -227,7 +227,7 @@ namespace Servis_Racunara
             this.lbKolicina.Location = new System.Drawing.Point(30, 161);
             this.lbKolicina.Name = "lbKolicina";
             this.lbKolicina.Size = new System.Drawing.Size(73, 20);
-            this.lbKolicina.TabIndex = 4;
+            this.lbKolicina.TabIndex = 6;
             this.lbKolicina.Text = "Kolicina:";
             // 
             // tbCijenaPoKomadu
@@ -235,7 +235,7 @@ namespace Servis_Racunara
             this.tbCijenaPoKomadu.Location = new System.Drawing.Point(34, 137);
             this.tbCijenaPoKomadu.Name = "tbCijenaPoKomadu";
             this.tbCijenaPoKomadu.Size = new System.Drawing.Size(179, 21);
-            this.tbCijenaPoKomadu.TabIndex = 3;
+            this.tbCijenaPoKomadu.TabIndex = 5;
             // 
             // lbCijenaPoKomadu
             // 
@@ -244,7 +244,7 @@ namespace Servis_Racunara
             this.lbCijenaPoKomadu.Location = new System.Drawing.Point(30, 114);
             this.lbCijenaPoKomadu.Name = "lbCijenaPoKomadu";
             this.lbCijenaPoKomadu.Size = new System.Drawing.Size(145, 20);
-            this.lbCijenaPoKomadu.TabIndex = 2;
+            this.lbCijenaPoKomadu.TabIndex = 4;
             this.lbCijenaPoKomadu.Text = "Cijena po komadu:";
             // 
             // tbNazivKomponente
@@ -252,7 +252,7 @@ namespace Servis_Racunara
             this.tbNazivKomponente.Location = new System.Drawing.Point(34, 90);
             this.tbNazivKomponente.Name = "tbNazivKomponente";
             this.tbNazivKomponente.Size = new System.Drawing.Size(179, 21);
-            this.tbNazivKomponente.TabIndex = 1;
+            this.tbNazivKomponente.TabIndex = 3;
             // 
             // lbNazivKomponente
             // 
@@ -261,7 +261,7 @@ namespace Servis_Racunara
             this.lbNazivKomponente.Location = new System.Drawing.Point(30, 67);
             this.lbNazivKomponente.Name = "lbNazivKomponente";
             this.lbNazivKomponente.Size = new System.Drawing.Size(150, 20);
-            this.lbNazivKomponente.TabIndex = 0;
+            this.lbNazivKomponente.TabIndex = 2;
             this.lbNazivKomponente.Text = "Naziv komponente:";
             // 
             // tbFilter
@@ -270,7 +270,7 @@ namespace Servis_Racunara
             this.tbFilter.Location = new System.Drawing.Point(728, 13);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(276, 20);
-            this.tbFilter.TabIndex = 2;
+            this.tbFilter.TabIndex = 1;
             this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
             // 
             // lbFilter
@@ -281,7 +281,7 @@ namespace Servis_Racunara
             this.lbFilter.Location = new System.Drawing.Point(456, 13);
             this.lbFilter.Name = "lbFilter";
             this.lbFilter.Size = new System.Drawing.Size(187, 21);
-            this.lbFilter.TabIndex = 3;
+            this.lbFilter.TabIndex = 0;
             this.lbFilter.Text = "Pretraga( sifra ili naziv ):";
             // 
             // KomponentaForma

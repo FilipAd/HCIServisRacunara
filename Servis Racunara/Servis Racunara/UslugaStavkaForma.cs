@@ -57,7 +57,7 @@ namespace Servis_Racunara
             {
                 if (dgvUsluga.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value != null)
                 {
-                    btDodajUsluguNaNalog.Enabled = true;
+                    
 
                     tbSifraUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnSifraUsluge.Index].Value.ToString();
                     tbNazivUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnNazivUsluge.Index].Value.ToString();
@@ -76,34 +76,42 @@ namespace Servis_Racunara
 
         private void btIzracunajCijenuUS_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
                 if (String.IsNullOrEmpty(tbKolicinaUS.Text) || String.IsNullOrEmpty(tbRabatUS.Text))
                 {
                 string srb = "МОРАТЕ ПОПУНИТИ СВА ЗАХТЈЕВАНА ПОЉА";
                 string eng = "All fields are required";
                 MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if(Int32.Parse(tbKolicinaUS.Text)<0)
+                   {
+                    string srb = "Negativne vrijednosti kolicine nisu dozvoljene";
+                    string eng = "Negative values are not allowed";
+                    MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                   }
                 else
                 {
-                    try
-                    {
-                        decimal rabat = Decimal.Parse(tbRabatUS.Text);
+                    
+                       decimal rabat = Decimal.Parse(tbRabatUS.Text);
                         int kolicina = Int32.Parse(tbKolicinaUS.Text);
                         decimal jedinicnaCijena = Decimal.Parse(tbCijenaPoSatuUS.Text);
                         tbCijenaUS.Text = Math.Round((((1 - (rabat / 100)) * jedinicnaCijena) * kolicina), 2).ToString();
                         btDodajUsluguNaNalog.Enabled = true;
                     }
-                    catch (Exception Ex)
-                    {
-                        tbKolicinaUS.Text = "";
-                        tbKolicinaUS.Text = "";
-                    string eng1 = "The values entered must be numbers, and the service must be selected";
-                    string srb1 = "Унесене вриједности морају бити бројеви, и сулуга мора бити селектована";
-                        MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb1 : eng1, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
                 }
-            
-           
+            catch (Exception Ex)
+            {
+                tbKolicinaUS.Text = "";
+                tbKolicinaUS.Text = "";
+                string eng1 = "The values entered must be numbers, and the service must be selected";
+                string srb1 = "Унесене вриједности морају бити бројеви, и сулуга мора бити селектована";
+                MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb1 : eng1, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
 
         private void tbKolicinaUS_TextChanged(object sender, EventArgs e)

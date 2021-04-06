@@ -47,7 +47,7 @@ namespace Servis_Racunara
             this.lbStaraLozinka.Location = new System.Drawing.Point(34, 79);
             this.lbStaraLozinka.Name = "lbStaraLozinka";
             this.lbStaraLozinka.Size = new System.Drawing.Size(74, 13);
-            this.lbStaraLozinka.TabIndex = 0;
+            this.lbStaraLozinka.TabIndex = 2;
             this.lbStaraLozinka.Text = "Stara lozinka :";
             // 
             // lbNovaLozinka
@@ -56,7 +56,7 @@ namespace Servis_Racunara
             this.lbNovaLozinka.Location = new System.Drawing.Point(34, 166);
             this.lbNovaLozinka.Name = "lbNovaLozinka";
             this.lbNovaLozinka.Size = new System.Drawing.Size(79, 13);
-            this.lbNovaLozinka.TabIndex = 1;
+            this.lbNovaLozinka.TabIndex = 4;
             this.lbNovaLozinka.Text = "Nova Lozinka :";
             // 
             // lbPotvrdaLozinke
@@ -65,7 +65,7 @@ namespace Servis_Racunara
             this.lbPotvrdaLozinke.Location = new System.Drawing.Point(34, 252);
             this.lbPotvrdaLozinke.Name = "lbPotvrdaLozinke";
             this.lbPotvrdaLozinke.Size = new System.Drawing.Size(88, 13);
-            this.lbPotvrdaLozinke.TabIndex = 2;
+            this.lbPotvrdaLozinke.TabIndex = 6;
             this.lbPotvrdaLozinke.Text = "Potvrdite lozinku:";
             // 
             // tbStaraLozinka
@@ -81,7 +81,7 @@ namespace Servis_Racunara
             this.tbNovaLozinka.Location = new System.Drawing.Point(177, 166);
             this.tbNovaLozinka.Name = "tbNovaLozinka";
             this.tbNovaLozinka.Size = new System.Drawing.Size(233, 20);
-            this.tbNovaLozinka.TabIndex = 4;
+            this.tbNovaLozinka.TabIndex = 5;
             this.tbNovaLozinka.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // tbPotvrtaLozinke
@@ -89,7 +89,7 @@ namespace Servis_Racunara
             this.tbPotvrtaLozinke.Location = new System.Drawing.Point(177, 252);
             this.tbPotvrtaLozinke.Name = "tbPotvrtaLozinke";
             this.tbPotvrtaLozinke.Size = new System.Drawing.Size(233, 20);
-            this.tbPotvrtaLozinke.TabIndex = 5;
+            this.tbPotvrtaLozinke.TabIndex = 7;
             this.tbPotvrtaLozinke.TextChanged += new System.EventHandler(this.tbPotvrtaLozinke_TextChanged);
             // 
             // btPromjeniLozinku
@@ -97,7 +97,7 @@ namespace Servis_Racunara
             this.btPromjeniLozinku.Location = new System.Drawing.Point(358, 309);
             this.btPromjeniLozinku.Name = "btPromjeniLozinku";
             this.btPromjeniLozinku.Size = new System.Drawing.Size(122, 38);
-            this.btPromjeniLozinku.TabIndex = 6;
+            this.btPromjeniLozinku.TabIndex = 9;
             this.btPromjeniLozinku.Text = "SACUVAJ";
             this.btPromjeniLozinku.UseVisualStyleBackColor = true;
             this.btPromjeniLozinku.Click += new System.EventHandler(this.btPromjeniLozinku_Click);
@@ -109,7 +109,7 @@ namespace Servis_Racunara
             this.lbGreska.Location = new System.Drawing.Point(34, 322);
             this.lbGreska.Name = "lbGreska";
             this.lbGreska.Size = new System.Drawing.Size(0, 13);
-            this.lbGreska.TabIndex = 7;
+            this.lbGreska.TabIndex = 8;
             // 
             // lbImeKorisnika
             // 
@@ -117,7 +117,7 @@ namespace Servis_Racunara
             this.lbImeKorisnika.Location = new System.Drawing.Point(174, 23);
             this.lbImeKorisnika.Name = "lbImeKorisnika";
             this.lbImeKorisnika.Size = new System.Drawing.Size(50, 13);
-            this.lbImeKorisnika.TabIndex = 8;
+            this.lbImeKorisnika.TabIndex = 0;
             this.lbImeKorisnika.Text = "Korisnik :";
             // 
             // lbIme
@@ -126,7 +126,7 @@ namespace Servis_Racunara
             this.lbIme.Location = new System.Drawing.Point(334, 23);
             this.lbIme.Name = "lbIme";
             this.lbIme.Size = new System.Drawing.Size(35, 13);
-            this.lbIme.TabIndex = 9;
+            this.lbIme.TabIndex = 1;
             this.lbIme.Text = "admin";
             // 
             // PromjenaLozinkeForma

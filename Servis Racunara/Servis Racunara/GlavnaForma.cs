@@ -386,6 +386,14 @@ namespace Servis_Racunara
                 
                 btSacuvajIzmjene.Enabled = false;
             }
+            else if(cbRadi.SelectedItem==null || cbZaprimio.SelectedItem==null)
+            {
+                string eng = "FIELDS: ASSIGNED,CREATED BY  are invalid";
+                string srb = "Polja RADI i ZAPRIMIO imaju nipsravne vrijednosti";
+
+                MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "NEUSPJESNO AZURIRANJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btSacuvajIzmjene.Enabled = false;
+            }    
             else
             {
                 var nalog = new RadniNalog()
@@ -418,7 +426,15 @@ namespace Servis_Racunara
                 MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA NEMA RADNIKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
-          else
+            else if (cbRadi.SelectedItem == null || cbZaprimio.SelectedItem == null)
+            {
+                string eng = "FIELDS: ASSIGNED,CREATED BY  are invalid";
+                string srb = "Polja RADI i ZAPRIMIO imaju nipsravne vrijednosti";
+
+                MessageBox.Show((rbPrevediNaSrpski.Checked) ? srb : eng, "NEUSPJESNO AZURIRANJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
+            else
             {
                 string IdServiserRadi = null;
                 string IdServiserZaprimio = null;
@@ -529,6 +545,7 @@ namespace Servis_Racunara
                 string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ";
                 MessageBox.Show((rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA NIJE ODABRAN NALOG", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             else
             {
                 KomponentaStavkaFormaGF = new KomponentaStavkaForma(tbBrojRadnogNaloga.Text);

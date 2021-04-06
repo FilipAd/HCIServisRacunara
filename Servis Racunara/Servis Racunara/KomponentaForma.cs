@@ -108,21 +108,30 @@ namespace Servis_Racunara
         {
             try
             {
-                var komponenta = new Komponenta()
+                if (Int32.Parse(tbKolicina.Text) < 0 || Decimal.Parse(tbCijenaPoKomadu.Text) < 0)
                 {
-                SifraKomponente = Int32.Parse(tbSifraKomponente.Text),
-                NazivKomponente = tbNazivKomponente.Text,
-                CijenaKomponente = Decimal.Parse(tbCijenaPoKomadu.Text),
-                DostupnaKolicina = Int32.Parse(tbKolicina.Text)
-                };
-            
-                DbServisRacunara.InsertKomponenta(komponenta);
+                    string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
+                    string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
+                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var komponenta = new Komponenta()
+                    {
+                        SifraKomponente = Int32.Parse(tbSifraKomponente.Text),
+                        NazivKomponente = tbNazivKomponente.Text,
+                        CijenaKomponente = Decimal.Parse(tbCijenaPoKomadu.Text),
+                        DostupnaKolicina = Int32.Parse(tbKolicina.Text)
+                    };
+
+                    DbServisRacunara.InsertKomponenta(komponenta);
+                }
             }
             catch(Exception)
             {
                 string srb = "Неисправни параметри";
                 string eng = "Invalid parameters";
-                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng);
+                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 NapuniGrid();
             
@@ -130,25 +139,48 @@ namespace Servis_Racunara
 
         private void btSacuvajIzmjeneKomponenta_Click(object sender, EventArgs e)
         {
+            bool dugmeUkljuceno = false;
             try
             {
-                var komponenta = new Komponenta()
+                if (Int32.Parse(tbKolicina.Text) < 0 || Decimal.Parse(tbCijenaPoKomadu.Text) < 0)
                 {
-                    SifraKomponente = Int32.Parse(tbSifraKomponente.Text),
-                    NazivKomponente = tbNazivKomponente.Text,
-                    CijenaKomponente = Decimal.Parse(tbCijenaPoKomadu.Text),
-                    DostupnaKolicina = Int32.Parse(tbKolicina.Text)
-                };
-                DbServisRacunara.UpdateKomponenta(staraSifra, komponenta);
+                    string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
+                    string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
+                    dugmeUkljuceno = true;
+                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(String.IsNullOrEmpty(tbKolicina.Text) || String.IsNullOrEmpty(tbNazivKomponente.Text) || String.IsNullOrEmpty(tbSifraKomponente.Text) || String.IsNullOrEmpty(tbCijenaPoKomadu.Text))
+                {
+                    string srb = "Morate popuniti sva zahtjeva polja";
+                    string eng = "All fields are required";
+                    dugmeUkljuceno = true;
+                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var komponenta = new Komponenta()
+                    {
+                        SifraKomponente = Int32.Parse(tbSifraKomponente.Text),
+                        NazivKomponente = tbNazivKomponente.Text,
+                        CijenaKomponente = Decimal.Parse(tbCijenaPoKomadu.Text),
+                        DostupnaKolicina = Int32.Parse(tbKolicina.Text)
+                    };
+                    DbServisRacunara.UpdateKomponenta(staraSifra, komponenta);
+                    tbSifraKomponente.Text = String.Empty;
+                    tbNazivKomponente.Text = String.Empty;
+                    tbCijenaPoKomadu.Text = String.Empty;
+                    tbKolicina.Text = String.Empty;
+                }
             }
             catch(Exception)
             {
                 string srb = "Неуспјешно ажурирање";
                 string eng = "Update failed";
                 MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng);
+                dugmeUkljuceno = true;
             }
             NapuniGrid();
-            btSacuvajIzmjeneKomponenta.Enabled = false;
+            btSacuvajIzmjeneKomponenta.Enabled = dugmeUkljuceno;
         }
 
         private void btDodajKolicinu_Click(object sender, EventArgs e)

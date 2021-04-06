@@ -75,8 +75,16 @@ namespace Servis_Racunara
                     MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbKolicinaKS.Text = "";
                 }
+                else if (Int32.Parse(tbKolicinaKS.Text) < 0)
+                {
+                    string srb = "Negativne vrijednosti kolicine nisu dozvoljene";
+                    string eng = "Negative values are not allowed";
+                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
                 else
                 {
+                   
                     try
                     {
                         decimal rabat = Decimal.Parse(tbRabatKS.Text);
@@ -111,7 +119,7 @@ namespace Servis_Racunara
             {
                 if (dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponenteKS.Index].Value != null)
                 {
-                    btDodajNaNalog.Enabled = true;
+                    
 
                     tbSifraKomponenteKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnSifraKomponenteKS.Index].Value.ToString();
                     tbNazivKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnNazivKS.Index].Value.ToString();

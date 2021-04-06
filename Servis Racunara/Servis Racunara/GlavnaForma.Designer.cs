@@ -30,10 +30,10 @@ namespace Servis_Racunara
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbZahtjev = new System.Windows.Forms.Label();
             this.tbZahtjev = new System.Windows.Forms.TextBox();
             this.tbNapomena = new System.Windows.Forms.TextBox();
@@ -155,7 +155,7 @@ namespace Servis_Racunara
             this.lbZahtjev.Location = new System.Drawing.Point(581, 135);
             this.lbZahtjev.Name = "lbZahtjev";
             this.lbZahtjev.Size = new System.Drawing.Size(89, 21);
-            this.lbZahtjev.TabIndex = 4;
+            this.lbZahtjev.TabIndex = 15;
             this.lbZahtjev.Text = "ZAHTJEV:";
             this.lbZahtjev.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -168,7 +168,7 @@ namespace Servis_Racunara
             this.tbZahtjev.Name = "tbZahtjev";
             this.tbZahtjev.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbZahtjev.Size = new System.Drawing.Size(462, 99);
-            this.tbZahtjev.TabIndex = 5;
+            this.tbZahtjev.TabIndex = 16;
             this.tbZahtjev.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbNapomena
@@ -179,7 +179,7 @@ namespace Servis_Racunara
             this.tbNapomena.Name = "tbNapomena";
             this.tbNapomena.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbNapomena.Size = new System.Drawing.Size(431, 152);
-            this.tbNapomena.TabIndex = 0;
+            this.tbNapomena.TabIndex = 21;
             this.tbNapomena.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dtpDatumKreiranja
@@ -188,7 +188,7 @@ namespace Servis_Racunara
             this.dtpDatumKreiranja.Location = new System.Drawing.Point(585, 281);
             this.dtpDatumKreiranja.Name = "dtpDatumKreiranja";
             this.dtpDatumKreiranja.Size = new System.Drawing.Size(204, 20);
-            this.dtpDatumKreiranja.TabIndex = 7;
+            this.dtpDatumKreiranja.TabIndex = 18;
             // 
             // cbStatus
             // 
@@ -211,7 +211,7 @@ namespace Servis_Racunara
             this.cbStatus.Location = new System.Drawing.Point(585, 105);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(271, 25);
-            this.cbStatus.TabIndex = 8;
+            this.cbStatus.TabIndex = 14;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // lbStatus
@@ -223,7 +223,7 @@ namespace Servis_Racunara
             this.lbStatus.Location = new System.Drawing.Point(581, 82);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(80, 21);
-            this.lbStatus.TabIndex = 9;
+            this.lbStatus.TabIndex = 13;
             this.lbStatus.Text = "STATUS:";
             this.lbStatus.Click += new System.EventHandler(this.lbStatus_Click);
             // 
@@ -235,7 +235,7 @@ namespace Servis_Racunara
             this.lbDatumKreiranja.Location = new System.Drawing.Point(582, 261);
             this.lbDatumKreiranja.Name = "lbDatumKreiranja";
             this.lbDatumKreiranja.Size = new System.Drawing.Size(106, 17);
-            this.lbDatumKreiranja.TabIndex = 10;
+            this.lbDatumKreiranja.TabIndex = 17;
             this.lbDatumKreiranja.Text = "Datum kreiranja:";
             // 
             // lbDatumZavrsetka
@@ -246,7 +246,7 @@ namespace Servis_Racunara
             this.lbDatumZavrsetka.Location = new System.Drawing.Point(854, 261);
             this.lbDatumZavrsetka.Name = "lbDatumZavrsetka";
             this.lbDatumZavrsetka.Size = new System.Drawing.Size(110, 17);
-            this.lbDatumZavrsetka.TabIndex = 11;
+            this.lbDatumZavrsetka.TabIndex = 26;
             this.lbDatumZavrsetka.Text = "Datum zavrsetka:";
             // 
             // dtpDatumZavrsetka
@@ -255,7 +255,7 @@ namespace Servis_Racunara
             this.dtpDatumZavrsetka.Location = new System.Drawing.Point(857, 281);
             this.dtpDatumZavrsetka.Name = "dtpDatumZavrsetka";
             this.dtpDatumZavrsetka.Size = new System.Drawing.Size(190, 20);
-            this.dtpDatumZavrsetka.TabIndex = 12;
+            this.dtpDatumZavrsetka.TabIndex = 27;
             this.dtpDatumZavrsetka.ValueChanged += new System.EventHandler(this.dtpDatumZavrsetka_ValueChanged);
             // 
             // lbNapomena
@@ -266,7 +266,7 @@ namespace Servis_Racunara
             this.lbNapomena.Location = new System.Drawing.Point(587, 526);
             this.lbNapomena.Name = "lbNapomena";
             this.lbNapomena.Size = new System.Drawing.Size(113, 21);
-            this.lbNapomena.TabIndex = 13;
+            this.lbNapomena.TabIndex = 20;
             this.lbNapomena.Text = "NAPOMENA:";
             // 
             // rbNeproknjizeni
@@ -278,7 +278,7 @@ namespace Servis_Racunara
             this.rbNeproknjizeni.Location = new System.Drawing.Point(144, 445);
             this.rbNeproknjizeni.Name = "rbNeproknjizeni";
             this.rbNeproknjizeni.Size = new System.Drawing.Size(232, 25);
-            this.rbNeproknjizeni.TabIndex = 14;
+            this.rbNeproknjizeni.TabIndex = 8;
             this.rbNeproknjizeni.TabStop = true;
             this.rbNeproknjizeni.Text = "NEPROKNJIZENI NALOZI";
             this.rbNeproknjizeni.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@ namespace Servis_Racunara
             this.rbProknjizeni.Location = new System.Drawing.Point(144, 486);
             this.rbProknjizeni.Name = "rbProknjizeni";
             this.rbProknjizeni.Size = new System.Drawing.Size(209, 25);
-            this.rbProknjizeni.TabIndex = 15;
+            this.rbProknjizeni.TabIndex = 9;
             this.rbProknjizeni.TabStop = true;
             this.rbProknjizeni.Text = "PROKNJIZENI NALOZI";
             this.rbProknjizeni.UseVisualStyleBackColor = true;
@@ -310,7 +310,7 @@ namespace Servis_Racunara
             this.tcNalozi.Name = "tcNalozi";
             this.tcNalozi.SelectedIndex = 0;
             this.tcNalozi.Size = new System.Drawing.Size(550, 306);
-            this.tcNalozi.TabIndex = 16;
+            this.tcNalozi.TabIndex = 6;
             this.tcNalozi.Selected += new System.Windows.Forms.TabControlEventHandler(this.tcNalozi_Selected);
             // 
             // tabPageNeproknjizeni
@@ -437,7 +437,7 @@ namespace Servis_Racunara
             this.btSacuvajIzmjene.Location = new System.Drawing.Point(1061, 208);
             this.btSacuvajIzmjene.Name = "btSacuvajIzmjene";
             this.btSacuvajIzmjene.Size = new System.Drawing.Size(189, 45);
-            this.btSacuvajIzmjene.TabIndex = 17;
+            this.btSacuvajIzmjene.TabIndex = 36;
             this.btSacuvajIzmjene.Text = "SACUVAJ IZMJENE";
             this.btSacuvajIzmjene.UseVisualStyleBackColor = true;
             this.btSacuvajIzmjene.Click += new System.EventHandler(this.button3_Click);
@@ -451,7 +451,7 @@ namespace Servis_Racunara
             this.lbKlijent.Location = new System.Drawing.Point(581, 25);
             this.lbKlijent.Name = "lbKlijent";
             this.lbKlijent.Size = new System.Drawing.Size(82, 21);
-            this.lbKlijent.TabIndex = 20;
+            this.lbKlijent.TabIndex = 11;
             this.lbKlijent.Text = "KLIJENT:";
             // 
             // tbKlijentGF
@@ -464,7 +464,7 @@ namespace Servis_Racunara
             this.tbKlijentGF.Name = "tbKlijentGF";
             this.tbKlijentGF.ReadOnly = true;
             this.tbKlijentGF.Size = new System.Drawing.Size(271, 27);
-            this.tbKlijentGF.TabIndex = 21;
+            this.tbKlijentGF.TabIndex = 12;
             this.tbKlijentGF.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // tcUslugaKomponenta
@@ -476,7 +476,7 @@ namespace Servis_Racunara
             this.tcUslugaKomponenta.Name = "tcUslugaKomponenta";
             this.tcUslugaKomponenta.SelectedIndex = 0;
             this.tcUslugaKomponenta.Size = new System.Drawing.Size(641, 203);
-            this.tcUslugaKomponenta.TabIndex = 22;
+            this.tcUslugaKomponenta.TabIndex = 19;
             this.tcUslugaKomponenta.Click += new System.EventHandler(this.tcUslugaKomponenta_Click);
             // 
             // tabPageUsluga
@@ -548,11 +548,11 @@ namespace Servis_Racunara
             // 
             // ColumnIzmjeniStavkuUsluge
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeniStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeniStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnIzmjeniStavkuUsluge.HeaderText = "Izmjeni";
             this.ColumnIzmjeniStavkuUsluge.Name = "ColumnIzmjeniStavkuUsluge";
             this.ColumnIzmjeniStavkuUsluge.ReadOnly = true;
@@ -561,11 +561,11 @@ namespace Servis_Racunara
             // 
             // ColumnObrisiStavkuUsluge
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisiStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisiStavkuUsluge.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnObrisiStavkuUsluge.HeaderText = "Obrisi";
             this.ColumnObrisiStavkuUsluge.Name = "ColumnObrisiStavkuUsluge";
             this.ColumnObrisiStavkuUsluge.ReadOnly = true;
@@ -635,11 +635,11 @@ namespace Servis_Racunara
             // 
             // ColumnIzmjeniKS
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnIzmjeniKS.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnIzmjeniKS.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnIzmjeniKS.HeaderText = "Izmjeni";
             this.ColumnIzmjeniKS.Name = "ColumnIzmjeniKS";
             this.ColumnIzmjeniKS.Text = "Izmjeni";
@@ -647,11 +647,11 @@ namespace Servis_Racunara
             // 
             // ColumnObrisiKS
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnObrisiKS.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnObrisiKS.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnObrisiKS.HeaderText = "Obrisi";
             this.ColumnObrisiKS.Name = "ColumnObrisiKS";
             this.ColumnObrisiKS.Text = "Obrisi";
@@ -663,7 +663,7 @@ namespace Servis_Racunara
             this.btIzmjenaNaloga.Location = new System.Drawing.Point(1061, 149);
             this.btIzmjenaNaloga.Name = "btIzmjenaNaloga";
             this.btIzmjenaNaloga.Size = new System.Drawing.Size(189, 45);
-            this.btIzmjenaNaloga.TabIndex = 23;
+            this.btIzmjenaNaloga.TabIndex = 35;
             this.btIzmjenaNaloga.Text = "IZMJENA NALOGA";
             this.btIzmjenaNaloga.UseVisualStyleBackColor = true;
             this.btIzmjenaNaloga.Click += new System.EventHandler(this.btIzmjenaNaloga_Click);
@@ -674,7 +674,7 @@ namespace Servis_Racunara
             this.btNoviRadniNalog.Location = new System.Drawing.Point(1061, 31);
             this.btNoviRadniNalog.Name = "btNoviRadniNalog";
             this.btNoviRadniNalog.Size = new System.Drawing.Size(189, 45);
-            this.btNoviRadniNalog.TabIndex = 24;
+            this.btNoviRadniNalog.TabIndex = 33;
             this.btNoviRadniNalog.Text = "KREIRAJ NOVI RADNI NALOG";
             this.btNoviRadniNalog.UseVisualStyleBackColor = true;
             this.btNoviRadniNalog.Click += new System.EventHandler(this.btNoviRadniNalog_Click);
@@ -688,7 +688,7 @@ namespace Servis_Racunara
             this.lbBrRadnogNaloga.Location = new System.Drawing.Point(889, 82);
             this.lbBrRadnogNaloga.Name = "lbBrRadnogNaloga";
             this.lbBrRadnogNaloga.Size = new System.Drawing.Size(85, 20);
-            this.lbBrRadnogNaloga.TabIndex = 26;
+            this.lbBrRadnogNaloga.TabIndex = 24;
             this.lbBrRadnogNaloga.Text = "Br.Naloga:";
             // 
             // tbBrojRadnogNaloga
@@ -700,7 +700,7 @@ namespace Servis_Racunara
             this.tbBrojRadnogNaloga.Name = "tbBrojRadnogNaloga";
             this.tbBrojRadnogNaloga.ReadOnly = true;
             this.tbBrojRadnogNaloga.Size = new System.Drawing.Size(97, 26);
-            this.tbBrojRadnogNaloga.TabIndex = 27;
+            this.tbBrojRadnogNaloga.TabIndex = 25;
             // 
             // lbIdKlijenta
             // 
@@ -711,7 +711,7 @@ namespace Servis_Racunara
             this.lbIdKlijenta.Location = new System.Drawing.Point(890, 26);
             this.lbIdKlijenta.Name = "lbIdKlijenta";
             this.lbIdKlijenta.Size = new System.Drawing.Size(86, 20);
-            this.lbIdKlijenta.TabIndex = 28;
+            this.lbIdKlijenta.TabIndex = 22;
             this.lbIdKlijenta.Text = "IDKlijenta:";
             this.lbIdKlijenta.Click += new System.EventHandler(this.lbBroj_Click);
             // 
@@ -724,7 +724,7 @@ namespace Servis_Racunara
             this.tbIdKlijentaGF.Name = "tbIdKlijentaGF";
             this.tbIdKlijentaGF.ReadOnly = true;
             this.tbIdKlijentaGF.Size = new System.Drawing.Size(97, 27);
-            this.tbIdKlijentaGF.TabIndex = 29;
+            this.tbIdKlijentaGF.TabIndex = 23;
             this.tbIdKlijentaGF.TextChanged += new System.EventHandler(this.tbIdKlijentaGF_TextChanged);
             // 
             // lbZaprimio
@@ -735,7 +735,7 @@ namespace Servis_Racunara
             this.lbZaprimio.Location = new System.Drawing.Point(1057, 607);
             this.lbZaprimio.Name = "lbZaprimio";
             this.lbZaprimio.Size = new System.Drawing.Size(100, 21);
-            this.lbZaprimio.TabIndex = 30;
+            this.lbZaprimio.TabIndex = 29;
             this.lbZaprimio.Text = "ZAPRIMIO:";
             // 
             // lbServiserRadi
@@ -759,7 +759,7 @@ namespace Servis_Racunara
             this.cbZaprimio.Location = new System.Drawing.Point(1061, 631);
             this.cbZaprimio.Name = "cbZaprimio";
             this.cbZaprimio.Size = new System.Drawing.Size(218, 23);
-            this.cbZaprimio.TabIndex = 32;
+            this.cbZaprimio.TabIndex = 30;
             // 
             // cbRadi
             // 
@@ -768,7 +768,7 @@ namespace Servis_Racunara
             this.cbRadi.Location = new System.Drawing.Point(1061, 681);
             this.cbRadi.Name = "cbRadi";
             this.cbRadi.Size = new System.Drawing.Size(218, 21);
-            this.cbRadi.TabIndex = 33;
+            this.cbRadi.TabIndex = 32;
             // 
             // btSacuvajNalog
             // 
@@ -789,7 +789,7 @@ namespace Servis_Racunara
             this.btDodajUslugu.Location = new System.Drawing.Point(1232, 329);
             this.btDodajUslugu.Name = "btDodajUslugu";
             this.btDodajUslugu.Size = new System.Drawing.Size(105, 41);
-            this.btDodajUslugu.TabIndex = 35;
+            this.btDodajUslugu.TabIndex = 38;
             this.btDodajUslugu.Text = "DODAJ USLUGU";
             this.btDodajUslugu.UseVisualStyleBackColor = true;
             this.btDodajUslugu.Click += new System.EventHandler(this.button1_Click_1);
@@ -800,7 +800,7 @@ namespace Servis_Racunara
             this.btDodajKomponentu.Location = new System.Drawing.Point(1232, 396);
             this.btDodajKomponentu.Name = "btDodajKomponentu";
             this.btDodajKomponentu.Size = new System.Drawing.Size(105, 41);
-            this.btDodajKomponentu.TabIndex = 36;
+            this.btDodajKomponentu.TabIndex = 39;
             this.btDodajKomponentu.Text = "DODAJ KOMPONENTU";
             this.btDodajKomponentu.UseVisualStyleBackColor = true;
             this.btDodajKomponentu.Click += new System.EventHandler(this.button2_Click);
@@ -812,7 +812,7 @@ namespace Servis_Racunara
             this.lbPretraziNalog.Location = new System.Drawing.Point(222, 113);
             this.lbPretraziNalog.Name = "lbPretraziNalog";
             this.lbPretraziNalog.Size = new System.Drawing.Size(70, 21);
-            this.lbPretraziNalog.TabIndex = 38;
+            this.lbPretraziNalog.TabIndex = 3;
             this.lbPretraziNalog.Text = "Pretrazi:";
             // 
             // tbFilterNalog
@@ -822,7 +822,7 @@ namespace Servis_Racunara
             this.tbFilterNalog.Location = new System.Drawing.Point(334, 113);
             this.tbFilterNalog.Name = "tbFilterNalog";
             this.tbFilterNalog.Size = new System.Drawing.Size(220, 20);
-            this.tbFilterNalog.TabIndex = 39;
+            this.tbFilterNalog.TabIndex = 4;
             this.tbFilterNalog.TextChanged += new System.EventHandler(this.tbFilterNalog_TextChanged);
             // 
             // lbUkupnoUsluge
@@ -831,7 +831,7 @@ namespace Servis_Racunara
             this.lbUkupnoUsluge.Location = new System.Drawing.Point(6, 25);
             this.lbUkupnoUsluge.Name = "lbUkupnoUsluge";
             this.lbUkupnoUsluge.Size = new System.Drawing.Size(89, 13);
-            this.lbUkupnoUsluge.TabIndex = 1;
+            this.lbUkupnoUsluge.TabIndex = 0;
             this.lbUkupnoUsluge.Text = "Usluge za uplatu:";
             // 
             // lbVrUsluge
@@ -840,7 +840,7 @@ namespace Servis_Racunara
             this.lbVrUsluge.Location = new System.Drawing.Point(202, 25);
             this.lbVrUsluge.Name = "lbVrUsluge";
             this.lbVrUsluge.Size = new System.Drawing.Size(28, 13);
-            this.lbVrUsluge.TabIndex = 41;
+            this.lbVrUsluge.TabIndex = 3;
             this.lbVrUsluge.Text = "0.00";
             this.lbVrUsluge.Click += new System.EventHandler(this.lbVrUsluge_Click);
             // 
@@ -850,7 +850,7 @@ namespace Servis_Racunara
             this.lbUkupnoKomponenti.Location = new System.Drawing.Point(6, 47);
             this.lbUkupnoKomponenti.Name = "lbUkupnoKomponenti";
             this.lbUkupnoKomponenti.Size = new System.Drawing.Size(94, 13);
-            this.lbUkupnoKomponenti.TabIndex = 42;
+            this.lbUkupnoKomponenti.TabIndex = 1;
             this.lbUkupnoKomponenti.Text = "Dijelova za uplatu:";
             // 
             // gbPlacanje
@@ -865,7 +865,7 @@ namespace Servis_Racunara
             this.gbPlacanje.Location = new System.Drawing.Point(1061, 517);
             this.gbPlacanje.Name = "gbPlacanje";
             this.gbPlacanje.Size = new System.Drawing.Size(260, 87);
-            this.gbPlacanje.TabIndex = 43;
+            this.gbPlacanje.TabIndex = 28;
             this.gbPlacanje.TabStop = false;
             this.gbPlacanje.Text = "IZNOS ZA PLACANJE:";
             // 
@@ -875,7 +875,7 @@ namespace Servis_Racunara
             this.lbVrUkupno.Location = new System.Drawing.Point(202, 69);
             this.lbVrUkupno.Name = "lbVrUkupno";
             this.lbVrUkupno.Size = new System.Drawing.Size(28, 13);
-            this.lbVrUkupno.TabIndex = 45;
+            this.lbVrUkupno.TabIndex = 5;
             this.lbVrUkupno.Text = "0.00";
             // 
             // lbUkupanIznosZaUplatu
@@ -884,7 +884,7 @@ namespace Servis_Racunara
             this.lbUkupanIznosZaUplatu.Location = new System.Drawing.Point(6, 69);
             this.lbUkupanIznosZaUplatu.Name = "lbUkupanIznosZaUplatu";
             this.lbUkupanIznosZaUplatu.Size = new System.Drawing.Size(147, 13);
-            this.lbUkupanIznosZaUplatu.TabIndex = 44;
+            this.lbUkupanIznosZaUplatu.TabIndex = 2;
             this.lbUkupanIznosZaUplatu.Text = "UKUPNI IZNOS ZA UPLATU";
             // 
             // lbVrKomponente
@@ -893,7 +893,7 @@ namespace Servis_Racunara
             this.lbVrKomponente.Location = new System.Drawing.Point(202, 47);
             this.lbVrKomponente.Name = "lbVrKomponente";
             this.lbVrKomponente.Size = new System.Drawing.Size(28, 13);
-            this.lbVrKomponente.TabIndex = 43;
+            this.lbVrKomponente.TabIndex = 4;
             this.lbVrKomponente.Text = "0.00";
             // 
             // btObrisiNalog
@@ -902,7 +902,7 @@ namespace Servis_Racunara
             this.btObrisiNalog.Location = new System.Drawing.Point(1061, 267);
             this.btObrisiNalog.Name = "btObrisiNalog";
             this.btObrisiNalog.Size = new System.Drawing.Size(189, 45);
-            this.btObrisiNalog.TabIndex = 44;
+            this.btObrisiNalog.TabIndex = 37;
             this.btObrisiNalog.Text = "OBRISI NALOG";
             this.btObrisiNalog.UseVisualStyleBackColor = true;
             this.btObrisiNalog.Click += new System.EventHandler(this.button1_Click_2);
@@ -913,7 +913,7 @@ namespace Servis_Racunara
             this.btProknjizi.Location = new System.Drawing.Point(431, 445);
             this.btProknjizi.Name = "btProknjizi";
             this.btProknjizi.Size = new System.Drawing.Size(123, 53);
-            this.btProknjizi.TabIndex = 45;
+            this.btProknjizi.TabIndex = 10;
             this.btProknjizi.Text = "PROKNJIZI NALOG";
             this.btProknjizi.UseVisualStyleBackColor = true;
             this.btProknjizi.Click += new System.EventHandler(this.btProknjizi_Click);
@@ -926,7 +926,7 @@ namespace Servis_Racunara
             this.gbJezici.Location = new System.Drawing.Point(1256, 27);
             this.gbJezici.Name = "gbJezici";
             this.gbJezici.Size = new System.Drawing.Size(83, 118);
-            this.gbJezici.TabIndex = 51;
+            this.gbJezici.TabIndex = 42;
             this.gbJezici.TabStop = false;
             // 
             // rbPrevediNaSrpski
@@ -936,7 +936,7 @@ namespace Servis_Racunara
             this.rbPrevediNaSrpski.Location = new System.Drawing.Point(12, 13);
             this.rbPrevediNaSrpski.Name = "rbPrevediNaSrpski";
             this.rbPrevediNaSrpski.Size = new System.Drawing.Size(59, 45);
-            this.rbPrevediNaSrpski.TabIndex = 49;
+            this.rbPrevediNaSrpski.TabIndex = 1;
             this.rbPrevediNaSrpski.TabStop = true;
             this.rbPrevediNaSrpski.UseVisualStyleBackColor = true;
             this.rbPrevediNaSrpski.CheckedChanged += new System.EventHandler(this.rbPrevediNaSrpski_CheckedChanged);
@@ -948,7 +948,7 @@ namespace Servis_Racunara
             this.rbPrevediNaengleski.Location = new System.Drawing.Point(10, 64);
             this.rbPrevediNaengleski.Name = "rbPrevediNaengleski";
             this.rbPrevediNaengleski.Size = new System.Drawing.Size(59, 45);
-            this.rbPrevediNaengleski.TabIndex = 50;
+            this.rbPrevediNaengleski.TabIndex = 1;
             this.rbPrevediNaengleski.TabStop = true;
             this.rbPrevediNaengleski.UseVisualStyleBackColor = true;
             this.rbPrevediNaengleski.CheckedChanged += new System.EventHandler(this.rbPrevediNaengleski_CheckedChanged);
@@ -960,7 +960,7 @@ namespace Servis_Racunara
             this.lbLogovaniSteKao.Location = new System.Drawing.Point(12, 699);
             this.lbLogovaniSteKao.Name = "lbLogovaniSteKao";
             this.lbLogovaniSteKao.Size = new System.Drawing.Size(54, 13);
-            this.lbLogovaniSteKao.TabIndex = 52;
+            this.lbLogovaniSteKao.TabIndex = 43;
             this.lbLogovaniSteKao.Text = "Korosnik :";
             // 
             // lbKorisnickoIme
@@ -970,7 +970,7 @@ namespace Servis_Racunara
             this.lbKorisnickoIme.Location = new System.Drawing.Point(75, 699);
             this.lbKorisnickoIme.Name = "lbKorisnickoIme";
             this.lbKorisnickoIme.Size = new System.Drawing.Size(35, 13);
-            this.lbKorisnickoIme.TabIndex = 53;
+            this.lbKorisnickoIme.TabIndex = 0;
             this.lbKorisnickoIme.Text = "admin";
             // 
             // btPromjenaLozinke
@@ -979,7 +979,7 @@ namespace Servis_Racunara
             this.btPromjenaLozinke.Location = new System.Drawing.Point(333, 694);
             this.btPromjenaLozinke.Name = "btPromjenaLozinke";
             this.btPromjenaLozinke.Size = new System.Drawing.Size(221, 23);
-            this.btPromjenaLozinke.TabIndex = 54;
+            this.btPromjenaLozinke.TabIndex = 1;
             this.btPromjenaLozinke.Text = "Promjena lozinke";
             this.btPromjenaLozinke.UseVisualStyleBackColor = true;
             this.btPromjenaLozinke.Click += new System.EventHandler(this.btPromjenaLozinke_Click);
@@ -995,7 +995,7 @@ namespace Servis_Racunara
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(1344, 24);
-            this.menuStrip1.TabIndex = 55;
+            this.menuStrip1.TabIndex = 41;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tsmTeme
@@ -1096,7 +1096,7 @@ namespace Servis_Racunara
             this.button1.Location = new System.Drawing.Point(8, 445);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 40);
-            this.button1.TabIndex = 46;
+            this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
