@@ -131,9 +131,8 @@ namespace Servis_Racunara
             this.lbGreska.ForeColor = System.Drawing.Color.Red;
             this.lbGreska.Location = new System.Drawing.Point(41, 230);
             this.lbGreska.Name = "lbGreska";
-            this.lbGreska.Size = new System.Drawing.Size(275, 20);
+            this.lbGreska.Size = new System.Drawing.Size(0, 20);
             this.lbGreska.TabIndex = 0;
-            this.lbGreska.Text = "POGRESNA LOZINKA ILI KORISNIK";
             this.lbGreska.Visible = false;
             // 
             // PrijavaForma

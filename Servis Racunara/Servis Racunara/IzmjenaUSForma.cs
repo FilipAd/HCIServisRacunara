@@ -26,13 +26,13 @@ namespace Servis_Racunara
             {
                 string srb = "Морате попунити сва захтјевана поља";
                 string eng = "All fields are required";
-                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Int32.Parse(tbKolicinaIzmjenaUS.Text) < 0)
+            else if (Int32.Parse(tbKolicinaIzmjenaUS.Text) < 1)
             {
-                string srb = "Negativne vrijednosti nisu dozvoljene";
+                string srb = "Негативне вриједности нису дозвољене, коа ни 0";
                 string eng = "Negative values are not allowed";
-                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -51,7 +51,7 @@ namespace Servis_Racunara
                 tbKolicinaIzmjenaUS.Text = "";
                 string srb = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
                 string eng = "The values entered must be numbers, and the service must be selected";
-                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Servis_Racunara
             DbServisRacunara.UpdateUslugaStavka(us);
             string srb = "Успјешно ажурирање";
             string eng = "Successful update";
-            MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, "Uspjesno Azuriranje Stavke Usluge", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show((GlavnaFormaIUS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void IzmjenaUSForma_Load(object sender, EventArgs e)

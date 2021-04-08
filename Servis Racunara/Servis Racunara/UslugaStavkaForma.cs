@@ -64,7 +64,7 @@ namespace Servis_Racunara
                     tbCijenaPoSatuUS.Text = dgvUsluga.Rows[e.RowIndex].Cells[ColumnCijenaPoH.Index].Value.ToString();
                 }
                 else
-                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Стиснули сте празно поље",String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -84,11 +84,11 @@ namespace Servis_Racunara
                 string eng = "All fields are required";
                 MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if(Int32.Parse(tbKolicinaUS.Text)<0)
+                else if(Int32.Parse(tbKolicinaUS.Text)<1)
                    {
-                    string srb = "Negativne vrijednosti kolicine nisu dozvoljene";
+                    string srb = "Негативне вриједности нису дозвољене, као ни 0";
                     string eng = "Negative values are not allowed";
-                    MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb : eng,String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                    }
                 else
@@ -107,7 +107,7 @@ namespace Servis_Racunara
                 tbKolicinaUS.Text = "";
                 tbKolicinaUS.Text = "";
                 string eng1 = "The values entered must be numbers, and the service must be selected";
-                string srb1 = "Унесене вриједности морају бити бројеви, и сулуга мора бити селектована";
+                string srb1 = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
                 MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb1 : eng1, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -135,7 +135,7 @@ namespace Servis_Racunara
             DbServisRacunara.InsertUslugaStavkaNaNalog(usluga);
             string srb = "Успјешно сте додали ставку";
             string eng = "You have successfully added an item";
-            MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb : eng, "USPJESNO DODAVANJE USLUGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show((GlavnaFormaUSLUGA.rbPrevediNaSrpski.Checked) ? srb : eng,String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void tbRabatUS_TextChanged(object sender, EventArgs e)

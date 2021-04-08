@@ -52,7 +52,7 @@ namespace Servis_Racunara
                     btDodajKomponentu.Enabled = true;
                     string eng = "Are you sure you want to delete this component?";
                     string srb = "Да ли сте сигурни да желите да обришете ову компоненту?";
-                    if (MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         int sifra = (int)dgvKomponenta.Rows[e.RowIndex].Cells[0].Value;
                         DbServisRacunara.DeleteKoomponentaSifra(sifra);
@@ -60,7 +60,7 @@ namespace Servis_Racunara
                     }
                 }
                 else
-                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Stisnuli ste prazno polje", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(dgvKomponenta.Columns[e.ColumnIndex].Name=="ColumnIzmjeni")
             {
@@ -75,7 +75,7 @@ namespace Servis_Racunara
                     tbKolicina.Text = dgvKomponenta.Rows[e.RowIndex].Cells[ColumnDostupnaKolicina.Index].Value.ToString();
                 }
                 else
-                  MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  MessageBox.Show("Stisnuli ste prazno polje", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(dgvKomponenta.Columns[e.ColumnIndex].Name == "ColumnDodaj")
             {
@@ -94,7 +94,7 @@ namespace Servis_Racunara
                     tbCijenaPoKomadu.Enabled = false;
                 }
                 else
-                  MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  MessageBox.Show("Stisnuli ste prazno polje", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -112,7 +112,7 @@ namespace Servis_Racunara
                 {
                     string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
                     string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
-                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -131,7 +131,7 @@ namespace Servis_Racunara
             {
                 string srb = "Неисправни параметри";
                 string eng = "Invalid parameters";
-                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 NapuniGrid();
             
@@ -147,14 +147,14 @@ namespace Servis_Racunara
                     string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
                     string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
                     dugmeUkljuceno = true;
-                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if(String.IsNullOrEmpty(tbKolicina.Text) || String.IsNullOrEmpty(tbNazivKomponente.Text) || String.IsNullOrEmpty(tbSifraKomponente.Text) || String.IsNullOrEmpty(tbCijenaPoKomadu.Text))
                 {
                     string srb = "Morate popuniti sva zahtjeva polja";
                     string eng = "All fields are required";
                     dugmeUkljuceno = true;
-                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -191,7 +191,7 @@ namespace Servis_Racunara
             {
                 string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
                 string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
-                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

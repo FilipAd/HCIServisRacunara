@@ -66,20 +66,20 @@ namespace Servis_Racunara
                     string srb = "Морате попунити сва захтјевана поља";
                     string eng = "All fields are required";
 
-                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if ((Int32.Parse(tbDostupnoKS.Text) - Int32.Parse(tbKolicinaKS.Text)) < 0)
                 {
                     string srb = "Тражити више компоненти него што их има на стању";
                     string eng = "LOOK FOR MORE COMPONENTS THAN THEY HAVE IN STOCK";
-                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA BROJA KOMPONENTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbKolicinaKS.Text = "";
                 }
-                else if (Int32.Parse(tbKolicinaKS.Text) < 0)
+                else if (Int32.Parse(tbKolicinaKS.Text) < 1)
                 {
-                    string srb = "Negativne vrijednosti kolicine nisu dozvoljene";
+                    string srb = "Негативне вриједности за количину нису дозвољене, као и 0";
                     string eng = "Negative values are not allowed";
-                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
                 else
@@ -99,7 +99,7 @@ namespace Servis_Racunara
                         tbRabatKS.Text = "";
                         string srb = "Унесене вриједности морају бити бројеви, и услуга мора бити селектована";
                         string eng = "The values entered must be numbers, and the service must be selected";
-                        MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -107,7 +107,7 @@ namespace Servis_Racunara
             {
                 string srb = "Унесене вриједности морају бити бројеви";
                 string eng = "The values entered must be numbers";
-                MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)? srb:eng, "GRESKA VRIJEDNSOTI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)? srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
         }
@@ -127,7 +127,7 @@ namespace Servis_Racunara
                     tbDostupnoKS.Text = dgvKomponentaStavka.Rows[e.RowIndex].Cells[ColumnDostupnaKolicinaKS.Index].Value.ToString();
                 }
                 else
-                    MessageBox.Show("Stisnuli ste prazno polje", "Greska praznog polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Стиснули сте празно поље", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -153,7 +153,7 @@ namespace Servis_Racunara
             DbServisRacunara.InsertKomponentaStavkaNaNalog(komponenta);
             string srb = "Успјешно сте додали ставку";
             string eng = "You have successfully added an item";
-            MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, "USPJESNO DODAVANJE KOMPONENTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show((GlavnaFormaKS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         public void prevediNaSrpski()

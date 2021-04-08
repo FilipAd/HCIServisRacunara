@@ -278,7 +278,7 @@ namespace Servis_Racunara
             this.lbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFilter.AutoSize = true;
             this.lbFilter.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFilter.Location = new System.Drawing.Point(456, 13);
+            this.lbFilter.Location = new System.Drawing.Point(386, 12);
             this.lbFilter.Name = "lbFilter";
             this.lbFilter.Size = new System.Drawing.Size(187, 21);
             this.lbFilter.TabIndex = 0;

@@ -72,6 +72,9 @@ namespace Servis_Racunara
 
         private void btPrijava_Click(object sender, EventArgs e)
         {
+            string srb = "НЕИСПРАВНА ЛОЗИНКА ИЛИ НАЛОГ";
+            string eng = "WRONG PASSWOR OR USERNAME";
+            lbGreska.Text = (rbPrevediNaSrpski.Checked) ? srb : eng;
             ComboBoxItem pom = cbKorisnickoIme.SelectedItem as ComboBoxItem;
             if (pom != null)
             {
@@ -80,12 +83,17 @@ namespace Servis_Racunara
                     DialogResult = DialogResult.OK;
                 else
                 {
+                  
+                    lbGreska.Text = (rbPrevediNaSrpski.Checked) ? srb : eng;
                     lbGreska.Visible = true;
-                    tbLozinka.Text = "";
+                    tbLozinka.Text =String.Empty;
                 }
             }
             else
-                lbGreska.Visible = true;
+           
+            lbGreska.Text = (rbPrevediNaSrpski.Checked) ? srb : eng;
+            lbGreska.Visible = true;
+            tbLozinka.Text =String.Empty;
 
         }
 

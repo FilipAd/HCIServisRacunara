@@ -45,7 +45,7 @@ namespace Servis_Racunara
                 string srb = "Успјешно ажурирање";
                 string eng = "Successful update";
 
-                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked)? srb:eng, "Uspjesno Azuriranje Stavke Komponente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked)? srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -58,13 +58,13 @@ namespace Servis_Racunara
             {
                 string srb = "Морате попунити сва захтјевана поља";
                 string eng = "All fields are required";
-                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked)?srb:eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(Int32.Parse(tbKolicinaIzmjenaKS.Text)<0)
+            else if(Int32.Parse(tbKolicinaIzmjenaKS.Text)<1)
             {
-                string srb = "Negativne vrijednosti nisu dozvoljene";
+                string srb = "Негативне вриједности нису дозвољене, као ни 0";
                 string eng = "Negative values are not allowed";
-                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA PRAZNO POLJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -83,7 +83,7 @@ namespace Servis_Racunara
                 tbKolicinaIzmjenaKS.Text = "";
                 string srb = "Унесене вриједности морају бити бројеви, и компонента мора бити селектована";
                 string eng = "The values entered must be numbers, and the component must be selected";
-                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked) ? srb : eng, "GRESKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((GlavnaFormaIKS.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
