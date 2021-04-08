@@ -782,7 +782,7 @@ namespace Servis_Racunara
             {
                 string eng = "TICKET IS NOT SELECTED";
                 string srb = "МОРАТЕ СЕЛЕКТОВАТИ РАДНИ НАЛОГ ";
-                MessageBox.Show((rbPrevediNaSrpski.Checked)?eng:srb,String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show((rbPrevediNaSrpski.Checked)?srb:eng,String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
