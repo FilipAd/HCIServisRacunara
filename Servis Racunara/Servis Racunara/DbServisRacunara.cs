@@ -10,7 +10,7 @@ namespace Servis_Racunara
 {
     static class DbServisRacunara
     {
-        //   public static string connectionString = "SERVER=localhost;DATABASE=servisracunara;UID=root;PASSWORD=specnaz9;";
+       
         public static string connectionString = ConfigurationManager.ConnectionStrings["Servis_Racunara.Properties.Settings.servisracunaraConnectionString"].ConnectionString;
         public static List<Komponenta> GetKomponentas()
         {

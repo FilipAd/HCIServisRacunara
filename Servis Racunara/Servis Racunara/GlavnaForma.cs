@@ -788,7 +788,7 @@ namespace Servis_Racunara
             {
                 string eng = "Are you sure you want to delete this ticket";
                 string srb = "Да ли сте сигурни да желите обрисати овај налог?";
-                if (MessageBox.Show((rbPrevediNaSrpski.Checked)?eng:srb, String.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show((rbPrevediNaSrpski.Checked)?srb:eng, String.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int brojNaloga = Int32.Parse(tbBrojRadnogNaloga.Text);
                     DbServisRacunara.ObrisSveStavkeUslugeSaRadnogNaloga(brojNaloga);

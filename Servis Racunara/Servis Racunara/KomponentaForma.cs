@@ -108,9 +108,9 @@ namespace Servis_Racunara
         {
             try
             {
-                if (Int32.Parse(tbKolicina.Text) < 0 || Decimal.Parse(tbCijenaPoKomadu.Text) < 0)
+                if (Int32.Parse(tbKolicina.Text) < 1 || Decimal.Parse(tbCijenaPoKomadu.Text) < 0)
                 {
-                    string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
+                    string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ ИЛИ 0";
                     string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
                     MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -142,9 +142,9 @@ namespace Servis_Racunara
             bool dugmeUkljuceno = false;
             try
             {
-                if (Int32.Parse(tbKolicina.Text) < 0 || Decimal.Parse(tbCijenaPoKomadu.Text) < 0)
+                if (Int32.Parse(tbKolicina.Text) < 1 || Decimal.Parse(tbCijenaPoKomadu.Text) < 0)
                 {
-                    string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ";
+                    string srb = "НЕ МОЖЕТЕ УНОСТИТИ НЕГАТИВНЕ ВРИЈЕДОСТИ ИЛИ 0";
                     string eng = "YOU CANNOT INSERT NEGATIVE VALUES ";
                     dugmeUkljuceno = true;
                     MessageBox.Show((GlavnaFormaKOM.rbPrevediNaSrpski.Checked) ? srb : eng, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
